@@ -45,10 +45,10 @@ return(
 
 const mapStateToProps = (state) =>{
     
-    return{
+  /*  return{
         smurfs:state.smurf
         
-    }
+    }*/
 
 }
 
