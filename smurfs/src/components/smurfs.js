@@ -13,7 +13,6 @@ const Smurf = props => {
 
     return (
         <div>
-            <h1>Smurf Village</h1>
             {props.isLoading && <h4>Loading your Smurf Village...</h4>}
             {props.error && (<p className="error"> Uh oh where have the Smurfs gone!...{props.error}</p>)}
             {props.smurfs.length > 0 && (
