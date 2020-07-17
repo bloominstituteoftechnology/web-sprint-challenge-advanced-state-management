@@ -1,7 +1,7 @@
 import React , {useState} from 'react' 
 import {connect} from 'react-redux'
 import axios from 'axios';
-import {fetchSmurfs} from '../actions/actions'
+import {postSmurfs} from '../actions/actions'
 
 
  const initialState = {
@@ -13,18 +13,6 @@ import {fetchSmurfs} from '../actions/actions'
 const SmurfForm = props => {
  const [newSmurf , setNewSmurf] = useState(initialState)
 
- const postNewSmurf = () =>{
-    axios.post('http://localhost:3333/smurfs',{
-        name: newSmurf.name,
-        age: newSmurf.age,
-        height: newSmurf.height,
-     })
-    .then(response =>{
-        props.fetchSmurfs()
-    })
-   
-}
-
 
 
   const  handleChanges = e => {
@@ -34,8 +22,7 @@ const SmurfForm = props => {
     
     const  handleSubmit =  e =>{
             e.preventDefault()
-            postNewSmurf(newSmurf)
-            setNewSmurf(initialState)
+            props.postSmurfs(newSmurf)
 
 
      }
@@ -76,4 +63,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps,{fetchSmurfs})(SmurfForm); 
+export default connect(mapStateToProps,{postSmurfs})(SmurfForm); 

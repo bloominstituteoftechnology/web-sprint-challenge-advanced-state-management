@@ -23,8 +23,11 @@ export const fetchSmurfs = () => {
 
 export const postSmurfs = (newSmurf) => {
     return dispatch => {
-        axios
-        .post('http://localhost:3333/smurfs', {newSmurf})
+        axios.post('http://localhost:3333/smurfs',{
+            name: newSmurf.name,
+            age: newSmurf.age,
+            height: newSmurf.height,
+         })
         .then( res => {
             dispatch({type: FETCH_SMURF_SUCCESS, payload: res.data})
         })
