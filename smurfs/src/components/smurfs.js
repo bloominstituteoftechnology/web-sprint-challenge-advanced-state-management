@@ -17,13 +17,13 @@ const Smurf = props => {
             {props.error && (<p className="error"> Uh oh where have the Smurfs gone!...{props.error}</p>)}
             {props.smurfs.length > 0 && (
 
-                <div>
+                <div className='smurfs'>
                     
                     {props.smurfs.map( smurf => (
-                        <div key={smurf.id}>
-                            <p>{smurf.name}</p>
-                            <p>{smurf.age}</p>  
-                            <p>{smurf.height}</p>  
+                        <div  className='smurf'key={smurf.id}>
+                            <p>Name : {smurf.name}</p>
+                            <p>Age: {smurf.age}</p>  
+                            <p>Height: {smurf.height}</p>  
                             </div>
                         ))}
 
