@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postSmurfs } from '../actions';
-import { Form, FormGroup, Label, Input, Button, Card } from 'reactstrap';
+import { Form,  Label, Input, Button, Card } from 'reactstrap';
 
 
 const SmurfsForm = (props) => {
@@ -25,9 +25,9 @@ return(
     <div>
         <Form id='smurfFrom' style={{ width: '40%',  marginLeft: '30%', padding: '2px #62cdfd', background: '#62cdfd', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}>
 
-            <Card  style={{ background: '#62cdfd', color: 'whitesmoke', fontSize: '24px', fontWeight: 'bold'}}>
-                <Label for='name'  >Name: </Label>
-                    <Input style={{ width: '50%', marginLeft: '25%'}}
+            <Card  style={{ background: '#62cdfd', color: 'whitesmoke', fontSize: '24px', fontWeight: 'bold', textShadow: '2px 2px 8px black'}}>
+                <Label for='name'>Name: </Label>
+                    <Input style={{ width: '50%', marginLeft: '25%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}
                         type='text'
                         name='name'
                         label='name'
@@ -38,7 +38,7 @@ return(
                     
 
             <Label for='Age'>Age</Label>
-                <Input  style={{ width: '50%', marginLeft: '25%'}}
+                <Input  style={{ width: '50%', marginLeft: '25%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}
                     type='text'
                     name='age'
                     label='age'
@@ -47,17 +47,17 @@ return(
                     onChange={inputHandler}
                     />  
 
-                <Label for='weight'>Weight</Label>
-                    <Input  style={{ width: '50%', marginLeft: '25%'}}
+                <Label for='height'>height</Label>
+                    <Input  style={{ width: '50%', marginLeft: '25%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}
                         type='text'
-                        name='weight'
-                        label='weight'
-                        placeholder='Enter Weight'
-                        value={props.weight}
+                        name='height'
+                        label='height'
+                        placeholder='Enter height'
+                        value={props.height}
                         onChange={inputHandler}
                         />
 
-             <Button onClick = {submitHandler} style={{ width: '30%', marginLeft: '35%', marginTop: '3%', marginBotton: '5%',  background: 'whitesmoke', color: '#62cdfd', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}> Submit Your Smurf</Button> 
+             <Button onClick = {submitHandler} style={{ width: '30%', margin: '3%', marginLeft: '35%',   background: 'whitesmoke', color: '#62cdfd', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', fontWeight: 'bold' , textShadow: '2px 2px 8px #C0C0C0 ' }}> Submit Your Smurf</Button> 
             </Card>         
         </Form>
     </div>
