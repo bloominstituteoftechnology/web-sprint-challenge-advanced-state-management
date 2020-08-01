@@ -11,3 +11,21 @@
   color: aliceblue;
   text-shadow: 2px 2px black;
 }
+
+.form{
+  width:50%;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.label{
+  border: 5px ridge rgb(2, 85, 85);
+}
+
+.input{
+  border: 5px ridge rgb(2, 85, 85);
+  background: linear-gradient(to bottom right, blue,cyan);
+  color: white;
+  font-weight: bold;
+}

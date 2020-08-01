@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import e from 'express';
+import { connect } from 'react-redux';
+import { postSmurfs } from '../actions/actionsIndex';
 
 const SmurfForm = (props) => {
     const [smurf, setSmurf] = useState({
@@ -12,9 +13,14 @@ const SmurfForm = (props) => {
         setSmurf({ ...smurf, [e.target.name]: e.target.value })
     }
 
+    const submitHandler = e => {
+        e.preventDefault();
+        props.postSmurfs(smurf)
+    }
+
 
     return (
-        <form className='form' id='smurfForm'>
+        <form className='form' id='smurfForm' onSubmit={submitHandler}>
             <label htmlFor='name' className='label'>Name</label>
             <input
                 type='text'
@@ -35,8 +41,6 @@ const SmurfForm = (props) => {
                 onChange={inputHandler}
                 className='input' />
 
-            <button className='btn'>Submit Smurf</button>
-
             <label htmlFor='height' className='label'>Height</label>
             <input
                 type='text'
@@ -46,8 +50,23 @@ const SmurfForm = (props) => {
                 value={props.height}
                 onChange={inputHandler}
                 className='input' />
+
+            <button className='btn'>Submit Smurf</button>
         </form>
     )
 };
 
-export default SmurfForm;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs,
+        isPosting: state.isPosting,
+        error: state.error
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {
+        postSmurfs
+    }
+)(SmurfForm);
