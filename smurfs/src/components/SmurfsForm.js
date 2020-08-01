@@ -7,7 +7,6 @@ const SmurfsForm = (props) =>{
         name:'',
         age: '',
         height: '',
-        id: ""
     })
 
     const inputHandler = e => {
@@ -15,7 +14,7 @@ const SmurfsForm = (props) =>{
     }
 
     const submitHandler = e => {
-        e.preventDefaul();
+        e.preventDefault();
         props.postSmurfs(smurf)
     }
 
