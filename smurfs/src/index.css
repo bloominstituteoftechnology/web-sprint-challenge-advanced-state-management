@@ -1,5 +1,10 @@
 body {
+  background-image: url('https://i.postimg.cc/D0mwzjf8/the-smurfs.jpg');
+  background-repeat: no-repeat;
+  background-size: 2500px 1200px;
+  
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+

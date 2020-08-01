@@ -1,16 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+import SmurfsList from './SmurfsList';
+import SmurfsForm from './SmurfsForm';
+import { Card, CardTitle } from 'reactstrap';
+
+
+
+function App() {
+  
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
-    );
+        <Card style={{ width: '50%', height: '30%', marginTop: '1%', marginLeft: '25%', fontSize: '80px' , fontWeight: 'bold' ,background: 'transparent', color: '#FFFF00', textShadow: '2px 2px 8px #FF0000' }}>
+        <CardTitle style={{ }}>SMURFS!</CardTitle> 
+        </Card>
+        
+        
+
+        <SmurfsList />
+      <SmurfsForm />
+      </div> 
+    ); 
   }
-}
+
 
 export default App;
