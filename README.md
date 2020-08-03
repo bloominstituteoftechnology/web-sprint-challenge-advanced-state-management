@@ -24,6 +24,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+context API is a simpler way to distribute state that everyhting that you have to import and install with redux, but still keeps all the state in one place similiar to redux thus keeping the benefits of it
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 
 actions are the functions used on the buttons and clicks on the page that feed information towards the reducer,
