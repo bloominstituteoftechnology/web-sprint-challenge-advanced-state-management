@@ -14,7 +14,7 @@ const SmurfsForm = (props) => {
 
     const submitHandler = e => {
         e.preventDefault();
-        props.postPlayers(smurf)
+        props.postSmurfs(smurf)
     }
     return (
         <div>
