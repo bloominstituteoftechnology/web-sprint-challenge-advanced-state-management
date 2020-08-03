@@ -2,27 +2,27 @@ import  { FETCH_DATA, FETCH_SUCCESS, FETCH_FAIL, POST_DATA, POST_SUCCESS, POST_F
 
 const initialState = {
     smurfs: [],
-    insFetching:false,
+    isFetching:false,
     isPosting: false,
     error:''
 }
 
 const smurfReducer = (state=initialState, actions)=>{
     switch(actions.type){
-        case FETCH_FAIL:
+        case FETCH_DATA:
             return {
-                ...state, insFetching:true
+                ...state, isFetching:true
             }
             case FETCH_SUCCESS:
                 return {
                     ...state,
-                    insFetching: false,
-                    players: actions.payload
+                    isFetching: false,
+                    smurfs: actions.payload
                 }
         case FETCH_FAIL:
                 return {
                     ...state,
-                    insFetching: false,
+                    isFetching: false,
                     error: actions.payload
                 }
          
@@ -30,14 +30,14 @@ const smurfReducer = (state=initialState, actions)=>{
             return{
                 ...state,
                 isPosting: true,
-                players: [...state.players]
+                smurfs: [...state.smurfs]
             }
 
         case POST_SUCCESS:
             return {
                 ...state,
                 isPosting: false,
-                players: actions.payload
+                smurfs: actions.payload
             }    
 
         case POST_FAIL:

@@ -27,7 +27,7 @@ const SmurfsForm = (props) => {
                 placeholder="Enter name"
                 value = {props.name}
                 onChange={inputHandler}
-                clasName="input"/>
+                className="input"/>
 
             <label htmlFor="name">Age</label>
            <input
@@ -37,7 +37,7 @@ const SmurfsForm = (props) => {
                 placeholder="Enter age"
                 value = {props.age}
                 onChange={inputHandler}
-                clasName="input"/>
+                className="input"/>
 
             <label htmlFor="name">Height</label>
            <input
@@ -47,7 +47,7 @@ const SmurfsForm = (props) => {
                 placeholder="Enter Height"
                 value = {props.height}
                 onChange={inputHandler}
-                clasName="input"/>
+                className="input"/>
 
            <button onClick = {submitHandler}>Submit your Smurf</button>    
        </form>
