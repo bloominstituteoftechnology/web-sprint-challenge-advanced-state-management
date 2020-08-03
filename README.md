@@ -25,9 +25,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+actions are the functions used on the buttons and clicks on the page that feed information towards the reducer,
+reducers take the state and actions given and create new state, not mutated state, to be fed to the store,
+the store is called the SSoT because it is where all the state lives and comes from throughout the entire application.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+component state lives soely in the component, this could be used for simple things like useState for handlechanges and other things that dont need to be shares with other components, Application state is what is needed to be shared throughout the entire apploication like data to be passed to components to cards etc.
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+redux-thunk allows us to make asynchronus calls in what wwas before this a synchronus system, we can stop the straight line reasoning of redux and apply middleware giving us availability to render information instatnly,
+our action creators can now contain other actions that have other dispatches within them
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+my favorite part has definitley been learning how redux works, i hear its overengineered but looking at how it runs totally makes sense to me. i think holdiing all state in one place that keeps it secure is incredibly smart
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
