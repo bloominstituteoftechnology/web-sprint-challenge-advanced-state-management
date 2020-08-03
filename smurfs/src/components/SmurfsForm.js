@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import {connect} from 'react-redux'
 import {postSmurfs} from '../actions/actions';
+import { Route, Link } from 'react-router-dom'
+
+
 
 const SmurfsForm = (props) => {
     const [smurf, setSmurf] = useState({
@@ -19,7 +22,8 @@ const SmurfsForm = (props) => {
     return (
         <div>
        <form id="playerForm">
-           <label htmlFor="name">Name</label>
+          
+    <label htmlFor="name">Name {' '}</label>
            <input
                 type="text"
                 name="name"
@@ -29,7 +33,7 @@ const SmurfsForm = (props) => {
                 onChange={inputHandler}
                 className="input"/>
 
-            <label htmlFor="name">Age</label>
+            <label htmlFor="name">Age{' '}</label>
            <input
                 type="text"
                 name="age"
@@ -39,7 +43,7 @@ const SmurfsForm = (props) => {
                 onChange={inputHandler}
                 className="input"/>
 
-            <label htmlFor="name">Height</label>
+            <label htmlFor="name">Height {' '}</label>
            <input
                 type="text"
                 name="height"
@@ -49,7 +53,10 @@ const SmurfsForm = (props) => {
                 onChange={inputHandler}
                 className="input"/>
 
-           <button onClick = {submitHandler}>Submit your Smurf</button>    
+        
+        <br></br>
+        <br></br>
+           <button onClick = {submitHandler}>{' '}Submit your Smurf</button>    
        </form>
         </div>
     )
