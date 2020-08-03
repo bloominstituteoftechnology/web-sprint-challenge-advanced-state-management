@@ -34,5 +34,6 @@ export const postSmurf = (theSmurf) => (dispatch) => {
         })
         .catch(err => {
             console.log('posterror', err)
+            dispatch({type:POST_FAIL, payload:err.error})
         })
 }
