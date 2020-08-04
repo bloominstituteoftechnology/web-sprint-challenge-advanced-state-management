@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url('/smurfs/src/forestBG.png');
+  background-image: url('./forestBG.png');
 }
 
 .App-div{
@@ -12,6 +12,8 @@
   background: linear-gradient(to bottom right, blue,cyan);
   color: aliceblue;
   text-shadow: 2px 2px black;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .form{
@@ -24,6 +26,7 @@
 
 .label{
   border: 5px ridge rgb(2, 85, 85);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .input{
@@ -35,4 +38,9 @@
 
 .btn{
   border: 5px ridge rgb(2, 85, 85);
+}
+
+.image{
+  width: 20%;
+
 }
