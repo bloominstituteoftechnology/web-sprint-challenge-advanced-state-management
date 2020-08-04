@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  background-image: url('/smurfs/src/forestBG.png');
 }
 
 .App-div{
   width:50%;
   margin: 0 auto;
+  margin-top: 2%;
   border: 5px ridge rgb(2, 85, 85);
   font-weight: bolder;
   background: linear-gradient(to bottom right, blue,cyan);
@@ -15,6 +17,7 @@
 .form{
   width:50%;
   margin: 0 auto;
+  margin-top: 2%;
   display:flex;
   flex-direction: column;
 }
@@ -28,4 +31,8 @@
   background: linear-gradient(to bottom right, blue,cyan);
   color: white;
   font-weight: bold;
+}
+
+.btn{
+  border: 5px ridge rgb(2, 85, 85);
 }

@@ -22,7 +22,7 @@ export const POST_SMURF_FAIL = 'POST_SMURF_FAIL';
 
 export const postSmurfs = (smurf) => (dispatch) => {
     dispatch({ type: POST_SMURF_START })
-    axios.get('http://localhost:3333/smurfs')
+    axios.post('http://localhost:3333/smurfs', smurf)
         .then(res => {
             console.log('from PSUCCESS', res)
             dispatch({ type: POST_SMURF_SUCCESS, payload: res.data })

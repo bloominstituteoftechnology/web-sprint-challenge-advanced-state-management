@@ -23,6 +23,7 @@ const SmurfForm = (props) => {
         <form className='form' id='smurfForm' onSubmit={submitHandler}>
             <label htmlFor='name' className='label'>Name</label>
             <input
+                data-testid='name'
                 type='text'
                 name='name'
                 label='name'
@@ -33,6 +34,7 @@ const SmurfForm = (props) => {
 
             <label htmlFor='age' className='label'>Age</label>
             <input
+                data-testid='age'
                 type='text'
                 name='age'
                 label='age'
@@ -43,6 +45,7 @@ const SmurfForm = (props) => {
 
             <label htmlFor='height' className='label'>Height</label>
             <input
+                data-testid='height'
                 type='text'
                 name='height'
                 label='height'
@@ -51,7 +54,9 @@ const SmurfForm = (props) => {
                 onChange={inputHandler}
                 className='input' />
 
-            <button className='btn'>Submit Smurf</button>
+            <button
+                data-testid='submit'
+                className='btn'>Submit Smurf</button>
         </form>
     )
 };
