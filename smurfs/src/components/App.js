@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import SmurfsList from '../components/SmurfsList';
-
+import SmurfsForm from './SmurfsForm';
 
 
 class App extends Component {
@@ -14,6 +14,7 @@ class App extends Component {
         <div>Have fun!</div>
 
         <SmurfsList/>
+        <SmurfsForm/>
       </div>
     );
   }

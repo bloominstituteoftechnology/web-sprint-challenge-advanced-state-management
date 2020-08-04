@@ -11,7 +11,13 @@ const SmurfsList = (props) => {
     }, [])
     return(
         <div>
-            
+            {
+                props.smurfs.map(
+                    smurf => (
+                        <SmurfsCard smurf = {smurf} />
+                    )
+                )
+            }
         </div>
     )
 }
