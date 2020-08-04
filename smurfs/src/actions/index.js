@@ -11,13 +11,10 @@ export const addSmurf = (smurfData) => {
 };
 
 export const fetchSmurfs = () => dispatch => {
-  // dispatch({
-  // type: FETCH_SMURFS
-  // });
   axios
     .get("http://localhost:3333/smurfs")
     .then(res => {
-      console.log(res.data)
+      console.log("fetchSmurf action", res.data)
       dispatch({
         type: FETCH_SMURFS,
         payload: res.data,

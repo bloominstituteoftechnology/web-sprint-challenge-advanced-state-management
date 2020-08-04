@@ -5,7 +5,7 @@ import { fetchSmurfs } from "../actions";
 const SmurfList = (props) => {
   useEffect(() => {
     props.fetchSmurfs();
-  }, [props.smurfs]);
+  }, []);
 
   return (
     <div>
@@ -16,7 +16,7 @@ const SmurfList = (props) => {
           <h6>{smurf.height}</h6>
         </div>
       ))}
-      {/* <button onClick={() => props.fetchSmurfs()}>fetch</button> */}
+      <button onClick={() => props.fetchSmurfs()}>fetch</button>
     </div>
   );
 };
