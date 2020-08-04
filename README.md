@@ -6,10 +6,9 @@ This challenge allows you to practice the concepts and techniques learned over t
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction. 
+You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction.
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
-
 
 ## Introduction
 
@@ -24,12 +23,26 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+-
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+-
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+-
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+-
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
 
-You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
+-
+
+You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
 ## Instructions
 
@@ -37,7 +50,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 > This section should include instruction for the sprint challenge. These should only cover things that are _not_ being evaluated by the challenge itself, e.g. environment/project setup, link to a starter project, etc. In general, this will be the following Git fork, clone, branch, commit, push, create pull request flow, though may need to be adapted for some specific challenges.
 
- [ ] `fork & clone` this repository.
+[ ] `fork & clone` this repository.
+
 - [ ] `cd` into the forked copy of this repository.
 - [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
 - [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
@@ -60,7 +74,7 @@ Your finished project must include all of the following requirements:
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
-#### Resource: API documentation 
+#### Resource: API documentation
 
 ##### GET '/smurfs'
 
@@ -73,8 +87,8 @@ In your solution, it is essential that you follow best practices and produce cle
     name: "Brainey",
     age: 200,
     height: "5cm",
-    id: 0
-  }
+    id: 0,
+  },
 ];
 ```
 
@@ -106,31 +120,28 @@ Example of object created in Smurf DB:
     name: "Brainey",
     age: 200,
     height: "5cm",
-    id: 0
+    id: 0,
   },
   {
     name: "Sleepy",
     age: 200,
     height: "5cm",
-    id: 1
-  }
+    id: 1,
+  },
 ];
 ```
 
-
-### Task 3: Stretch Goals 
+### Task 3: Stretch Goals
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-* [ ] Build a smurf profile page with using react-router and dynamic url params  
-* [ ] Using React Testing Library, test one or more of your components (not any component that fetches data though)
+- [ ] Build a smurf profile page with using react-router and dynamic url params
+- [ ] Using React Testing Library, test one or more of your components (not any component that fetches data though)
 
 ## Submission format
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
-
-
