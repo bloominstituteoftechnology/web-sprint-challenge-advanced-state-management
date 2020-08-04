@@ -2,13 +2,17 @@ import React from "react";
 import "./App.css";
 import SmurfsList from './SmurfsList'
 import SmurfsForm from './SmurfsForm'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link,} from "react-router-dom";
+import { CardImg } from 'reactstrap'
+
 function App () {
   
     return (
       <Router>
-      <div className="App">
+        
+      <div className="App" >
         <h1>SMURFS! 2.0 W/ Redux</h1>
+        <CardImg style = {{width:'90%', margin:'0 auto', height:'500px'}} src={require ('../img/images.jpeg')}/>
         <div>Welcome to your state management version of Smurfs!</div>
         <br></br>
         <Link to= '/Profile'>
