@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 // step 9. create a new component for each smurf and render the data 
 const SmurfCard = (props) => {
  
