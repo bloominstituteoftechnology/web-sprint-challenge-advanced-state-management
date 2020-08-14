@@ -4,7 +4,7 @@ export const SMURF_LOADING = 'SMURF_LOADING'
 export const SMURF_SUCCESS = 'SMURF_SUCCESS'
 export const SMURF_FAILURE = 'SMURF_FAILURE'
 export const ADD_SMURF = 'ADD_SMURF'
-
+  
 export const getSmurfs = () => (dispatch) => {
   console.log('im here')
   dispatch({type: SMURF_LOADING})
