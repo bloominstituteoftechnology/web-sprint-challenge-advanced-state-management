@@ -13,7 +13,7 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 ## Introduction
 
-In this challenge, you are to build a Smurfs village utilizing context or Redux as your state management. Build this challenge from the ground up using what you have learned about state management.
+In this challenge, you are to build a Smurfs village utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
 
 ### Commits
 
@@ -35,9 +35,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-> This section should include instruction for the sprint challenge. These should only cover things that are _not_ being evaluated by the challenge itself, e.g. environment/project setup, link to a starter project, etc. In general, this will be the following Git fork, clone, branch, commit, push, create pull request flow, though may need to be adapted for some specific challenges.
-
- [ ] `fork & clone` this repository.
+- [ ] `fork & clone` this repository.
 - [ ] `cd` into the forked copy of this repository.
 - [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
 - [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
@@ -54,7 +52,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 Your finished project must include all of the following requirements:
 
 - [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use either context or Redux as your state management system
+- [ ] You _must_ use Redux as your state management system
 - [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
 - [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
