@@ -1,4 +1,4 @@
-import { SMURFS_LOADING, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAIL } from '../actions/actions'
+import { SMURFS_LOADING, FETCH_SMURFS_SUCCESS, SMURFS_FAIL } from '../actions/actions'
 
 const inititalState = {
     smurf: [],
@@ -18,9 +18,10 @@ const smurfReducer = (state = inititalState, action) => {
             return {
                 ...state,
                 smurf: action.payload,
+                isLoading: false,
                 error: ''
             }
-        case FETCH_SMURFS_FAIL:
+        case SMURFS_FAIL:
             return {
                 ...state,
                 error: action.payload

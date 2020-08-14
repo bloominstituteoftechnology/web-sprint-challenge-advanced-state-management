@@ -10,14 +10,21 @@ const SmurfList = props => {
 
     return (
         <div>
-            {/* {props.isLoading ? <h2>Loading...</h2> : null}
+            {props.isLoading ? <h2>Loading...</h2> : null}
             {props.error ? <h2>Error</h2> : null}
-            {props.length > 0 ? (
-                <div>
-                    <h2>{props.name}</h2>
-                    <p>{props.age}</p>            
-                    <p>{props.height}</p>
-                    ) : null} */}
+            {props.smurf.length > 0 ? (
+            <div>
+                {props.smurf.map((smurf) => (
+                    <div>
+                        <h2 key={smurf.id}>
+                            Name: {smurf.name}<br/>
+                            Age: {smurf.age}<br/>
+                            Height: {smurf.height}
+                        </h2>
+                    </div>
+                ))}
+            </div>
+            ) : null}
         </div>
 
     );
@@ -25,13 +32,10 @@ const SmurfList = props => {
 
 const mapStateToProps = state => {
     return {
-        name: state.name,
-        age: state.age,
-        height: state.height,
-        id: state.id,
+        smurf: state.smurf,
         isLoading: state.isLoading,
         error: state.error
     };
 };
 
-export default connect(mapStateToProps, {fetchSmurfs})(SmurfList);
+export default connect(mapStateToProps, { fetchSmurfs })(SmurfList);
