@@ -1,16 +1,18 @@
 import axios from "axios";
 
-export const getSmurf = () => (dispatch) => {
-  
-  axios
+export const getSmurf = () => {
+  return (dispatch) => {
+    dispatch({ type: "FETCH_SMURFS" });
+    axios
     .get("http://localhost:3333/smurfs")
     .then((res) => {
-      console.log(res);
-      ReactDOM.unstable_renderSubtreeIntoContainer.map((smurfs) => {
-        dispatch({ type: "FETCH_SMURFS_SUCCESS", payload: smurfs })
-      })
+      console.log('getSmurf res:', res.data);
+      res.data.map((smurfs) => {
+        dispatch({ type: "FETCH_SMURF_SUCCESS", payload: smurfs });
+      });
     })
     .catch((err) => {
-      console.log(err);
+      console.log('error:', err);
     })
+  };
 };

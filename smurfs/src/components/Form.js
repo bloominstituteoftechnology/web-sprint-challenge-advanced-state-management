@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const SmurfForm = () => {
-  const [smurf, setSmurf] = useState({name: "", age: "", height: ""});
+  const [smurf, setSmurf] = useState({ name: "", age: "", height: "" });
 
   const handleSubmit = () => {
+    console.log('submitted');
     axios
-      .post('http://localhost:333/smurfs', smurf)
+      .post('http://localhost:3333/smurfs', smurf)
       .then((res) => {
-        console.log(res);
+        console.log('post:', res);
       })
       .catch((err) => {
         console.log(err);
