@@ -7,4 +7,13 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import smurfReducer from "./reducers/reducer";
+
+let store = createStore(smurfReducer, applyMiddleware(thunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
