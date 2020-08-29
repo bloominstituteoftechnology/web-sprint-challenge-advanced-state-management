@@ -1,0 +1,10 @@
+.test{
+    color: red;
+}
+.home {
+    border: solid red;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

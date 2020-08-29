@@ -1,0 +1,65 @@
+body {
+    /* position: relative; */
+}
+.header {
+  background: #2c83fa;
+  height: 180px;
+  position: relative;
+}
+.header::after {
+  content: "";
+  background:  #0775be;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+transform: skewY(-1deg);
+  height: 100px;
+z-index: -1;
+ 
+ 
+}
+.header::before {
+  content: "";
+  background: #0775be;
+  position: absolute;
+  bottom: 10px;
+right: 0;
+  width: 100%;
+transform: skewY(2deg);
+  height: 100px;
+z-index: -1;
+
+ 
+ 
+}
+
+.navigation {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu a {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.menu > a {
+  padding-right: 50px;
+}
+
+.login--btn {
+  background: white;
+  border-radius: 50% 20%;
+  padding: 20px;
+}
+
+.login--btn > a {
+  color: #2c83fa;
+}
