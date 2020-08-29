@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postSmurf } from "../actions/smurfActions";
 
-const AddSmurf = ({ postSmurf, isPosting }) => {
+const AddSmurf = ({ postSmurf, isPosting, error }) => {
   const [formValues, setFormValues] = useState({
     name: "",
     age: "",
@@ -30,6 +30,7 @@ const AddSmurf = ({ postSmurf, isPosting }) => {
         <h2 className="text-center text-3xl leading-9 font-extrabold text-gray-900">
           Add A Smurf To Your Village
         </h2>
+        {error && <p class="text-red-500 text-xs italic">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mt-6">
             <label
@@ -43,6 +44,7 @@ const AddSmurf = ({ postSmurf, isPosting }) => {
                 onChange={handleChange}
                 value={formValues.name}
                 id="name"
+                name="name"
                 type="text"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
@@ -60,6 +62,7 @@ const AddSmurf = ({ postSmurf, isPosting }) => {
               <input
                 onChange={handleChange}
                 value={formValues.age}
+                name="age"
                 id="age"
                 type="text"
                 required
@@ -78,7 +81,8 @@ const AddSmurf = ({ postSmurf, isPosting }) => {
               <input
                 onChange={handleChange}
                 value={formValues.height}
-                id="age"
+                name="height"
+                id="height"
                 type="text"
                 required
                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
@@ -104,6 +108,7 @@ const AddSmurf = ({ postSmurf, isPosting }) => {
 const mapStateToProps = (state) => {
   return {
     isPosting: state.isPosting,
+    error: state.error,
   };
 };
 
