@@ -17,7 +17,7 @@ const App = (props) => {
          <div key={smurfs.id}>
            <h1>Name: {smurfs.age}</h1>
           <p>Age: {smurfs.age}</p>
-          <p>Height: {smurgs.height}</p>
+          <p>Height: {smurfs.height}</p>
          </div>
        );
      })}
