@@ -5,6 +5,7 @@ FETCH_SMURF_FAIL, POST_SMURF_FAIL,POST_SMURF_START,POST_SMURF_SUCCESS} from '../
 
 const initialState = {
     smurfs: [],
+    newSmurfs: [],
     error: '',
     isfetching: false
 }
@@ -39,7 +40,7 @@ const smurfReducer = ( state = initialState, action) => {
         case POST_SMURF_SUCCESS: 
             return {
                 ...state,
-                smurfs: [...state.smurfs, action.payload],
+                smurfs: action.payload,
                 isFetching: false,
                 error: ''
             }
