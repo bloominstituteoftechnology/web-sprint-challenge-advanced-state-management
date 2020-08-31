@@ -11,12 +11,12 @@ export const getSmurf = () => (dispatch) => {
     axios
         .get('http://localhost:3333/smurfs')
         .then((res) => {
-            dispatch({ type: FETCHING_SMURF_SUCCESS, payload: res});
+            dispatch({ type: FETCHING_SMURF_SUCCESS, payload: res.data});
             console.log('API RESPONSE', res);
         })
         .catch((err) => {
             dispatch({
-                type: FETCHING_SMURF_ERROR, payload: `${err.response.message} code: ${err.response.code}`
+                type: FETCHING_SMURF_ERROR
             });
             console.log(err);
         
