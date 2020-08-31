@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Smurfs from './smurfs'
 import SmurfForm from './smurfsForm'
-import NewSmurf from './newSmurfs'
+
 
 class App extends Component {
   render() {
