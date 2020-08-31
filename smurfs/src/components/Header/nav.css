@@ -1,5 +1,5 @@
 body {
-    /* position: relative; */
+  /* position: relative; */
 }
 .header {
   background: #2c83fa;
@@ -7,31 +7,26 @@ body {
   position: relative;
 }
 .header::after {
-  content: "";
-  background:  #0775be;
+  content: '';
+  background: #0775be;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-transform: skewY(-1deg);
+  transform: skewY(-1deg);
   height: 100px;
-z-index: -1;
- 
- 
+  z-index: -1;
 }
 .header::before {
-  content: "";
+  content: '';
   background: #0775be;
   position: absolute;
   bottom: 10px;
-right: 0;
+  right: 0;
   width: 100%;
-transform: skewY(2deg);
+  transform: skewY(2deg);
   height: 100px;
-z-index: -1;
-
- 
- 
+  z-index: -1;
 }
 
 .navigation {
@@ -62,4 +57,16 @@ z-index: -1;
 
 .login--btn > a {
   color: #2c83fa;
+}
+
+.nav-add {
+  background: transparent;
+  border: none;
+  color: #0775be;
+  font-weight: 600;
+  outline: none;
+}
+.nav-add:focus {
+  border: none;
+  outline: none;
 }

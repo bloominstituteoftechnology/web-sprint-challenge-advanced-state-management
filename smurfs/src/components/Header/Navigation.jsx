@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
 import './nav.css'
 import logo from '../../assets/image/logo.svg'
-
-import {NavLink} from 'react-router-dom'
+import AddSmurfs from '../../Pages/Smurfs/AddSmurfs'
+import {NavLink, Link} from 'react-router-dom'
 
 const Navigation = (props) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggle = () => setIsOpen(!isOpen)
+  const [modal, setModal] = useState(false)
+  const toggle = () => setModal(!modal)
 
   return (
     <div className='header'>
@@ -18,13 +17,14 @@ const Navigation = (props) => {
           </NavLink>
 
           <div className='menu'>
-            <NavLink to='/smurfs'>SMURFS</NavLink>
+            <NavLink to='/smurfs'>Village</NavLink>
             <div className='login--btn'>
-              <NavLink to='/smurfs'>login</NavLink>
+              <Link to='/new'>ADD</Link>
             </div>
           </div>
         </nav>
       </div>
+      <AddSmurfs modal={modal} toggle={toggle} />
     </div>
   )
 }

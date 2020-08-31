@@ -6,18 +6,19 @@ import './home.css'
 
 const Home = () => {
   const smurfsData = useSelector((state) => state.smurfs)
+
   const dispatch = useDispatch()
-  console.log(smurfsData)
 
   useEffect(() => {
+    console.log('Home Render 1')
     dispatch(actions.fetchUserApi())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <div className='home'>
       <div className='items'>
-        <h1 className='test'>Home</h1>
         {smurfsData.users?.map((smurf) => (
-          <Smurfs data={smurf} />
+          <Smurfs key={smurf.id} data={smurf} />
         ))}
       </div>
     </div>

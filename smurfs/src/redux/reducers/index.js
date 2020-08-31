@@ -1,9 +1,8 @@
-import { combineReducers } from 'redux'
-import { smurfsReducer } from './smurfsReducer'
-
-
+import {combineReducers} from 'redux'
+import {smurfsReducer} from './smurfsReducer'
+import {imageReducer} from './imageReducer'
 
 export const rootReducer = combineReducers({
-    smurfs: smurfsReducer,
-
+  smurfs: smurfsReducer,
+  image: imageReducer,
 })
