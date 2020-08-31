@@ -13,6 +13,7 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 
 ## Introduction
 
+
 In this challenge, you are to build a Smurfs village utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
 
 ### Commits
