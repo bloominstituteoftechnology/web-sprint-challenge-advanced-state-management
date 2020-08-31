@@ -1,7 +1,8 @@
 import {
     ADD_SMURF,
     FETCH_SMURF,
-    FETCHING_SMURF_ERROR
+    FETCHING_SMURF_ERROR,
+    FETCHING_SMURF_SUCCESS
 } from '../components/Actions/smurfActions';
 
 
@@ -24,6 +25,13 @@ export const smurfReducer = (state = initialState, action) => {
                 height: action.payload
             };
         case FETCH_SMURF:
+            return {
+                ...state,
+                name: action.payload,
+                age: action.payload,
+                height: action.payload
+            };
+        case FETCHING_SMURF_SUCCESS:
             return {
                 ...state,
                 name: action.payload,

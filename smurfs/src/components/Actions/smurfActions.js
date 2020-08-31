@@ -9,9 +9,9 @@ export const getSmurf = () => (dispatch) => {
     console.log('get smurf action');
     dispatch({ type: FETCH_SMURF });
     axios
-        .get('/smurfs')
+        .get('http://localhost:3333/smurfs')
         .then((res) => {
-            dispatch({ type: FETCHING_SMURF_SUCCESS, payload: res.data.smurf });
+            dispatch({ type: FETCHING_SMURF_SUCCESS, payload: res});
             console.log('API RESPONSE', res);
         })
         .catch((err) => {
