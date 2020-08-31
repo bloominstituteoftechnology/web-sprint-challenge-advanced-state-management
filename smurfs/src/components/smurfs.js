@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getSmurf } from './Actions/smurfActions';
 
@@ -9,7 +9,7 @@ const Smurf = ({ getSmurf, name, age, height }) => {
 
 
     return (
-        <h2>Smurf List! {name, age, height}</h2>
+        <h2>Smurf List! {getSmurf}</h2>
 
     );
 }
