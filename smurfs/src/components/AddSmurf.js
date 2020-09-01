@@ -16,7 +16,6 @@ const AddSmurf = ({ postSmurf, isPosting, error }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postSmurf(formValues);
-    console.log(formValues);
     setFormValues({
       name: "",
       age: "",
@@ -30,7 +29,7 @@ const AddSmurf = ({ postSmurf, isPosting, error }) => {
         <h2 className="text-center text-3xl leading-9 font-extrabold text-gray-900">
           Add A Smurf To Your Village
         </h2>
-        {error && <p class="text-red-500 text-xs italic">{error}</p>}
+        {error && <p className="text-red-500 text-xs italic">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="mt-6">
             <label
