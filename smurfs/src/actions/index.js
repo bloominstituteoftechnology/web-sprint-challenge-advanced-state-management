@@ -8,7 +8,7 @@ export const getSmurf = () => {
     .then((res) => {
       console.log('getSmurf res:', res.data);
       res.data.map((smurfs) => {
-        dispatch({ type: "FETCH_SMURF_SUCCESS", payload: smurfs });
+        dispatch({ type: "FETCH_SMURFS_SUCCESS", payload: smurfs });
       });
     })
     .catch((err) => {
