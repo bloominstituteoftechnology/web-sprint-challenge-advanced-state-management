@@ -1,4 +1,4 @@
-import { GET_DATA,GET_DATA_NO,GET_DATA_YES } from '../actions'
+import { GET_DATA, GET_DATA_NO, GET_DATA_YES, ADD_SMURF } from '../actions'
 
 const initalState = {
     smurfData: [],
@@ -6,7 +6,7 @@ const initalState = {
     error: ''
 }
 
-export default (state = initalState, action) => {
+export const smurfReducer = (state = initalState, action) => {
     switch(action.type){
         case GET_DATA:
             return {
@@ -27,5 +27,15 @@ export default (state = initalState, action) => {
             }
         default:
             return state
+    }
+}
+
+export const formReducer = (state = initalState, action) => {
+    switch(action.type){
+        case ADD_SMURF:
+            return{
+                ...state,
+                smurfData: action.payload
+            }
     }
 }

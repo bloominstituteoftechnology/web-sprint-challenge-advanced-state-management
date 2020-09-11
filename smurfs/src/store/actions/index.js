@@ -4,3 +4,5 @@ export {
     GET_DATA_NO,
     smurfFetch,
 } from './smurfActions'
+
+export { ADD_SMURF, addSmurf} from './formActions'

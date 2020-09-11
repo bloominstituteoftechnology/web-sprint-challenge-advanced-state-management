@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import {connect} from 'react-redux'
-import {smurfFetch} from '../store/actions/index'
 
+import Form from '../components/Form'
+import {smurfFetch} from '../store/actions/index'
 import Loader from './Loader'
 import "./App.css";
 function App({loading, smurfFetch, error}){
@@ -19,6 +20,7 @@ function App({loading, smurfFetch, error}){
         <div>Have fun!</div>
         {!loading ? <Loader /> : <div>Finding the Smurfs...</div>}
         {error !== '' ? <div>{error}</div> : null }
+        <Form />
       </div>
     );
   }
