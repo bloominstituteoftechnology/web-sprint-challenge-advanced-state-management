@@ -1,32 +1,62 @@
+import axios from 'axios'
 import React, {useState} from 'react'
-import {connect} from 'react-redux'
-import {addSmurf} from '../store/actions'
+
+
 
 const initialValues = {
     name: '',
     age: '',
-    height: ''
+    height: '',
+    id:''
 }
 
 function Forms(){
 
     const [values, setValues] = useState(initialValues)
+    const [newSmurf, setNewSmurf] = useState(initialValues)
 
     const change = (e) => {
-        setValues({[e.target.name]: e.target.value })
+        setNewSmurf({...newSmurf, [e.target.name]: e.target.value })
     }
 
-    const submit = (e) => {
-        e.preventDefault()
-        addSmurf(e)
+    const postNewSmurf = (newSmurf) => {
+        axios.post('http://localhost:3333/smurfs', {
+            name: newSmurf.name,
+            age: newSmurf.age,
+            height: newSmurf.height
+        })
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        .finally(() => {
+            setValues(initialValues)
+        })
     }
+
+        // const submit = (e) => {
+        //     e.preventDefault()
+    
+        //     const newSmurf ={
+        //         name: values.name,
+        //         age: values.age,
+        //         height: values.height, 
+        //         id: values.id
+        //     }
+    
+        //     postNewSmurf(newSmurf)
+        // }
+
+
 
     return (
         <>
-        <form onSubmit = {submit}>
+        <form >
             <label>Name: 
                 <input 
-                value = {values.name}
+                value = {newSmurf.name}
                 onChange = {change}
                 name = 'name'
                 type = 'text'
@@ -34,7 +64,7 @@ function Forms(){
                 </label>
             <label>Age: 
                 <input 
-                value = {values.age}
+                value = {newSmurf.age}
                 onChange = {change}
                 name = 'age'
                 type = 'text'
@@ -42,16 +72,16 @@ function Forms(){
                 </label>
             <label>Height: 
                 <input 
-                value = {values.height}
+                value = {newSmurf.height}
                 onChange = {change}
                 name = 'height'
                 type = 'text'
                 />
                 </label>
-            <button> Add Smurf</button>
+            <button onClick = {postNewSmurf(newSmurf)}> Add Smurf</button>
         </form>
         </>
     )
 }
 
-export default connect(() => {return{}}, {addSmurf})(Forms)
+export default Forms

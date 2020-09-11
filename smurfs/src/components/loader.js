@@ -16,7 +16,7 @@ function Loader(props) {
 
 function mapStateToProps(state){
     return {
-        smurfData: state.smurfData
+        smurfData: state.Smurf.smurfData
     }
 }
 

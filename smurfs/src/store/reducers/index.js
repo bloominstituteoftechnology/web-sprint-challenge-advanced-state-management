@@ -1,41 +1,9 @@
-import { GET_DATA, GET_DATA_NO, GET_DATA_YES, ADD_SMURF } from '../actions'
+import { combineReducers } from 'redux'
 
-const initalState = {
-    smurfData: [],
-    loading: false,
-    error: ''
-}
+import { smurfReducer as Smurf } from  './smurfReducer'
 
-export const smurfReducer = (state = initalState, action) => {
-    switch(action.type){
-        case GET_DATA:
-            return {
-                ...state,
-                loading:true
-            }
-        case GET_DATA_YES:
-            return {
-                ...state,
-                smurfData: action.payload,
-                loading: false
-            }
-        case GET_DATA_NO:
-            return{
-                ...state,
-                loading: false,
-                error: action.payload.message
-            }
-        default:
-            return state
-    }
-}
+export default combineReducers({
+    Smurf
+})
 
-export const formReducer = (state = initalState, action) => {
-    switch(action.type){
-        case ADD_SMURF:
-            return{
-                ...state,
-                smurfData: action.payload
-            }
-    }
-}
+

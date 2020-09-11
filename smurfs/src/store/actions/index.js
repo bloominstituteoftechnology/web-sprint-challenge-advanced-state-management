@@ -5,4 +5,3 @@ export {
     smurfFetch,
 } from './smurfActions'
 
-export { ADD_SMURF, addSmurf} from './formActions'

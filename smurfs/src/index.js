@@ -5,13 +5,13 @@ import {applyMiddleware, createStore } from 'redux'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
-import {smurfReducer, formReducer} from './store/reducers'
+import reducer from './store/reducers'
 import "./index.css";
 import App from "./components/App";
 
 
 
-const store = createStore(smurfReducer, formReducer, applyMiddleware(thunk, logger))
+const store = createStore( reducer, applyMiddleware(thunk, logger))
 
 
 ReactDOM.render(
