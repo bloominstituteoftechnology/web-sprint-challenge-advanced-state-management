@@ -5,17 +5,17 @@ export const GET_DATA_YES = 'GET_DATA_YES'
 export const GET_DATA_NO = 'GET_DATA_NO'
 
 
-export const smurfAction = () => {
+export const smurfFetch = () => {
     return (dispatch) => {
         dispatch({type: GET_DATA})
         axios.get('http://localhost:3333/smurfs')
             .then(res => {
-                console.log(res)
-                dispatch({type: GET_DATA_YES, payload: []})
+                console.log(res.data)
+                dispatch({type: GET_DATA_YES, payload: res.data})
             })
             .catch(err => {
                 console.log('UhOh')
-                dispatch({type: GET_DATA_NO, payload: "OH NO, the smurfs were caught by Gargamel"})
+                dispatch({type: GET_DATA_NO, payload: {message: "OH NO, the smurfs were caught by Gargamel !!!"}})
             })
     }
 }
