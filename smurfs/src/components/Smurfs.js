@@ -26,7 +26,8 @@ const Smurfs = (props) => {
 
   const onChange = (e) => {
     e.persist();
-    setNewSmurf(e.target.value);
+    setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value });
+    console.log("new smurf", newSmurf);
   };
 
   return (
@@ -34,18 +35,21 @@ const Smurfs = (props) => {
       <h2 className="addSmurf">Add another Smurf to the List</h2>
       <form>
         <input
+          name="name"
           type="text"
           placeholder="Smurf's Name"
           value={newSmurf.name}
           onChange={onChange}
         />
         <input
+          name="age"
           type="text"
           placeholder="Smurf's Age"
           value={newSmurf.age}
           onChange={onChange}
         />
         <input
+          name="height"
           type="text"
           placeholder="Smurf's Height"
           value={newSmurf.height}
