@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ACTIONS = {
+export const ACTIONS = {
     AXIOS_GET_START: 'AXIOS_GET_START',
     AXIOS_GET_SUCCESS: 'AXIOS_GET_SUCCES',
     AXIOS_GET_FAIL: 'AXIOS_GET_FAIL'
