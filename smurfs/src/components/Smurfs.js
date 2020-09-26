@@ -1,18 +1,61 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { getSmurfs } from "../actions";
+import { getSmurfs } from "../actions/viewSmurfs";
 import { SmurfCard } from "./SmurfCard";
+import { addSmurf } from "../actions/addSmurf";
 
 const Smurfs = (props) => {
   console.log("props from Smurfs", props);
+  const [newSmurf, setNewSmurf] = useState("");
+
+  const addNewSmurf = (e) => {
+    e.preventDefault();
+    console.log("fired");
+    props.addSmurf(newSmurf);
+    setNewSmurf({
+      name: "",
+      age: "",
+      height: "",
+    });
+  };
 
   const fetchSmurfs = (e) => {
     e.preventDefault();
     props.getSmurfs();
   };
 
+  const onChange = (e) => {
+    e.persist();
+    setNewSmurf(e.target.value);
+  };
+
   return (
     <div className="smurfslist">
+      <h2 className="addSmurf">Add another Smurf to the List</h2>
+      <form>
+        <input
+          type="text"
+          placeholder="Smurf's Name"
+          value={newSmurf.name}
+          onChange={onChange}
+        />
+        <input
+          type="text"
+          placeholder="Smurf's Age"
+          value={newSmurf.age}
+          onChange={onChange}
+        />
+        <input
+          type="text"
+          placeholder="Smurf's Height"
+          value={newSmurf.height}
+          onChange={onChange}
+        />
+        <button onClick={addNewSmurf} type="submit">
+          Add a smurf
+        </button>
+      </form>
+
       <h2>See the Smurfs</h2>
 
       <button onClick={fetchSmurfs} type="submit">
@@ -33,4 +76,4 @@ const mapStateToProps = (state) => ({
   error: state.error,
 });
 
-export default connect(mapStateToProps, { getSmurfs })(Smurfs);
+export default connect(mapStateToProps, { getSmurfs, addSmurf })(Smurfs);

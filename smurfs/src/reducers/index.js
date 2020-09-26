@@ -2,7 +2,8 @@ import {
   FETCH_SMURFS_START,
   FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS_FAIL,
-} from "../actions";
+} from "../actions/viewSmurfs";
+import { ADD_SMURF } from "../actions/addSmurf";
 
 const initialState = {
   smurfs: [],
@@ -33,6 +34,7 @@ function reducer(state = initialState, action) {
         error: action.payload,
         isFetching: false,
       };
+
     default: {
       return state;
     }
