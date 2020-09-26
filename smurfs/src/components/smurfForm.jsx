@@ -6,33 +6,28 @@ import { connect } from 'react-redux'
 
 const SmurfForm = props => {
 
-  const { register, handleSubmit, errors } = useForm();
+  const { errors } = useForm();
 
   const [formState, setFormState] = useState({
     name: '',
-    age: 0,
+    age: '',
     height: ''
   })
 
-  const [post, setPost] = useState([])
+  
 
-  const [newSmurf, setNewSmurf] = useState({
-    name: '',
-    age: 0,
-    height: ''
-  })
+  const [newSmurf, setNewSmurf] = useState({})
 
 
   const handleChanges = e => {
 
-    e.persist()
-
     const newFormData = {
       ...formState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.name === 'age' ? Number(e.target.value) : e.target.value
     }
 
     setFormState(newFormData)
+    setNewSmurf(newFormData)
 
   }
 
@@ -40,11 +35,12 @@ const SmurfForm = props => {
   const submitSmurf = e => {
 
      e.preventDefault()
+
      props.postSmurf(newSmurf)
 
      setFormState({
       name: '',
-      age: 0,
+      age: '',
       height: ''
     })
 
@@ -73,7 +69,8 @@ const SmurfForm = props => {
             <Label for="age"></Label>
             <Input 
               type="text" 
-              name="age" id="age" 
+              name="age" 
+              id="age" 
               placeholder="Age"
               value={formState.age}
               onChange={handleChanges}
@@ -97,7 +94,8 @@ const SmurfForm = props => {
           <Button type='submit'>Create!</Button>
 
       </Form>
-      <pre>{JSON.stringify(post, null, 2)}</pre>
+      <h4 className='json'>New Smurf: </h4>
+      <pre>{JSON.stringify(newSmurf, null, 2)}</pre>
     </div>
 
   )

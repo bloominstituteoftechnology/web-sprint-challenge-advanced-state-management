@@ -16,7 +16,7 @@ export const postSmurf = newSmurf => dispatch => {
   setTimeout(() => {
 
     axios
-      .post('/smurfs', { newSmurf })
+      .post('/smurfs', newSmurf)
 
       .then(response => {
         console.log('postAction.js: POST success: ', response)
