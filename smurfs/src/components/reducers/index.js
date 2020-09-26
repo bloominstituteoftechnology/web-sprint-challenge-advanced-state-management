@@ -1,4 +1,5 @@
 import {
+    ADD_SMURFS,
     FETCH_DATA,
     FETCH_SUCCESS
 } from "../actions";
@@ -24,6 +25,12 @@ export const smurfsReducer = (state = initialState,action) => {
                 ...state,
                 smurfs:action.payload,
                 smurf:action.payload
+            }
+        case ADD_SMURFS:
+            const newSmurf = action.payload
+            return {
+                ...state,newSmurf
+
             }
             default:
                 return state;
