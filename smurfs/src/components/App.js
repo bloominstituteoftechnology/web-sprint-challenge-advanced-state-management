@@ -23,7 +23,7 @@ const App = (props) => {
   }
   useEffect(() => {
     props.fetchData();
-  }, [addSmurf]);
+  }, []);
   return (
     <div>
       <header>
@@ -45,7 +45,7 @@ const App = (props) => {
         <input
             name = "name"
             type = "text"
-            value = {form.value}
+            value = {form.name}
             onChange = {handleChange}
         />
       </label>
@@ -54,7 +54,7 @@ const App = (props) => {
         <input
             name = "height"
             type = "text"
-            value = {form.value}
+            value = {form.height}
             onChange = {handleChange}
         />
       </label>
@@ -63,7 +63,7 @@ const App = (props) => {
         <input
             name = "age"
             type = "text"
-            value = {form.value}
+            value = {form.age}
             onChange = {handleChange}
         />
       </label>

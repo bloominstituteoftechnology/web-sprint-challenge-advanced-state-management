@@ -24,7 +24,7 @@ export const fetchData = () => (dispatch) => {
 
 export const addSmurf = (form) => (dispatch) => {
         axios
-    .post("http://localhost:3333/smurfs", {form})
+    .post("http://localhost:3333/smurfs", form)
     .then((res) => {
         console.log(res.data);
         dispatch({
