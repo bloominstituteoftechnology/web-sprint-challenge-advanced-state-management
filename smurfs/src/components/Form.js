@@ -1,12 +1,11 @@
-import Axios from 'axios';
 import React, {useState} from 'react'
 
-const Form = () => {
-    const [form, setForm] = useState({});
+const Form = (props) => {
     const [newSmurf, setNewSmurf] =  useState({
         name: '',
         age: '',
         height: '',
+        id: ''
     });
     
     const handleChanges = (event) => {
@@ -16,12 +15,12 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //props.updateSmurfData(newSmurf);
+        props.updateSmurfData({...newSmurf, id: Date.now()});
     }
 
     return (
         <section>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor='name'>Name:</label>
                 <input id='name' name='name' type='text' value={newSmurf.name} onChange={handleChanges} />
                 <label htmlFor='age'>Age:</label>

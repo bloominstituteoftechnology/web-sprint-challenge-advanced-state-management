@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {connect} from 'react-redux';
 
-import {getSmurfData} from '../actions'
+import {getSmurfData, updateSmurfData} from '../actions'
 
 import Form from './Form';
 
@@ -20,7 +20,7 @@ const App = (props) => {
         <p>smurfs: {props.smurfData.map(smurf => smurf.name).join(', ')}</p>
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
-        <Form />
+        <Form updateSmurfData={props.updateSmurfData} />
       </div>
     );
 }
@@ -32,4 +32,4 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default connect(mapStatetoProps, {getSmurfData})(App);
+export default connect(mapStatetoProps, {getSmurfData, updateSmurfData})(App);

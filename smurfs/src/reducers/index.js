@@ -1,12 +1,6 @@
 import { ACTIONS } from '../actions'
 
 const initialState = {
-    smurf: {
-        name: '',
-        age: '',
-        height: '5cm',
-        id: ''
-    },
     smurfData: [],
     isLoading: false,
     error: ''
@@ -31,6 +25,22 @@ export const reducer = (state = initialState, action) => {
                 isLoading: false,
                 error: action.payload
             }
+        case ACTIONS.UPDATE_SMURF_START:
+            return {
+                ...state,
+                isLoading: true,
+            }
+        case ACTIONS.UPDATE_SMURF_SUCESS:
+                return {
+                    ...state,
+                    isLoading: false,
+                }
+        case ACTIONS.UPDATE_SMURF_FAIL:
+                return {
+                    ...state,
+                    isLoading: false,
+                    error: action.payload
+                }
         default:
             return state;
     }
