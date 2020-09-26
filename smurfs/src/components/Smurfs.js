@@ -24,6 +24,12 @@ const Smurfs = (props) => {
     props.getSmurfs();
   };
 
+  const onChangeNumber = (e) => {
+    e.persist();
+    console.log("number value", typeof e.target.value);
+    setNewSmurf({ ...newSmurf, age: Number(e.target.value) });
+  };
+
   const onChange = (e) => {
     e.persist();
     setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value });
@@ -43,10 +49,10 @@ const Smurfs = (props) => {
         />
         <input
           name="age"
-          type="text"
+          type="number"
           placeholder="Smurf's Age"
           value={newSmurf.age}
-          onChange={onChange}
+          onChange={onChangeNumber}
         />
         <input
           name="height"
