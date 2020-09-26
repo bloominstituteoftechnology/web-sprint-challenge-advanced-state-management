@@ -35,6 +35,7 @@ export const reducer = ( state = initialState, action ) => {
         smurfs: action.payload
       }
 
+
     case FETCH_DATA_FAIL:
       return {
         ...state,

@@ -11,16 +11,14 @@ import {
 export const postSmurf = newSmurf => dispatch => {
 
 
-  dispatch({ type: POST_SMURF_START })
-
-  setTimeout(() => {
+  dispatch({ type: POST_SMURF_START }) 
 
     axios
-      .post('/smurfs', newSmurf)
+      .post('http://localhost:3333/smurfs', newSmurf)
 
       .then(response => {
-        console.log('postAction.js: POST success: ', response)
-        dispatch({ type: POST_SMURF, payload: response })
+        console.log('postAction.js: POST success: ', response.data)
+        dispatch({ type: POST_SMURF, payload: response.data })
       })
 
       .catch(error => {
@@ -29,5 +27,5 @@ export const postSmurf = newSmurf => dispatch => {
         dispatch({ type: POST_SMURF_FAIL, payload: errorMsg })
       })
 
-  }, 1000)
+  
 }

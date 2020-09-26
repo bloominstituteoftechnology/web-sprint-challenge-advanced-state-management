@@ -11,14 +11,12 @@ export const fetchSmurfs = () => dispatch => {
 
   dispatch({ type: FETCH_DATA_START })
 
-  setTimeout(() => {
-
     axios
-      .get('/smurfs')
+      .get('http://localhost:3333/smurfs')
 
       .then(response => {
-        const smurfs = response;
-        console.log('fetchAction.js: axios success: ', response)
+        const smurfs = response.data;
+        console.log('fetchAction.js: axios success: ', response.data)
         dispatch({ type: FETCH_DATA_SUCCESS, payload: smurfs })
       })
 
@@ -27,6 +25,5 @@ export const fetchSmurfs = () => dispatch => {
         dispatch({ type: FETCH_DATA_FAIL, payload: errorMsg })
       })
 
-  }, 1000)
+  }
 
-}

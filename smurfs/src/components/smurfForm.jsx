@@ -94,8 +94,8 @@ const SmurfForm = props => {
           <Button type='submit'>Create!</Button>
 
       </Form>
-      <h4 className='json'>New Smurf: </h4>
-      <pre>{JSON.stringify(newSmurf, null, 2)}</pre>
+      {/* <h4 className='json'>New Smurf: </h4>
+      <pre>{JSON.stringify(newSmurf, null, 2)}</pre> */}
     </div>
 
   )

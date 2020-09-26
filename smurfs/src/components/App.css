@@ -10,3 +10,9 @@
 .json {
   margin-top: 2rem;
 }
+
+.smurf-card {
+  max-width: 25%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
