@@ -14,6 +14,8 @@ const SmurfForm = props => {
     height: ''
   })
 
+  const [post, setPost] = useState([])
+
   const [newSmurf, setNewSmurf] = useState({
     name: '',
     age: 0,
@@ -21,9 +23,24 @@ const SmurfForm = props => {
   })
 
 
-  const submitSmurf = smurf => {
+  const handleChanges = e => {
 
-     props.postSmurf(smurf)
+    e.persist()
+
+    const newFormData = {
+      ...formState,
+      [e.target.name]: e.target.value
+    }
+
+    setFormState(newFormData)
+
+  }
+
+
+  const submitSmurf = e => {
+
+     e.preventDefault()
+     props.postSmurf(newSmurf)
 
      setFormState({
       name: '',
@@ -37,7 +54,7 @@ const SmurfForm = props => {
 
     <div>
       
-      <Form className='form' onSubmit={handleSubmit(submitSmurf)}>
+      <Form className='form' onSubmit={submitSmurf}>
 
           <FormGroup>
             <Label for="name"></Label>
@@ -46,7 +63,8 @@ const SmurfForm = props => {
               name="name" 
               id="name" 
               placeholder="Name" 
-              ref={register({ required: true })}
+              value={formState.name}
+              onChange={handleChanges}
             />
             {errors.name && (<p>Looks like there was an error: {errors.name.type}</p>)}
           </FormGroup>
@@ -57,7 +75,8 @@ const SmurfForm = props => {
               type="text" 
               name="age" id="age" 
               placeholder="Age"
-              ref={register({ required: true })}
+              value={formState.age}
+              onChange={handleChanges}
             />
             {errors.age && (<p>Looks like there was an error: {errors.age.type}</p>)}
           </FormGroup>
@@ -69,7 +88,8 @@ const SmurfForm = props => {
               name="height" 
               id="height" 
               placeholder="Height"
-              ref={register({ required: true })}
+              value={formState.height}
+              onChange={handleChanges}
             />
             {errors.height && (<p>Looks like there was an error: {errors.height.type}</p>)}
           </FormGroup>
@@ -77,6 +97,7 @@ const SmurfForm = props => {
           <Button type='submit'>Create!</Button>
 
       </Form>
+      <pre>{JSON.stringify(post, null, 2)}</pre>
     </div>
 
   )
