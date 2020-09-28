@@ -25,7 +25,7 @@ const App = (props) => {
     props.fetchData();
   },[props.smurfs]);
   return (
-    <div>
+    <div className = "container">
       <header>
       <h1>SMURFS! W/Redux</h1>
       </header>
@@ -37,9 +37,10 @@ const App = (props) => {
               <h2>Name:{props.smurfs[i].name} </h2> 
             <h3>height:{props.smurfs[i].height}</h3>
             <h4>age:{props.smurfs[i].age}</h4>
+            <img src = "https://i.pinimg.com/originals/df/0d/9f/df0d9ff2a9f4166bb4e02e2ff0513bf6.jpg" width= "300px" alt = "smurf image" />
             </div>
           ))}
-          <form onSubmit={handleSubmit}>
+          <form className = "form" onSubmit={handleSubmit}>
       <label htmlFor= "name">
         Smurf's Name:
         <input
