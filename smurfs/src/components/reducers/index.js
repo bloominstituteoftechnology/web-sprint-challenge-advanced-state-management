@@ -27,10 +27,9 @@ export const smurfsReducer = (state = initialState,action) => {
                 smurf:action.payload
             }
         case ADD_SMURFS:
-            const newSmurf = action.payload
             return {
                 ...state,
-                smurfs: [...state, newSmurf]
+                smurfs: state.smurfs
 
             }
             default:

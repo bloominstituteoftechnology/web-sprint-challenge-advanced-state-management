@@ -10,8 +10,16 @@ const App = (props) => {
     height: "",
     age: ""
   })
+  const [ isClicked, setClick] = useState(false);
+
   const handleSubmit = e => {
     e.preventDefault();
+    if(isClicked === false) {
+      setClick(true);
+    }
+    else{
+      setClick(false);
+    }
     props.addSmurf(form)
   }
   const handleChange = e => {
@@ -23,7 +31,8 @@ const App = (props) => {
   }
   useEffect(() => {
     props.fetchData();
-  },[props.smurfs]);
+    console.log("hey")
+  },[isClicked]);
   return (
     <div className = "container">
       <header>
@@ -41,6 +50,7 @@ const App = (props) => {
             </div>
           ))}
           <form className = "form" onSubmit={handleSubmit}>
+            <h2>Make You're Own Smurf!</h2>
       <label htmlFor= "name">
         Smurf's Name:
         <input
@@ -68,7 +78,7 @@ const App = (props) => {
             onChange = {handleChange}
         />
       </label>
-      <input type="submit" value="Submit" />
+      <button type="submit" value={isClicked}>Submit</button>
     </form>
       </main>
     </div>
