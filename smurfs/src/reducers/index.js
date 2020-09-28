@@ -2,6 +2,7 @@ import {
   GET_DATA_FAIL,
   GET_DATA_START,
   GET_DATA_SUCCESS,
+  ADD_NEW_SMURF,
 } from "../actions/index";
 
 const initialState = {
@@ -9,7 +10,6 @@ const initialState = {
     name: "",
     age: "",
     height: "",
-    id: "",
   },
   is_loading_data: false,
   error: "",
@@ -35,6 +35,13 @@ export const reducer = (state = initialState, action) => {
         is_loading_data: false,
         error: action.payload,
       };
+    case ADD_NEW_SMURF:
+      const newSmurf = {
+        name: action.payload.name,
+        age: action.payload.age,
+        height: action.payload.height,
+      };
+      return [...state, newSmurf];
     default:
       return state;
   }

@@ -2,6 +2,7 @@ import axios from "axios";
 export const GET_DATA_START = "GET_DATA_START";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const GET_DATA_FAIL = "GET_DATA_FAIL";
+export const ADD_NEW_SMURF = "ADD_NEW_SMURF";
 
 export const getData = () => (dispatch) => {
   dispatch({ type: GET_DATA_START });
