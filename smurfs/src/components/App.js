@@ -23,7 +23,7 @@ const App = (props) => {
   }
   useEffect(() => {
     props.fetchData();
-  }, []);
+  },[props.smurfs]);
   return (
     <div>
       <header>
@@ -69,7 +69,6 @@ const App = (props) => {
       </label>
       <input type="submit" value="Submit" />
     </form>
-          {console.log(props.smurfs)}
       </main>
     </div>
   );
