@@ -14,13 +14,13 @@ const App = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    props.addSmurf(form)
     if(isClicked === false) {
       setClick(true);
     }
     else{
       setClick(false);
     }
-    props.addSmurf(form)
   }
   const handleChange = e => {
     const newFormData = {
@@ -78,7 +78,7 @@ const App = (props) => {
             onChange = {handleChange}
         />
       </label>
-      <button type="submit" value={isClicked}>Submit</button>
+      <button type="submit" value={isClicked} onClick = {() => setClick(!isClicked)}>Submit</button>
     </form>
       </main>
     </div>
