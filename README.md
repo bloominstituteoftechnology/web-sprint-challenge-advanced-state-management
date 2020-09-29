@@ -24,10 +24,30 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+It solves the problems with sharing state down a component tree. It eliminates the need for prop drilling.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions- an onject with a type property and a payload property. Actions are passed to the reducer function as an argument and the reducer updates the state based on the payload and type.
+
+Reducers- a reducer function takes two arguments, the current state and an action, and returns a new updated state object based on those arguments.
+
+Store- the store is where state is stored in a redux app. It is immutable and changes are handled by dispatching actions which create new copies of the state.
+
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global and availbale to all parts of the app. Component state exists at the component level and is not available globally. Global state is good when there are parts of the state that need to be accessed by multiple parts of the app. Component state is good when only the component in qwuestion needs the particular piece of state.
+
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is middleware that allows us to handle asynchronous operations inside action creators. Thunk allows us to write action creators that return a function instead of an action, like an API call. The function is executed before the action is dispatched to the reducer.
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Context API. It is much simpler and cleaner than Redux
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
