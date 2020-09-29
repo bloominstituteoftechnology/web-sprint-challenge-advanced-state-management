@@ -13,4 +13,10 @@
 //   //   });
 // };
 
-// export default Display;
+// const mapStateToProps = (state) => {
+//     return {
+//
+//     };
+//   };
+
+// export default connect(mapStateToProps, { })(Display);

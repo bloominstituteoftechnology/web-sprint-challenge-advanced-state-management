@@ -63,9 +63,17 @@ const App = (props) => {
         </form>
         <div className="display"></div>
       </div>
-
+      {/* {post.map((smurfs) => {
+        return (
+          <div>
+            <h1>{smurfs}</h1>
+            <h2>{smurfs.age}</h2>
+            <h2>{smurfs.height}</h2>
+          </div>
+        );
+      })} */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      {/* <Display smurf={smurf} /> */}
+      {/* <Display /> */}
     </div>
   );
 };
