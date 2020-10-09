@@ -10,7 +10,6 @@ const SmurfList = (props) => {
 
   return (
     <div>
-      <h2>Smurf List</h2>
       {props.smurfs.map((smurf) => (
         <SmurfCard key={smurf.id} smurf={smurf} />
       ))}

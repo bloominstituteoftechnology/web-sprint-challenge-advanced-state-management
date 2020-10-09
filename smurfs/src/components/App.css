@@ -1,3 +1,68 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  background: url('../assets/village.jpg');
+  height: 100%;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
+
+}
+
+.title {
+  color: white;
+  background-color: black;
+}
+
+.form {
+  background-color:rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+label {
+  color: white;
+}
+
+.input, .btn {
+  padding: 1rem;
+  margin-left: 1rem;
+  border-radius: 2%;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: rgba(77, 5, 232, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5%;
+}
+
+.btn:hover{
+  background-color: rgba(0, 230, 64, 1);
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(243, 241, 239, 0.8);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.card {
+  background-color: rgba(243, 241, 239, 1);
+  margin: 2rem;
+  border-radius: 5%;
+  width: 12rem;
+  height: 12rem;
+  color: black;
+
 }
