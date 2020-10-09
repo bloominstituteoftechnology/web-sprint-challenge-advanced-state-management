@@ -17,7 +17,6 @@
 // export default App;
 
 import React from "react";
-import { connect } from "react-redux";
 import SmurfList from "./SmurfList";
 import SmurfForm from "./SmurfForm";
 import { getSmurf } from "../actions/index";
@@ -42,7 +41,6 @@ export default function App(props) {
   
   return (
     <Wrapper>
-      {error ? props.error : null}
       <Header>Welcome to Smurfville</Header>
       <SmurfList/>
       {props.smurf.map((smurf) => (
@@ -51,12 +49,5 @@ export default function App(props) {
       <SmurfForm/>
     </Wrapper>
   );
+
       }
-
-const mapStateToProps = (state) => {
-  return {
-    smurfs: state.smurfs
-  };
-};
-
-export default connect(null, { getSmurf })(App);

@@ -7,12 +7,16 @@ const SmurfForm = () => {
   const { register, errors, handleSubmit } = useForm({
     mode: "onBlur",
   });
+  
   const onSubmit = (data) => {
-    setData(data);
+    setData(data)
     axios.post('/smurfs', data)
       .then(response => {
-        console.log(response);
+        console.log(response)
+      .catch(error => {
+        console.log(error)
       })
+    })
   };
 
   return (

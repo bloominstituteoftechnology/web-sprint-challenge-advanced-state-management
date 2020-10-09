@@ -9,7 +9,7 @@ export const getSmurf = () => dispatch => {
   axios
     .get('/smurfs')
     .then(res =>
-      dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data.results })
+      dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data })
     )
     .catch(err => dispatch({ type: FETCH_SMURF_FAIL, payload: err }));
 };

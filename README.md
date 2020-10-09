@@ -24,10 +24,24 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+Context API allows data to be passed between components without having to follow the traditional hierarchy of Parent to Child.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+The store contains all state for the application, it is immutable. The actions contain packets of information with an action type and the associated data, the type and optional payload. Reducers are pure functions without side-effects that take in the current state and an action object. From this the return a new object. 
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global whereas component state is local. Component state only exists within that component and is therefore limited, while application state can be accessed all throughout the app and is very useful when the apps get larger and more complex. 
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk middleware is a separate packed which allows a function returned by an action creator to be executed - including asynchronous API calls. It changes our action creators by allowing not pure functions, i.e. those with side-effects to pass through. 
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Context api is definitely very smooth! Most condensed and efficient state management I've seen so far. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
