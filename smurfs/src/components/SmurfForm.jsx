@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { postSmurf } from "../actions/index.js";
+import { postSmurf } from "../actions/index.js"
 
 const SmurfForm = (props) => {
   const [smurf, setSmurf] = useState({
