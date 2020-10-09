@@ -53,7 +53,7 @@ const SmurfForm = () => {
           </pre>
         )}
 
-        <input type="submit" />
+        <input type="Submit Smurf" />
       </form>
     </div>
   );

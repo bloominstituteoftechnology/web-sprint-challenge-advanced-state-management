@@ -5,7 +5,7 @@ import {
   } from '../actions/index';
   
   const initialState = {
-    insult: [],
+    smurf: [],
     error: '',
     isFetching: false
   };
