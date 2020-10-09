@@ -12,7 +12,7 @@ const SmurfForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     props.postSmurf(smurf);
-    document.getElementById("smurfForm").requestFullscreen();
+    document.getElementById("smurfForm").reset();
   };
 
   const inputHandler = (e) => {
