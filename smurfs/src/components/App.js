@@ -17,7 +17,6 @@
 // export default App;
 
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import SmurfList from "./SmurfList";
 import SmurfForm from "./SmurfForm";
 import { getSmurf } from "../actions/index";
@@ -38,29 +37,36 @@ const Header = styled.h1`
   color: white;
   `;
 
-class App extends Component(props) {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      smurfs: []};
+  }
 
-  const { getSmurf } = props; 
-  
+  componentDidMount() {
+    getSmurf().then(res => {
+      this.setState({
+        smurfs: res.smurfs
+      });
+    });
+  }
+
+  render() {
   return (
     <Wrapper>
       <Header>Welcome to Smurfville</Header>
       <SmurfList/>
-      {props.smurfs.map((smurf) => (
-        <Header key={smurfs.id}>{smurfs.name}</Header>
+      {this.props.smurfs.map((smurf) => (
+        <Header key={this.props.smurfs.id}>{this.props.smurfs.name}</Header>
       ))}
       <SmurfForm/>
     </Wrapper>
         );
       }
-    
-      const mapStateToProps = (state) => {
-        return {
-          smurfs: state.smurfs
-        };
-      };
+    }
 
-  export default connect(null, { getSmurf })(App);
+  export default App;
 
 
       
