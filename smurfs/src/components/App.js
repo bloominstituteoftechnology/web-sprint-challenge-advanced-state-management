@@ -16,11 +16,13 @@
 
 // export default App;
 
-import React, { useState } from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import SmurfList from "./SmurfList";
 import SmurfForm from "./SmurfForm";
 import { getSmurf } from "../actions/index";
 import styled from 'styled-components';
+import "./App.css";
 
 const Wrapper = styled.div`
 /* styles */
@@ -36,19 +38,29 @@ const Header = styled.h1`
   color: white;
   `;
 
-export default function App(props) {
-  const [smurfs, setSmurfs] = useState([]);
-  const { getSmurf } = props;
+class App extends Component(props) {
+
+  const { getSmurf } = props; 
   
   return (
     <Wrapper>
       <Header>Welcome to Smurfville</Header>
       <SmurfList/>
       {props.smurfs.map((smurf) => (
-        <Header key={smurf.id}>{smurf.name}</Header>
+        <Header key={smurfs.id}>{smurfs.name}</Header>
       ))}
       <SmurfForm/>
     </Wrapper>
-  );
-
+        );
       }
+    
+      const mapStateToProps = (state) => {
+        return {
+          smurfs: state.smurfs
+        };
+      };
+
+  export default connect(null, { getSmurf })(App);
+
+
+      
