@@ -51,7 +51,7 @@ export default function App(props) {
       <SmurfForm/>
     </Wrapper>
   );
-}
+      }
 
 const mapStateToProps = (state) => {
   return {
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(null, { getInsult })(App);
+export default connect(null, { getSmurf })(App);

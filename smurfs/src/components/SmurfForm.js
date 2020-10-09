@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 const SmurfForm = () => {
   const [data, setData] = useState();
@@ -8,6 +9,10 @@ const SmurfForm = () => {
   });
   const onSubmit = (data) => {
     setData(data);
+    axios.post('/smurfs', data)
+      .then(response => {
+        console.log(response);
+      })
   };
 
   return (
