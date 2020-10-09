@@ -16,7 +16,7 @@
 
 // export default App;
 
-import React from "react";
+import React, { useState } from "react";
 import SmurfList from "./SmurfList";
 import SmurfForm from "./SmurfForm";
 import { getSmurf } from "../actions/index";
@@ -37,13 +37,14 @@ const Header = styled.h1`
   `;
 
 export default function App(props) {
+  const [smurfs, setSmurfs] = useState([]);
   const { getSmurf } = props;
   
   return (
     <Wrapper>
       <Header>Welcome to Smurfville</Header>
       <SmurfList/>
-      {props.smurf.map((smurf) => (
+      {props.smurfs.map((smurf) => (
         <Header key={smurf.id}>{smurf.name}</Header>
       ))}
       <SmurfForm/>

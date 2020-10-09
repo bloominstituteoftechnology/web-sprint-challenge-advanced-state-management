@@ -9,10 +9,10 @@ const SmurfForm = () => {
   });
   
   const onSubmit = (data) => {
-    setData(data)
+    setData(data);
     axios.post('/smurfs', data)
-      .then(response => {
-        console.log(response)
+      .then(res => {
+        console.log(res)
       .catch(error => {
         console.log(error)
       })
