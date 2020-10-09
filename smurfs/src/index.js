@@ -6,10 +6,14 @@ import App from "./components/App";
 import {Provider} from 'react-redux'
 import reducer from './reducers/index'
 import thunk from 'redux-thunk'
+import{ThemeProvider} from "styled-components"
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-<Provider store={store}>
+    
+        <Provider store={store}>
     <App />
-    </Provider>, document.getElementById("root"));
+    </Provider>
+    
+, document.getElementById("root"));

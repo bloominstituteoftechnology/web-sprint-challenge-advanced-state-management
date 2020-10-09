@@ -1,3 +1,7 @@
 .App {
   text-align: center;
+  background-color: dodgerblue;
+  color: skyblue;
+  border: 15px solid black;
+  border-radius: 20px;
 }

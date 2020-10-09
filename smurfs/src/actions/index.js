@@ -21,10 +21,10 @@ export const POST_START ='POST_START'
 export const POST_SUCCESS = 'POST_SUCCESS'
 export const POST_FAILURE = 'POST_FAILURE'
 
-export const postSmurf =(smurf) => (dispatch) => {
+export const postSmurfs =(smurfs) => (dispatch) => {
     dispatch({ type: POST_START});
 
-    axios.post('http://localhost:3333/smurfs', smurf).then((res) => {
+    axios.post('http://localhost:3333/smurfs', smurfs).then((res) => {
         dispatch({
             type:POST_SUCCESS,
             payload: res.data

@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react'
 import {connect} from 'react-redux';
-import {postSmurf} from '../actions/index.js' 
+import {postSmurfs} from '../actions/index.js' 
 
 const SmurfForm = (props) => {
     const [smurf, setSmurf] = useState({
@@ -13,7 +13,7 @@ const SmurfForm = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        props.postSmurf(smurf)
+        props.postSmurfs(smurf)
         document.getElementById('smurfform').reset()
       }
   
@@ -30,21 +30,21 @@ const SmurfForm = (props) => {
       name="name"
       value={props.name}
       type="text"
-      placeholder=""
+      placeholder="Smurf Name"
       onChange={inputHandler} 
       />
       <input
       name="age"
       value={props.age}
       type="text"
-      placeholder=""
+      placeholder="Smurf age"
       onChange={inputHandler}
       />
       <input
       name="height"
       value={props.height}
       type="text"
-      placeholder=""
+      placeholder="Smurf height"
       onChange={inputHandler}
       />
       <button>Add Smurf!</button>  
@@ -60,4 +60,4 @@ const mapStateToProps = state => {
         errors: state.errors
     }
 }
-export default connect(mapStateToProps, {postSmurf})(SmurfForm)
+export default connect(mapStateToProps, {postSmurfs})(SmurfForm)
