@@ -7,7 +7,7 @@ export const FETCH_SMURF_FAIL = 'FETCH_SMURF_FAIL';
 export const getSmurf = () => dispatch => {
   dispatch({ type: FETCH_SMURF_START });
   axios
-    .get('https://evilinsult.com/generate_insult.php?lang=en&type=json')
+    .get('/smurfs')
     .then(res =>
       dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data.results })
     )
