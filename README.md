@@ -24,10 +24,28 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+Prop drilling
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions - a function that returns an action object.
+Reducers - actually carries out the state transition depending on the action.
+Store - Everything that changes within your application is represented by a single JavaScript Object known as the store. The store contains our state for our application. when you want to implement 'single source of truth', you want to make your components controllable.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is the "global" state that all components in the component tree can access, through cursors. 
+Component local state is state that is local to a single component and cannot be seen outside of this component. 
+When composing state, think if it's relevant to other components  globally? Think about the component tree, if passing down several levels, intermediate levels, does it matter at different places of the tree?
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux Thunk is a middleware that lets you call action creators that return a function instead of an action object. That function receives the store's dispatch method, which is then used to dispatch regular synchronous actions inside the function's body once the asynchronous operations have been completed.
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I don't really have a favorite as each of them have a specific purpose. One could argue that context API is much simpler and straight forward, but it also has its drawbacks like not being reusable. Redux on the other hand, is complex and more involved, but having a store allows us to grab a specific state anywhere in our application.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
