@@ -6,16 +6,13 @@
   justify-content: space-between;
   width: 100%;
 }
-/* header{
-  background-image: url("header.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-} */
-/* h1{
-  color: white;
-  padding: 2rem;
-} */
+header{
+  background-color: #87CEEB;
+  color: #4169E1;
+}
+img{
+  width: 50%;
+}
 form{
   display: flex;
   flex-direction: column;
@@ -32,10 +29,34 @@ input {
   background-image: url(smurfHat.png);
   background-size: contain;
   background-repeat: no-repeat;
+  border: 2px solid  #4169E1;
 }
-
+.smurf-card{
+  font-size: 100%;
+  width: 50%;
+  margin: 0 auto;
+}
+.form{
+  
+  color:#00008B;
+}
 button{
   width: 50%;
   align-self: center;
+  background-color: #87CEEB;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+footer{
+  background-image: url("header.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #4B0082;
+}
+.smurf-list{
+  color: #708090;
 }
 

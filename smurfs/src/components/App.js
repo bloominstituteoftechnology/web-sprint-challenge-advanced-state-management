@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Form from "./form.js";
 import "./App.css";
-
+import SmurfList from "./smurfList";
+import Footer from "./footer";
 
 class App extends Component {
   
@@ -12,6 +13,8 @@ class App extends Component {
           <h1>Smurfs Village no.112354</h1>
         </header>
         <Form />
+        <SmurfList />
+        <Footer />
       </div>
     );
   }
