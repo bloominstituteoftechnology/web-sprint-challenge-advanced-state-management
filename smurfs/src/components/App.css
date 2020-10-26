@@ -1,3 +1,41 @@
 .App {
   text-align: center;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
+/* header{
+  background-image: url("header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+} */
+/* h1{
+  color: white;
+  padding: 2rem;
+} */
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+input {
+  width: 50%;
+  align-self: center;
+  margin: 1rem;
+  background-image: url(smurfHat.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+button{
+  width: 50%;
+  align-self: center;
+}
+
