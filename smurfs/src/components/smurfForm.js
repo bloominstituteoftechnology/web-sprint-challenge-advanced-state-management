@@ -16,6 +16,7 @@ const SmurfForm = (props) => {
     }
 
     const onSubmit = e => {
+        e.preventDefault()
         props.postSmurfs(formValues)
         setFormValues(initialValues)
     }
@@ -63,6 +64,8 @@ const SmurfForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
+        isPosting: state.isPosting,
+        isLoading: state.isLoading,
         smurfs: state.smurfs,
         smurf: state.smurf,
         error: state.error
