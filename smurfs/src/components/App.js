@@ -24,6 +24,10 @@ const SmurfContainer = styled.div`
 `;
 
 
+const MessageContainer = styled.div`
+  color: #fff;
+  text-shadow: 4px 4px 10px #000;
+`;
 
 
 const App = (props) => {
@@ -38,10 +42,10 @@ const App = (props) => {
       <Container>
         <h1>SMURFS! W/Redux</h1>
         {/*loading and error messages*/}
-        <div>        
+        <MessageContainer>        
           {props.isLoading}  
           {props.error}
-        </div>
+        </MessageContainer>
         
         <Form/>
 

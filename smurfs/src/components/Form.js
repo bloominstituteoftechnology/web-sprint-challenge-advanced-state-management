@@ -11,13 +11,18 @@ const StyledForm = styled.form`
     width: 30%;
     margin: auto;
     justify-content: space-between;
-    align-content: flex-start;
+    align-content: flex-start;    
+    font-weight: 500;
+    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+
     input {
         padding: 1%;
         border: 1px solid #444;
         border-radius: 10px;        
         width: 100%;
         margin: 2% 0;
+        box-shadow: inset 2px 2px 5px #444;
     }
 
     label {
