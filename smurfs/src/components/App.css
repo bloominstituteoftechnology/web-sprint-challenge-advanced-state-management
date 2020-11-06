@@ -1,3 +1,38 @@
 .App {
   text-align: center;
 }
+
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 5px #000000;
+}
+
+.form-group {
+  margin: 25px;
+}
+
+#name {
+  width: 55%;
+}
+
+#age {
+  width: 100px;
+  margin: 10px;
+}
+
+button {
+  margin: 25px;
+  width: 100px;
+  height: 35px;
+  color: whitesmoke;
+  background: blueviolet;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: violet;
+}
