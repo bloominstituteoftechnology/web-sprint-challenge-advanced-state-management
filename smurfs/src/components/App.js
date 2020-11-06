@@ -33,11 +33,6 @@ const MessageContainer = styled.div`
 
 const App = (props) => {
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    props.getSmurfs();
-  }
-
   return (
     <div className="App">
       <Container>
@@ -62,4 +57,4 @@ const App = (props) => {
 
 
 
-export default connect(mapStateToProps, { getSmurfs })(App);
+export default connect(mapStateToProps, null)(App);
