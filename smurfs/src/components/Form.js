@@ -1,5 +1,37 @@
 import React from 'react';
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { mapStateToProps } from '../redux/mapStateToProps' 
+import { addSmurf, getSmurfs } from '../redux/actions'
+import styled from 'styled-components';
+
+const StyledForm = styled.form`
+    display: flex;
+    flex-flow: column;
+    width: 30%;
+    margin: auto;
+    justify-content: space-between;
+    align-content: flex-start;
+    input {
+        padding: 1%;
+        border: 1px solid #444;
+        border-radius: 10px;        
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    label {
+        font-size: 2rem;
+    }
+
+    button {
+        margin: 2% 0;
+        width: 100%;
+        padding: 2%;
+        font-size: 2rem;
+    }
+`;
+
 
 const Form = (props) => {
     //Set initial values
@@ -9,13 +41,21 @@ const Form = (props) => {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
 
-    const handleClick = (e) => {
+    const handleAdd = (e) => {
         e.preventDefault();
+        props.addSmurf(input);
+        props.getSmurfs();
+    }
+
+    const handleGet = (e) => {
+        e.preventDefault();
+        props.addSmurf(input);
+        props.getSmurfs();
     }
 
 
     return(
-        <form>
+        <StyledForm>
             <label>Name
                 <input
                     type="text"
@@ -40,9 +80,10 @@ const Form = (props) => {
                     onChange={handleChange}
                 />
             </label>
-            <button onClick={handleClick}>Add Smurf</button>
-        </form>
+            <button onClick={handleAdd}>Add Smurf</button>
+            <button onClick={handleGet}>Get Smurfs</button>
+        </StyledForm>
         )
 }
 
-export default Form;
+export default connect(mapStateToProps, { addSmurf, getSmurfs })(Form);

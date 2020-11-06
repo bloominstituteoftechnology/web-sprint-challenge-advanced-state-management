@@ -1,5 +1,12 @@
 //Actions import
-import { GET_SMURFS, GET_SMURFS_SUCCESS, GET_SMURFS_FAIL } from '../actions'
+import {
+    GET_SMURFS,
+    GET_SMURFS_SUCCESS,
+    GET_SMURFS_FAIL,
+    ADD_SMURF,
+    ADD_SMURF_SUCCESS,
+    ADD_SMURF_FAIL
+} from '../actions'
 
 //Initialize base app state
 const initialState = {
@@ -25,6 +32,25 @@ export const reducer = (state = initialState, action) => {
                 error: ''
             };
         case GET_SMURFS_FAIL:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            };
+        case ADD_SMURF:
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            };
+        case ADD_SMURF_SUCCESS:
+            return {
+                ...state,
+                smurfs: [...state.smurfs, action.payload],
+                isLoading: false,
+                error: ''
+            };
+        case ADD_SMURF_FAIL:
             return {
                 ...state,
                 isLoading: false,
