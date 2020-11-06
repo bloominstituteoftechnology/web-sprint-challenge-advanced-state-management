@@ -19,6 +19,7 @@ const SmurfContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  height: 100vh;
   width: 50%;
   margin: auto;
 `;
