@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {addNewSmurf} from "../actions/actions";
 import {connect} from "react-redux";
 import {getData} from "../actions/actions";
@@ -19,15 +19,17 @@ const handleChange = (e) => {
         [e.target.name]: e.target.value})
 }
 const submit = (e) => {
-    
-    props.addNewSmurf(newSmurf)
+    e.preventDefault();
+    props.addNewSmurf(newSmurf);
     setNewSmurf({
         name: "",
         age: ""
     })
     
 }
-
+useEffect(() => {
+    props.getData();
+}, []);
 return (
     <div className="form">
     <h2>New to the village? Sign in!</h2>
@@ -38,7 +40,7 @@ return (
         <input type="text" name="age" value={newSmurf.age} onChange={handleChange} placeholder="     age" />
         {/* <label htmlFor="terms">Checking your not Gargamel. Are you 5cm tall and blue?</label>
         <input type="checkbox" value={newSmurf.height} onChange={handleChange} /> */}
-        <button onClick={() => props.getData()}>Join the Village</button>
+        <button>Join the Village</button>
     </form>
     </div>
 )

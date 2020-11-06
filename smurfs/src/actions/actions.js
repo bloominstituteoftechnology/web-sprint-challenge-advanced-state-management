@@ -7,7 +7,7 @@ export const addNewSmurf = (newSmurf) => dispatch => {
     axios.post('http://localhost:3333/smurfs', newSmurf)
     .then((res) => {
         console.log("post request res: ", res.data);
-        dispatch({type: addSmurfSuccess});
+        dispatch({type: addSmurfSuccess, payload: res.data});
     })
     .catch((err) => {
         console.log("post request err: ", err);
@@ -19,6 +19,8 @@ export const getData = () => dispatch => {
     dispatch ({type: fetchingStart});
     axios.get("http://localhost:3333/smurfs")
     .then((res) => {
+        //const resArray = res.data.splice(",");
+        //console.log("resArray: ",resArray);
         console.log("server smurf data: ",res.data);
         dispatch({type: fetchingSuccess, payload: res.data})
     })

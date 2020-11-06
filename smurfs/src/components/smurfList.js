@@ -1,23 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SmurfCard from "./smurfCard";
+import Loader from "react-loader-spinner";
 import {getData} from "../actions/actions";
 import {connect} from "react-redux";
 import image from "./smurfs.jpg"
 
 function SmurfList(props) {
     console.log(props);
+    
     return(
         <>
-        {props.data.length < 1 ? (<div className="welcome">
-        <img src={image} alt="welcome-village" />
-        <button onClick={props.getData()}>See Smurfs</button>
-            </div>) : 
-            (<div className="smurf-list">
-                <h2>Meet Your New Neighbors</h2>
-            {props.data[0].map((obj) => {
+        {props.data.length < 1 ? (
+            <div className="welcome">
+            <h2>Meet Your New Neighbors</h2>
+            <img src={image} alt="welcome-village" />
+            <Loader type="ThreeDots" color="#A52A2A" heigth={40} width={40} />
+            </div>  
+        ) : (
+        <div className="smurf-list">
+            {props.data.map((obj) => {
                 return <SmurfCard key={obj.id} object={obj} />
             })}
-        </div>)}
+        </div>
+        )}
         
         </>
     )

@@ -14,6 +14,11 @@ header{
 img{
   width: 50%;
 }
+.welcome{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
 form{
   display: flex;
   flex-direction: column;

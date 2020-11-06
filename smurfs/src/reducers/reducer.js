@@ -1,5 +1,5 @@
 const initialState = {
-    data: "",
+    data: [],
     loading: false,
     error: "",
     
@@ -16,7 +16,7 @@ export const reducer = (state=initialState, action) => {
         case addSmurfStart:
             return{...state, loading: true}
         case addSmurfSuccess:
-            return{...state, loading: false};
+            return{...state, loading: false, data: action.payload};
         case addSmurfErorr:
             return{...state, loading: false, error: action.payload};
         case fetchingStart:
@@ -26,7 +26,7 @@ export const reducer = (state=initialState, action) => {
         case fetchingSuccess:
             return {
                 ...state, laoding: false,
-                data: [action.payload]
+                data: action.payload
             }
             case fetchingError:
                 return {
