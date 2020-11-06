@@ -1,4 +1,4 @@
-import { FETCH_SMURFS_START } from '../action'
+import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS } from '../action'
 
 
 const initialState = { 
@@ -17,6 +17,14 @@ export const rootReducer = (state = initialState, action) => {
                     isLoading: true, 
                     error: ""
                    }
+
+        case FETCH_SMURFS_SUCCESS: 
+            return {
+                ...state, 
+                smurfs: action.payload,
+                isLoading: false, 
+                error: ""
+                }
             
         default: 
             return state

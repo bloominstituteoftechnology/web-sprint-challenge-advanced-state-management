@@ -9,7 +9,8 @@ export const getSmurfs = () => dispatch => {
     dispatch({type: FETCH_SMURFS_START})
         axios.get('http://localhost:3333/smurfs')
         .then((response) => { 
-            console.log(response.data)
+            //console.log("Res",response.data)
+            dispatch({type:FETCH_SMURFS_SUCCESS, payload: response.data})
         })
         .catch((error) => { 
             console.log("There was an error retreving the data from the server", error)

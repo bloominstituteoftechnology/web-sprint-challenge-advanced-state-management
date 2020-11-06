@@ -5,6 +5,7 @@ import { getSmurfs } from '../action'
 
 
 const SmurfList = (props) => {
+    const {smurfs} = props
 
     useEffect(() => { 
         props.getSmurfs()
@@ -13,7 +14,12 @@ const SmurfList = (props) => {
 
     return ( 
         <div>
-            {console.log("SMURFLIST", props.smurfs)}
+            {smurfs.map((smurf) => { 
+               return <div className='card' key={smurf.id}>
+                    <h2>{smurf.name}</h2>
+                    <p>AGE: {smurf.age} HEIGHT: {smurf.height} </p>
+                </div>
+            })}
 
         </div>
      );
