@@ -16,9 +16,15 @@ const App = (props) => {
     <div className="App">
       <div>
         <h1>SMURFS! W/Redux</h1>
+        {/*loading and error messages*/}
+        <div>        
+          {props.isLoading}  
+          {props.error}
+        </div>
         <button onClick={handleClick}>Get Smurfs</button>
       </div>
       <div>
+        {/*If there are smurfs, render*/}
         {props.smurfs.length > 0 && props.smurfs.map(smurf => <Smurf key={smurf.id} {...smurf} />)}
       </div>
     </div>    
