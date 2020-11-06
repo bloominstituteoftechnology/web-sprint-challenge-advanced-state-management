@@ -54,7 +54,6 @@ const Form = (props) => {
 
     const handleGet = (e) => {
         e.preventDefault();
-        props.addSmurf(input);
         props.getSmurfs();
     }
 

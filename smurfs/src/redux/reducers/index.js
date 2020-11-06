@@ -21,8 +21,7 @@ export const reducer = (state = initialState, action) => {
         case GET_SMURFS:
             return {
                 ...state,
-                isLoading: true,
-                error: ''
+                isLoading: true
             };
         case GET_SMURFS_SUCCESS:
             return {
@@ -40,8 +39,7 @@ export const reducer = (state = initialState, action) => {
         case ADD_SMURF:
             return {
                 ...state,
-                isLoading: true,
-                error: ''
+                isLoading: true
             };
         case ADD_SMURF_SUCCESS:
             return {
