@@ -26,6 +26,19 @@ export const reducer = (state = initialState, action) => {
                 isLoading: false,
                 smurfs: action.payload
             };
+            case ADD_NEW_SMURF:
+                console.log(action);
+                return {
+                    ...state,
+                    smurfs: [ 
+                        ...state.smurfs,
+                        {
+                            name: action.name,
+                            age: action.age,
+                            height: action.height
+                        }
+                    ]
+                }
         default:
             return state;
     }

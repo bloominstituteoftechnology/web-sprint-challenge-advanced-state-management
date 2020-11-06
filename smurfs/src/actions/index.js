@@ -9,11 +9,9 @@ export const getSmurfs = ()=> {
     return (dispatch) => {
 
         dispatch({ type: GET_SMURFS_START });
-        console.log(dispatch);
         axios
             .get('http://localhost:3333/smurfs')
             .then((res) => {
-                console.log(res);
                 dispatch({ type: GET_SMURFS_SUCCESS, payload: res.data });
             })
             .catch((err) => {
@@ -22,4 +20,20 @@ export const getSmurfs = ()=> {
             
     };
 };
+
+export const addNewSmurf = (newSmurf) => {
+    return (dispatch) => {
+        console.log(newSmurf);
+        axios
+            .post('http://localhost:3333/smurfs', newSmurf)
+            .then((res) => {
+                console.log(res);
+                dispatch({ type: ADD_NEW_SMURF , payload: res.data, name:newSmurf.name, age:newSmurf.age, height:newSmurf.height })
+
+            })
+            .catch((err) => {
+                dispatch({type: GET_SMURFS_FAILURE, payload: err.message });   
+   })
+   }
+  };
 
