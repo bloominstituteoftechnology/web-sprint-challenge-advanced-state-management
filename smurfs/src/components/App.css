@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.card {
+  border: 1px solid black;
+  width: 30%;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 5px #000000;
+  color: white;
+  background: #62cdfd;
+}
+
+h2 {
+  font-size: 30px;
+  -webkit-text-stroke: 1px black;
+}
+
 .form-container {
   width: 50%;
   margin: 0 auto;
