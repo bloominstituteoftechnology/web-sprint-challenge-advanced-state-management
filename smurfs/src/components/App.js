@@ -1,11 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { connect } from 'react-redux';
 import { getSmurfs } from '../redux/actions'
-import { Smurf } from './Smurf'
+import { Smurf } from './Smurf';
+import Form from './Form';
 import "./App.css";
 
 
 const App = (props) => {
+
+  
+
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -21,12 +25,13 @@ const App = (props) => {
           {props.isLoading}  
           {props.error}
         </div>
+        
+        <Form/>
+        
         <button onClick={handleClick}>Get Smurfs</button>
       </div>
-      <div>
-        {/*If there are smurfs, render*/}
-        {props.smurfs.length > 0 && props.smurfs.map(smurf => <Smurf key={smurf.id} {...smurf} />)}
-      </div>
+      {/*If there are smurfs, render*/}
+      {props.smurfs.length > 0 && props.smurfs.map(smurf => <Smurf key={smurf.id} {...smurf} />)}
     </div>    
   );
 }
