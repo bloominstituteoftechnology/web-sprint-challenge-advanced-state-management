@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { getSmurfs } from '../redux/actions'
+import { Smurf } from './Smurf'
 import "./App.css";
 
 
@@ -10,12 +11,17 @@ const App = (props) => {
     e.preventDefault();
     props.getSmurfs();
   }
-  
+
   return (
     <div className="App">
-      <h1>SMURFS! W/Redux</h1>
-      <button onClick={handleClick}>Get Smurfs</button>
-    </div>
+      <div>
+        <h1>SMURFS! W/Redux</h1>
+        <button onClick={handleClick}>Get Smurfs</button>
+      </div>
+      <div>
+        {props.smurfs.length > 0 && props.smurfs.map(smurf => <Smurf key={smurf.id} {...smurf} />)}
+      </div>
+    </div>    
   );
 }
 
