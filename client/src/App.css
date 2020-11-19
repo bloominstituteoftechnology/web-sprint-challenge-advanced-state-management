@@ -1,0 +1,48 @@
+html, body, #root, .App {
+  height:100%;
+}
+
+.App {
+  background: #007bff!important;
+}
+
+main {
+  background: white;
+  width: 65%;
+  margin: 2em auto;
+}
+
+input, textarea {
+  width:100%;
+}
+
+section {
+  margin: 1em;
+  padding: 1em;
+}
+
+.display {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  /* height: 100%;
+  min-width:250px; */
+  flex: 0 1 24%;
+}
+
+.card-title {
+  margin:0;
+  padding:0;
+}
+
+
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
