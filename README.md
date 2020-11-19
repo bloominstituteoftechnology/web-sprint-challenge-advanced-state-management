@@ -2,7 +2,7 @@
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **advanced state management**. During this sprint, you studied **the reducer pattern, redux, and context APIs**. In your challenge this week, you will demonstrate your mastery of these skills by creating **Smurfs village**!
+This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **advanced state management**. During this sprint, you studied **the reducer pattern, and redux**. In your challenge this week, you will demonstrate your mastery of these skills by creating the **Smurf Village Database**!
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
@@ -10,10 +10,9 @@ You are not allowed to collaborate during the sprint challenge. However, you are
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
 
-
 ## Introduction
 
-In this challenge, you are to build a Smurfs village utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
+In this challenge, you are to build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
 
 ### Commits
 
@@ -37,24 +36,44 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 - [ ] `fork & clone` this repository.
 - [ ] `cd` into the forked copy of this repository.
+- [ ] `cd` into the server folder of this repository.
+
+#### Setup Server Code
 - [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+- [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
 - [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+
+#### Setup Client Code
+- [ ] `cd ../client` into the client folder of this repository.
 - [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
-- [ ] **cd** into `smurfs` and run `npm install` to retrieve the client side dependencies.
+- [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
 - [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
 ### Task 2: Project Requirements
-
 Your finished project must include all of the following requirements:
 
 - [ ] Plan and implement how you are going to manage your state for your application
 - [ ] You _must_ use Redux as your state management system
-- [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
-- [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
+- [ ] Complete the tasks listed within:
+        - `./reducers/index.js`
+        - `./actions/index.js`
+        - `./index.js`
+        - `./App.js`
+        - `./components/AddForm.js`
+        - `./components/Smurf.js`
+        - `./components/SmurfDisplay.js`
+- [ ] You completed application should do the following:
+        - Fetch and display data from the included server code on mounting.
+        - Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
+        - Allow new smurfs to be added to the list when the submit smurf button is pressed.
+        - Displays an error alert when name, position or nickname is not included in the submission.
+        - Include the word "Error" and "name/position/nickname" in the rendered error alert as approprate.
+        - Does NOT display an error alert when description is left blank.
+        - Display an error alert if a smurf is submitted with a name already assigned to a smurf.
+        - Include the word "Error" and the returned server error message in the rendered error alert as approprate.
+        - DO NOT REMOVE ANY data-testid FIELDS FROM THE CODE. These fields are used for internal grading of your sprints. While we don't recommend using testid in most cases, it is necessary our grading systems currently.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -130,5 +149,3 @@ Follow these steps for completing your project.
 - [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
 - [ ] Your team lead will count the project as complete after receiving your pull-request
-
-
