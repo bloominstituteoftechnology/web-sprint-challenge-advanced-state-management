@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+input {
+  display: flex;
+  margin: 2% auto;
+}
