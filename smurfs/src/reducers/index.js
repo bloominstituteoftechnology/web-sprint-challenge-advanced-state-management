@@ -1,3 +1,5 @@
+import {LOADING,SUCCESS,ERROR} from "../actions"
+
 const initialState = {
     isLoading: false,
     error: "",
@@ -10,12 +12,12 @@ const initialState = {
 
 const smurfReducer = (state=initialState, action) => {
     switch(action.type) {
-        case "LOADING": 
+        case LOADING: 
         return {
             ...state,
             isLoading: true,
         }
-      case "SUCCESS":{
+      case SUCCESS:{
         return {
             ...state,
             isLoading: false,
@@ -23,7 +25,7 @@ const smurfReducer = (state=initialState, action) => {
 
         }
     }
-    case "ERROR": {
+    case ERROR: {
         return {
             ...state,
             isLoading: false,

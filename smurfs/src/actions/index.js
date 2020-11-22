@@ -1,13 +1,13 @@
-import axios from "axios"
+import axios from "axios";
 
-export const LOADING = "LOADING"
-export const SUCCESS = "SUCCESS"
-export const ERROR = "ERROR"
+export const LOADING = "LOADING";
+export const SUCCESS = "SUCCESS";
+export const ERROR = "ERROR";
 
 
 
-export const Submit = () => {
-dispatch( {type: LOADING} )
+export const submitForm = (search) => {
+dispatch( {type: LOADING, search} )
 
 axios.get("http://localhost:3333/smurfs")
 .then(res => {
@@ -19,8 +19,7 @@ axios.get("http://localhost:3333/smurfs")
 .catch((err) => {
     dispatch({
         type: ERROR,
-        payload: 'error loading data'
-    })
+        payload: 'error loading data'})
 })
 
 }

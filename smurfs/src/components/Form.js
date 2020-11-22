@@ -1,15 +1,20 @@
 import React, {useState} from "react"
 import {connect} from "react-redux"
-
+import {submit} from "../actions"
 
 
 function Form() {
 
-const [name, setName] = useState("")
+const [submit, setSubmit] = useState()
 
 const handleChange = (e) => {
-    setName(e.target.value)
+    setSubmit(e.target.value)
 
+}
+
+const handleClick = (e) => {
+    e.preventDefault()
+    props.Submit()
 }
 
     return(
@@ -26,11 +31,15 @@ const handleChange = (e) => {
             onChange={handleChange}>
             
             </input>
+            <button onClick={handleClick}>Get Smurfs</button>
         </form>
     )
 }
 
-// const mapStateToProps = (state) => {
+const mapStateToProps = (state) => ( {} )
+
+
+// {
 //     return {
 //         isLoading: state.smurfReducer.isLoading,
 //         isError: state.smurfReducer.isError,
@@ -39,6 +48,5 @@ const handleChange = (e) => {
 //     }
 // }
 
-// export default connect(mapStateToProps, {})(Form)
+export default connect(mapStateToProps, {Submit})(Form)
 
-export default Form
