@@ -1,52 +1,58 @@
 import React, {useState} from "react"
 import {connect} from "react-redux"
-import {submit} from "../actions"
+import {displaySmurfs} from "../actions"
 
 
-function Form() {
+function Form(props) {
 
 const [submit, setSubmit] = useState()
 
-const handleChange = (e) => {
-    setSubmit(e.target.value)
 
-}
+// const handleChange = (e) => {
+//     setSubmit(e.target.value)
+
+// }
 
 const handleClick = (e) => {
     e.preventDefault()
-    props.Submit()
+    props.displaySmurfs(submit)
 }
 
     return(
-        <form 
-        onSubmit={(e) =>{
-            e.preventDefault()
-            //props.Submit(submit) need to create submit state on this component and update state for name, age & height
-        }}>
-            <label>Name</label>
-            <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleChange}>
+        <div>
+        <button onClick={handleClick}>Get Smurfs</button>
+        {props.smurfs.map((item)=> {
+    return <div key={item.id}>
+    <p>Name: {item.name}</p>
+    <p>Age: {item.age}</p>
+    <p>Height: {item.height}</p>
+    </div>
+})}
+    </div>
+        // <form 
+        // onSubmit={(e) =>{
+        //     e.preventDefault()
+        //     //props.Submit(submit) need to create submit state on this component and update state for name, age & height
+        // }}>
+        //     <label>Name</label>
+        //     <input
+        //     type="text"
+        //     name="name"
+        //     value={name}
+        //     onChange={handleChange}>
             
-            </input>
-            <button onClick={handleClick}>Get Smurfs</button>
-        </form>
+        //     </input>
+
+        // </form>
     )
 }
 
-const mapStateToProps = (state) => ( {} )
-
-
-// {
-//     return {
-//         isLoading: state.smurfReducer.isLoading,
-//         isError: state.smurfReducer.isError,
-//         error: state.smurfReducer.error,
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs
         
-//     }
-// }
+    }
+}
 
-export default connect(mapStateToProps, {Submit})(Form)
+export default connect(mapStateToProps, {displaySmurfs})(Form)
 

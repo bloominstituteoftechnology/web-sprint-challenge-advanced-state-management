@@ -6,15 +6,15 @@ export const ERROR = "ERROR";
 
 
 
-export const submitForm = (search) => {
-dispatch( {type: LOADING, search} )
+export const displaySmurfs = () => (dispatch) => {
+dispatch( {type: LOADING} )
 
 axios.get("http://localhost:3333/smurfs")
 .then(res => {
-    console.log(res)
+    console.log(res.data)
     dispatch({
         type: SUCCESS,
-        payload: res})
+        payload: res.data})
 })
 .catch((err) => {
     dispatch({

@@ -10,7 +10,7 @@ const initialState = {
 
 }
 
-const smurfReducer = (state=initialState, action) => {
+export const smurfReducer = (state=initialState, action) => {
     switch(action.type) {
         case LOADING: 
         return {
@@ -40,4 +40,4 @@ const smurfReducer = (state=initialState, action) => {
     }
 }
 
-export default smurfReducer
+// export default smurfReducer
