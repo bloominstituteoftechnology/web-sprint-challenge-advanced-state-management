@@ -13,7 +13,11 @@ const handleChange = (e) => {
 }
 
     return(
-        <form>
+        <form 
+        onSubmit={(e) =>{
+            e.preventDefault()
+            //props.Submit(submit) need to create submit state on this component and update state for name, age & height
+        }}>
             <label>Name</label>
             <input
             type="text"
