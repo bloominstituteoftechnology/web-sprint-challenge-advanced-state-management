@@ -67,10 +67,10 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use Redux as your state management system
-- [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
-- [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
+- [X] Plan and implement how you are going to manage your state for your application
+- [X] You _must_ use Redux as your state management system
+- [X] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
+- [X] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
