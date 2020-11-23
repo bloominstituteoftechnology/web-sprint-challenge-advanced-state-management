@@ -1,0 +1,21 @@
+.list{
+    background-color: white;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15%;
+    box-shadow: 5px 5px 15px blue;
+}
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: blue;
+    font-size: 60px;
+    text-shadow: 3px 3px 3px white;
+}
+
+h2 {
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 3px 3px 3px white;
+}

@@ -1,0 +1,9 @@
+.container {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+button{
+    color: blue;
+    background-color: white;
+}

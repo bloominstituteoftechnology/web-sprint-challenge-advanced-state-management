@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import SmurfDetails from "./smurfDetails";
 import { connect } from "react-redux";
 import { getSmurfData } from "../reducer/actions/actions";
+import "./smurfList.css";
 
 const SmurfList = (props) => {
     useEffect(() => {
@@ -10,10 +11,12 @@ const SmurfList = (props) => {
 
     return (
         <>
+        <div className="list">
         <h1>Smurf List</h1>
         {props.smurfs.map((smurf) => (
             <SmurfDetails key={smurf.id} smurf={smurf} />
         ))}
+        </div>
         </>
     );
 };

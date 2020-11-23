@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postSmurfData } from "../reducer/actions/actions"
+import "./smurfForm.css";
 
 export const SmurfForm = (props) => {
     const [smurf, setSmurf] = useState({
@@ -22,6 +23,7 @@ export const SmurfForm = (props) => {
 
     return (
         <>
+        <div className="container">
         <form id="smurfForm" onSubmit={onSubmit}>
             <input
                 name="name"
@@ -46,6 +48,7 @@ export const SmurfForm = (props) => {
             />
             <button>Submit</button>
         </form>
+        </div>
         </>
     );
 };
