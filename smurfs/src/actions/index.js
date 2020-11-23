@@ -1,24 +1,40 @@
-import axios from "axios"
 
-export const LOADING ="LOADING"
-export const DATA_LOAD_SUCCESS ="DATA_LOAD_SUCCESS";
-export const DATA_LOAD_FAILURE ="DATA_LOAD_FAILURE";
+import axios from 'axios';
 
-const loadDataForLocation =  (location) =>(disptach) =>{
-dispatch({type:LOADING});
-console.log('making your axios call')
-setTimeout(() =>{
-    axios.get(`http://localhost:3333/smurfs`)
-    .then((res) =>{
-        console.log(`KH: acions.js loadDataForLocation axios:good`, res)
-        dispatch({type:DATA_LOAD_SUCCESS,payload:res.data.all})
+export const FETCH_SMURF_DATA = "FETCH_SMURF_DATA"
+export const FETCH_SMURF_DATA_FETCH = "FETCH_SMURF_DATA_FETCH"
+export const ADD_SMURF ="ADD_SMURF"
+
+export const fetchData = () => (dispatch) =>{
+    dispatch({type: FETCH_SMURF_DATA_FETCH})
+
+    axios
+.get("http://localhost:3333/smurfs")
+.then((res) =>{
+    dispatch({
+        type:FETCH_SMURF_DATA,
+        payload:res.data
     })
-    .catch(err =>{
-        console.log(`KH acions.js loadDataForLocation axios bad`, err)
-        dispatch({type:DATA_LOAD_FAILURE,payload:'error fetching data${err.message}'})
-    })
-}, 1500)
-
-
+    
+})
+.catch((err) =>{
+    console.error("smurf error :(", err)
+})
 }
 
+
+export const addSmurf =(smurf) => (dispatch)=>{
+    axios
+    .post("http://localhost:3333/smurfs", smurf)
+    .then((res) =>{
+        dispatch({
+            type:ADD_SMURF,
+            payload:res.data
+        })
+      console.log("response",res)
+    })
+    .catch(err =>{
+        console.log("smurf error",err)
+    })
+
+}
