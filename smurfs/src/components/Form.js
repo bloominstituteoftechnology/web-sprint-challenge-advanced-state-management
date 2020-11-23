@@ -1,24 +1,42 @@
 import React, {useState} from "react"
 import {connect} from "react-redux"
 import {displaySmurfs} from "../actions"
+import {postSmurfs} from "../actions"
 
 
 function Form(props) {
 
-const [submit, setSubmit] = useState()
+const [addSmurf, setAddSmurf] = useState([{
+    name: "",
+    age: "",
+    height: ""
+}])
+const [getSmurfs, setGetSmurfs] = useState()
+const [input, setInput] = useState({
+    name:"",
+    age:"",
+    height:""
+})
 
 
-// const handleChange = (e) => {
-//     setSubmit(e.target.value)
 
-// }
+const handleChanges = (e) => {
+    const value = e.target.value;
+    setInput({
+        ...input,
+        [e.target.name]: value
+    })
+
+}
+
 
 const handleClick = (e) => {
     e.preventDefault()
-    props.displaySmurfs(submit)
+    props.displaySmurfs(getSmurfs)
 }
 
     return(
+        <div>
         <div>
         <button onClick={handleClick}>Get Smurfs</button>
         {props.smurfs.map((item)=> {
@@ -29,30 +47,56 @@ const handleClick = (e) => {
     </div>
 })}
     </div>
-        // <form 
-        // onSubmit={(e) =>{
-        //     e.preventDefault()
-        //     //props.Submit(submit) need to create submit state on this component and update state for name, age & height
-        // }}>
-        //     <label>Name</label>
-        //     <input
-        //     type="text"
-        //     name="name"
-        //     value={name}
-        //     onChange={handleChange}>
-            
-        //     </input>
+        <form 
+        onSubmit={(e) =>{
+            e.preventDefault()
+            props.postSmurfs(addSmurf) 
+            setAddSmurf({
+                name: "",
+                age: null,
+                height: null
+            })
 
-        // </form>
+            // need to create submit state on this component and update state for name, age & height
+        }}>
+            <label>Name</label>
+            <input
+            type="text"
+            name="name"
+            value={input.name}
+            onChange={handleChanges}>
+            
+            </input>
+            <label>Age</label>
+            <input
+            type="text"
+            name="age"
+            value={input.age}
+            onChange={handleChanges}>
+            
+            </input>
+            <label>Height</label>
+            <input
+            type="text"
+            name="height"
+            value={input.height}
+            onChange={handleChanges}>
+            
+            </input>
+            <button>Add Smurf</button>
+
+        </form>
+        </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        smurfs: state.smurfs
-        
+        smurfs: state.smurfs,
+
+
     }
 }
 
-export default connect(mapStateToProps, {displaySmurfs})(Form)
+export default connect(mapStateToProps, {displaySmurfs, postSmurfs})(Form)
 

@@ -1,11 +1,8 @@
-import {LOADING,SUCCESS,ERROR} from "../actions"
+import {LOADING,SUCCESS,ERROR, ADD_SMURF} from "../actions"
 
 const initialState = {
     isLoading: false,
     error: "",
-    name: "",
-    age: "",
-    height: "",
     smurfs: []
 
 }
@@ -34,6 +31,13 @@ export const smurfReducer = (state=initialState, action) => {
         }
     }
 
+    case ADD_SMURF: {
+        return {
+            ...state,
+            isLoading: false,
+            smurfs: action.payload
+        }
+    }
 
         default:
             return state
