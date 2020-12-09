@@ -30,22 +30,22 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
-### Task 1: CodeGrade Setup
-
-For submission, please setup the webhook needed to push your submission to codegrade. 
-
-* [ ] [Visit this link for instuctions on how to setup codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
-
-
 
 ### Task 1: Project Set Up
 
 * [ ] `fork & clone` this repository.
 * [ ] `cd` into the forked copy of this repository.
-* [ ] `cd` into the server folder of this repository.
+
+### Task 1: CodeGrade Setup
+
+For submission, please setup the webhook needed to push your submission to codegrade. 
+
+* [ ] [Visit this link for instuctions on how to setup webhooks for codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
+
+
 
 #### Setup Server Code
-* []  cd ../client into the client folder of this repository.
+* [ ] `cd` into the server folder of this repository.
 * [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
 * [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
 * [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
