@@ -1,8 +1,5 @@
 html, body, #root, .App {
   height:100%;
-}
-
-.App {
   background: #007bff!important;
 }
 
