@@ -1,7 +1,6 @@
 # Advanced State Management Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
-
 This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **advanced state management**. During this sprint, you studied **the reducer pattern, and redux**. In your challenge this week, you will demonstrate your mastery of these skills by creating the **Smurf Village Database**!
 
 This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
@@ -9,6 +8,8 @@ This is an individual assessment. All work must be your own. Your challenge scor
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your TL if you need direction. 
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
+
+For submission, please setup the webhook needed to push your submission to codegrade. [You can see the instructions for this setup here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
 ## Introduction
 
@@ -57,23 +58,23 @@ Your finished project must include all of the following requirements:
 - [ ] Plan and implement how you are going to manage your state for your application
 - [ ] You _must_ use Redux as your state management system
 - [ ] Complete the tasks listed within:
-        - `./reducers/index.js`
-        - `./actions/index.js`
-        - `./index.js`
-        - `./App.js`
-        - `./components/AddForm.js`
-        - `./components/Smurf.js`
-        - `./components/SmurfDisplay.js`
+  * `./reducers/index.js`
+  * `./actions/index.js`
+  * `./index.js`
+  * `./App.js`
+  * `./components/AddForm.js`
+  * `./components/Smurf.js`
+  * `./components/SmurfDisplay.js`
 - [ ] You completed application should do the following:
-        - Fetch and display data from the included server code on mounting.
-        - Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
-        - Allow new smurfs to be added to the list when the submit smurf button is pressed.
-        - Displays an error alert when name, position or nickname is not included in the submission.
-        - Include the word "Error" and "name/position/nickname" in the rendered error alert as approprate.
-        - Does NOT display an error alert when description is left blank.
-        - Display an error alert if a smurf is submitted with a name already assigned to a smurf.
-        - Include the word "Error" and the returned server error message in the rendered error alert as approprate.
-        - DO NOT REMOVE ANY data-testid FIELDS FROM THE CODE. These fields are used for internal grading of your sprints. While we don't recommend using testid in most cases, it is necessary our grading systems currently.
+  * Fetch and display data from the included server code on mounting.
+  * Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
+  * Allow new smurfs to be added to the list when the submit smurf button is pressed.
+  * Displays an error alert when name, position or nickname is not included in the submission.
+  * Include the word "Error" and "name/position/nickname" in the rendered error alert as approprate.
+  * Does NOT display an error alert when description is left blank.
+  * Display an error alert if a smurf is submitted with a name already assigned to a smurf.
+  * Include the word "Error" and the returned server error message in the rendered error alert as approprate.
+  * DO NOT REMOVE ANY data-testid FIELDS FROM THE CODE. These fields are used for internal grading of your sprints. While we don't recommend using testid in most cases, it is necessary our grading systems currently.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -81,8 +82,8 @@ In your solution, it is essential that you follow best practices and produce cle
 
 ##### GET '/smurfs'
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
+* [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+* [ ] Double check that your response from the server is an array of smurfs.
 
 ```js
 [
@@ -97,7 +98,7 @@ In your solution, it is essential that you follow best practices and produce cle
 
 ##### POST '/smurfs'
 
-- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
+* [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
 
 Example of the shape of data to be sent to the `POST` endpoint:
 
@@ -109,7 +110,7 @@ Example of the shape of data to be sent to the `POST` endpoint:
 }
 ```
 
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
+* [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
 
 Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
 
@@ -143,9 +144,4 @@ After finishing your required elements, you can push your work further. These go
 * [ ] Using React Testing Library, test one or more of your components (not any component that fetches data though)
 
 ## Submission format
-
-Follow these steps for completing your project.
-
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+To submit, simply push your latest commit to the master branch and the CodeGrade webhook you setup will run automatically.
