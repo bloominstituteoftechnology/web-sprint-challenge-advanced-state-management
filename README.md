@@ -9,8 +9,6 @@ You are not allowed to collaborate during the sprint challenge. However, you are
 
 _You have **three hours** to complete this challenge. Plan your time accordingly._
 
-For submission, please setup the webhook needed to push your submission to codegrade. [You can see the instructions for this setup here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
-
 ## Introduction
 
 In this challenge, you are to build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
@@ -32,6 +30,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
+### Task 1: CodeGrade Setup
+
+For submission, please setup the webhook needed to push your submission to codegrade. 
+
+[You can see the instructions for this setup here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
+
+
 
 ### Task 1: Project Set Up
 
