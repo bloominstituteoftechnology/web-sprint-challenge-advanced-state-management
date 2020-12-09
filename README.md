@@ -45,6 +45,7 @@ For submission, please setup the webhook needed to push your submission to codeg
 * [ ] `cd` into the server folder of this repository.
 
 #### Setup Server Code
+* []  cd ../client into the client folder of this repository.
 * [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
 * [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
 * [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
