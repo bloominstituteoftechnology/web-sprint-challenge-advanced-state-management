@@ -34,35 +34,35 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 For submission, please setup the webhook needed to push your submission to codegrade. 
 
-[You can see the instructions for this setup here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
+* [ ] [Visit this link for instuctions on how to setup codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
 
 
 ### Task 1: Project Set Up
 
-- [ ] `fork & clone` this repository.
-- [ ] `cd` into the forked copy of this repository.
-- [ ] `cd` into the server folder of this repository.
+* [ ] `fork & clone` this repository.
+* [ ] `cd` into the forked copy of this repository.
+* [ ] `cd` into the server folder of this repository.
 
 #### Setup Server Code
-- [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+* [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
+* [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+* [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
 
 #### Setup Client Code
-- [ ] `cd ../client` into the client folder of this repository.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
-- [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+* [ ] `cd ../client` into the client folder of this repository.
+* [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+* [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
+* [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
 ### Task 2: Project Requirements
 Your finished project must include all of the following requirements:
 
-- [ ] Plan and implement how you are going to manage your state for your application
-- [ ] You _must_ use Redux as your state management system
-- [ ] Complete the tasks listed within:
+* [ ] Plan and implement how you are going to manage your state for your application
+* [ ] You _must_ use Redux as your state management system
+* [ ] Complete the tasks listed within:
   * `./reducers/index.js`
   * `./actions/index.js`
   * `./index.js`
@@ -70,7 +70,7 @@ Your finished project must include all of the following requirements:
   * `./components/AddForm.js`
   * `./components/Smurf.js`
   * `./components/SmurfDisplay.js`
-- [ ] You completed application should do the following:
+* [ ] You completed application should do the following:
   * Fetch and display data from the included server code on mounting.
   * Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
   * Allow new smurfs to be added to the list when the submit smurf button is pressed.
