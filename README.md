@@ -67,8 +67,8 @@ Your finished project must include all of the following requirements:
 * [x] Plan and implement how you are going to manage your state for your application
 * [x] You _must_ use Redux as your state management system
 * Complete the tasks listed within:
-  *  [ ] - `./reducers/index.js`
-  *  [ ] - `./actions/index.js`
+  *  [x] - `./reducers/index.js`
+  *  [x] - `./actions/index.js`
   *  [ ] - `./index.js`
   *  [ ] - `./App.js`
   *  [ ] - `./components/AddForm.js`
