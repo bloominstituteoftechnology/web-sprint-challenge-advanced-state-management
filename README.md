@@ -36,14 +36,6 @@ You are expected to be able to answer questions in these areas. Your responses c
 * [ ] `fork & clone` this repository.
 * [ ] `cd` into the forked copy of this repository.
 
-### Task 1: CodeGrade Setup
-
-For submission, please setup the webhook needed to push your submission to codegrade. 
-
-* [ ] [Visit this link for instuctions on how to setup webhooks for codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
-
-
-
 #### Setup Server Code
 * [ ] `cd` into the server folder of this repository.
 * [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
@@ -83,6 +75,13 @@ Your finished project must include all of the following requirements:
   * DO NOT REMOVE ANY data-testid FIELDS FROM THE CODE. These fields are used for internal grading of your sprints. While we don't recommend using testid in most cases, it is necessary our grading systems currently.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
+
+### Task 3: CodeGrade Setup
+
+For submission, please setup the webhook needed to push your submission to codegrade. 
+
+* [ ] [Visit this link for instuctions on how to setup webhooks for codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
+
 
 #### Resource: API documentation 
 
