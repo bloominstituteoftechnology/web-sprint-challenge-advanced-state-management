@@ -35,7 +35,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
    `It takes our synchronous flow and turns it into async-chronous flow, which allows us to utilize async to make api calls inside of our action creators.`
 
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
-   `Probably Redux with Thunk because it's really cool to do the api calls in the action-creators. Context API isn't bad but I really don't like the syntax for it. Context API is pretty similar to the store in Redux in that you wrap .Providers around the components you want to have slices of state, or 'contexts', and it probably is a lot simpler to use than Redux in that you don't have to connect state to props. `
+   `Probably Redux with Thunk because it's really cool to do the api calls in the action-creators. Context API isn't bad but I really don't like the syntax for it. Context API is pretty similar to the store in Redux in that you wrap .Providers around the components you want to have slices of state, or 'contexts', and it probably is a lot simpler to use than Redux in that you don't have to connect state to props..`
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
