@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { findingSmurf } from "../actions";
-import Smurf from "./smurf";
+import Smurf from "./Smurf";
 
 const SmurfDisplay = (props) => {
+  const { error, smurfs, isLoading } = props;
   useEffect(() => {
     props.findingSmurf();
   }, []);
@@ -15,8 +16,9 @@ const SmurfDisplay = (props) => {
   return (
     <div>
       <h2>Here are the Smurfs</h2>
-      <p>{props.error}</p>
-      {props.smurfs.map((smurf) => (
+      {error ? <p>{error}</p> : null}
+      {isLoading ? <p>Animating the Village...</p> : null}
+      {smurfs.map((smurf) => (
         <div>
           <Smurf smurf={smurf}></Smurf>
         </div>
@@ -30,8 +32,10 @@ const mapStateToProps = (state) => {
     smurfs: state.smurfs,
     error: state.error,
     isPosting: state.isPosting,
+    isLoading: state.isLoading,
   };
 };
+
 export default connect(mapStateToProps, { findingSmurf })(SmurfDisplay);
 
 //Task List:
