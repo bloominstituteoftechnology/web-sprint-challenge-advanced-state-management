@@ -43,4 +43,4 @@ export default connect(mapStateToProps, { postSmurf })(AddForm);
 //6. Build eventhandler and listener needed to submit a new smurf and dispatch it's assosated action.
 //7. Ensure that the included alert code only displays when error text is passed in from redux.
 //4. DO NOT DELETE THE data-testid FIELD FROM THE ERROR ALERT! This is used for sprint grading.
-//8. Style as necessary.
+//8. Style as necessary...
