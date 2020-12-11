@@ -12,7 +12,7 @@ const sendUserError = (msg, res) => {
   return;
 };
 
-let smurfs = [
+export let smurfs = [
   {
     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
     name:'Poppa Smurf',
