@@ -1,5 +1,4 @@
 
-
 //Task List:
 //1. Add fetch smurfs action: 
 //              - fetch and return initial list of smurfs
@@ -13,32 +12,39 @@
 //3. Add set error text action:
 //              - return action object setting error text
 //4. Any other actions you deem nessiary to complete application.
+
+
 import axios from 'axios';
 
-export const START = "FETCH_START";
-export const SMURFS = "FETCH_SMURF";
-export const ADD_SMURF = "ADD_SMURF";
+
+
+export const SMURF = "FETCH_SMURF";
 export const FAIL = "FETCH_FAIL";
+export const ADD = "ADD_SMURF";
+export const DATA_FAIL = "DATA_FAIL";
 
-
-export const findSmurf = () => dispatch => {
-    dispatch({ type: START });
+export const smurfData = () => dispatch => {
+    
 
     axios
         .get("http://localhost:3333/smurfs")
         .then(res => {
-            dispatch({ type: SMURFS, payload: res.data });
+            dispatch({ type: SMURF, payload: res.data });
         })
-        .catch(err => dispatch({ type: FAIL, payload: error }));
+        .catch(err => dispatch({ type: FAIL, payload: err }));
 }
 
-export const addSmurf = (smurfData) => dispatch => {
+export const addNewSmurf = (smurfData) => dispatch => {
     axios
         .post("http://localhost:3333/smurfs", smurfData)
         .then(res => {
-            dispatch({ type: ADD_SMURF, payload: smurfData });
+            dispatch({ type: ADD, payload: smurfData });
         })
-        .catch(err => dispatch({ type: FAIL, payload: error }));
+        .catch(err => dispatch({ type: FAIL, payload: err }));
+}
+
+export const setError = (err) => {
+    return({ type: DATA_FAIL, payload: err });
 }
 
 

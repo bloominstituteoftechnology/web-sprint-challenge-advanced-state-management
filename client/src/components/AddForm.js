@@ -1,57 +1,57 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { addSmurf, setErrorText, getSmurfs } from "../actions/index";
+import { smurfData, addNewSmurf, setError,  } from "../actions/index";
 
 class AddForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            
-            name: "",
-            position: "",
-            nickname: "",
-            description: "",
-            
-        }
-    }
-
-    handleChange = (event) => {
-        this.setState({
-            ...this.state, [event.target.name]: event.target.value
-        });
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        return  this.setState({
             name: "",
             position: "",
             nickname: "",
             description: ""
+        }
+    }
+
+    handleChange = (event) => {
+        const value = event.target.value;
+        this.setState({
+            ...this.state, [event.target.name]: value
         });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+      
+    };
+    
+
     render() {
 
-        return (<div>
-            <h2>New Smurf</h2>
+        return <div>
+            <h1>New Blue Tyke</h1>
             <form onSubmit={this.handleSubmit}>
-                <div>
-                    
-                    <input onChange={this.handleChange} value={this.state.name}  />
-                     <input onChange={this.handleChange} value={this.state.position}  />
-                     <input onChange={this.handleChange} value={this.state.nickname}  />
+                <div className="form-group">
+                    <label>name</label>
+                    <input onChange={this.handleChange} value={this.state.name} />
 
-                  
+                    <label>position</label>
+                    <input onChange={this.handleChange} value={this.state.position}  />
+
+                    <label>description</label>
                     <input onChange={this.handleChange} value={this.state.description}  />
+
+                    <label>nickName</label>
+                    <input onChange={this.handleChange} value={this.state.nickname}  />
+
+                   
                 </div>
 
-               
-                <button>Submit </button>
+              
+                <button>submit</button>
             </form>
-            </div>
-        );
+            </div>;
     }
 }
 
@@ -63,8 +63,7 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { addSmurf, setErrorText, getSmurfs })(AddForm);
-
+export default connect(mapStateToProps, { smurfData, addNewSmurf, setError  })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.

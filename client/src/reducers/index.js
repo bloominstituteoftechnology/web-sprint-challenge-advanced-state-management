@@ -1,4 +1,4 @@
-import { START, SMURFS, ADD_SMURF, FAIL,  } from "../actions/index";
+import {  SMURF, ADD, FAIL, DATA_FAIL } from "../actions/index";
 
 export const initialState = {
     smurfs: [],
@@ -8,26 +8,28 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case (START):
-            return ({ ...state, loading: true });
-        case (SMURFS):
-            console.log(action.payload);
+        
+        case (SMURF):
             return ({ ...state, smurfs: action.payload, loading: false });
-        case (ADD_SMURF):
-            return ({
-                ...state, smurfs: [...state.smurfs,
+        case (ADD):
+            return ({ ...state, smurfs: 
+                [...state.smurfs,
                 {
-                    name: action.payload.name,
-                    position: action.payload.position,
-                    nickname: action.payload.nickname,
-                    description: action.payload.description
+                        name: action.payload.name,
+                        position: action.payload.position,
+                        description: action.payload.description,
+                        nickname: action.payload.nickname
+                        
                 }
                 ],
-                isLoading: false
+                
             });
         case (FAIL):
-            return ({ ...state, loading: false, error: action.payload });
-       
+            return ({ ...state, loading: false, err: 
+                        action.payload });
+        case (DATA_FAIL):
+            return ({ ...state, loading: false, 
+                        err: action.payload });
         default:
             return state;
     }
