@@ -22,10 +22,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+  - It's another way of being able to pass state data to components that need the data instead of passing through props down every level of the tree.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  - Actions: It's what gives motion to events being done on the DOM and it contains information that has an action type and associated data. Type MUST be part of an action. The payload property is needed because it's data links with the type interaction.
+  - Reducers: They are the next step after actions are dispatched which become pure functions that don't make side effects. They take two arguments of the current state from the Redux store and an action object that is sent through action creator functions. Type tells the reducer what to do and the payload tells it what to update on the state.
+  - Store: It is known as the single source of truth simply because of where all the state data is stored to be utilized throughout the application.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  - Application state is on a global scope compared to Component state only being used on a local scope. It would be wise to use Application state when you need data spread down the levels while Component state is data you only want on that component.
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+  - Redux-thunk: It's a node package that makes the reducer flow asynchronous and creates API calls from the action creators we made. Action creators get changed through performing asynchronous API calls instead of synchronous calls because of the Redux middleware interrupting the normal Redux flow, and can also make calls before the actions get to the reducer.
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+  - I'd have to say Context API is pretty nifty and simple to use, but I can see how it can become quite combersome having the imports/exports being used constantly in certain components and application state. For larger scale projects, I'd go with using the Redux libary as it has the ability to scale larger in comparison to Context API. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -33,8 +44,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-* [ ] `fork & clone` this repository.
-* [ ] `cd` into the forked copy of this repository.
+* [x] `fork & clone` this repository.
+* [x] `cd` into the forked copy of this repository.
 
 #### Setup Server Code
 * [ ] `cd` into the server folder of this repository.
