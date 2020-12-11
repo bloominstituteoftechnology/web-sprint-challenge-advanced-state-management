@@ -82,6 +82,10 @@ For submission, please setup the webhook needed to push your submission to codeg
 
 * [ ] [Visit this link for instuctions on how to setup webhooks for codegrade.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
+**Note that you can ignore the npm run:test:watch command**
+
+
+
 
 #### Resource: API documentation 
 
