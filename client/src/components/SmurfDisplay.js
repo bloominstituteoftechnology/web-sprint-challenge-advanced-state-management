@@ -7,10 +7,11 @@ export class SmurfDisplay extends React.Component {
         smurfs: this.props.smurfs,
         error: this.props.error,
         appLoading: this.props.appLoading
+        
 
     }
    componentDidMount(props){
-       props.getSmurfs()
+      getSmurfs()
    }
     render() {
     {this.props.smurfs ? <div>{this.props.smurfs.map((item)=>{<Smurf key={item.id} smurfs={item.smurfs}/>})}</div> : <div><h2>No Smurfs to display</h2></div> }
