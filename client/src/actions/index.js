@@ -29,7 +29,7 @@ export const findSmurf = () => dispatch => {
         .then(res => {
             dispatch({ type: SMURFS, payload: res.data });
         })
-        .catch(err => dispatch({ type: FETCH_FAIL, payload: error }));
+        .catch(err => dispatch({ type: FAIL, payload: error }));
 }
 
 export const addSmurf = (smurfData) => dispatch => {

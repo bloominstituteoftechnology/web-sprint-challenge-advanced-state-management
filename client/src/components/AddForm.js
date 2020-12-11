@@ -12,7 +12,7 @@ class AddForm extends React.Component {
             position: "",
             nickname: "",
             description: "",
-            id: Date.now()
+            
         }
     }
 
