@@ -38,7 +38,7 @@ const mapStateToProps = state => {
     }
 }
 
-
+//gh
 
 export default connect(mapStateToProps, {findSmurf})(SmurfDisplay);
 
