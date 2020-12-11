@@ -1,4 +1,28 @@
 import axios from 'axios';
+export const FETCHING_SMURF_START = 'FETCHING_SMURF_START';
+export const FETCHING_SMURF_SUCCESS = 'FETCHING_SMURF_SUCCESS';
+export const FETCHING_SMURF_FAIL = 'FETCHING_SMURF_FAIL';
+
+//using Thunk
+export const getSmurfs = () => {
+    return (dispatch => {
+        dispatch({type:FETCHING_SMURF_START});
+        axios
+        .get('http://localhost:3333/smurfs')
+        .then((res)=>{
+            dispatch({type:FETCHING_SMURF_SUCCESS, payload:{
+                id: res.data.id,
+                name: res.data.name,
+                position:res.data.position,
+                nickname: res.data.nickname,
+                description: res.data.description
+            }})
+        })
+        .catch((err)=>{
+            dispatch({type:FETCHING_SMURF_FAIL , payload: err.response.message})
+        })
+    })
+}
 
 //Task List:
 //1. Add fetch smurfs action: 
