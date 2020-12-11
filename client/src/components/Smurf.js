@@ -1,12 +1,15 @@
 import React from 'react';
 
-class Smurf extends React.Component {
-    render() {
-        const { smurf } = this.props;
+const Smurf = (props) => {
+    
+        
 
-        return(<div data-testid="smurf" className="card">
-        </div>);
-    }
+        return(
+        <div data-testid="smurf" className="card">
+            
+        </div>
+        );
+    
 }
 
 export default Smurf;

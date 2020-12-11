@@ -1,4 +1,43 @@
 import axios from 'axios';
+export const FETCHING_SMURF_START = "FETCHING_SMURF_START";
+export const FETCHING_SMURF_SUCCESS = "FETCHING_SMURF_SUCCESS";
+export const FETCHING_SMURF_FAIL = "FETCHING_SMURF_FAIL";
+export const ADD_SMURF = "ADD_SMURF";
+
+export const getSmurf = () => (dispatch) => {
+    dispatch({type:FETCHING_SMURF_START})
+
+        axios.get(`http://localhost:3333/smurfs`)
+        .then(res=>{
+            console.log('this is the res', res.data);
+            dispatch({type:FETCHING_SMURF_SUCCESS, payload:res.data})
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({type:FETCHING_SMURF_FAIL, payload: err.response.message})
+        })
+    
+};
+
+export const addSmurf = (newSmurf) => (dispatch) =>{
+    // return{
+    //     type:ADD_SMURF,
+    //     payload:{name:newSmurf.name, nickname:newSmurf.nickname, position:newSmurf.position}
+    // }
+
+    return(dispatch=> {
+        axios.post(`http://localhost:3333/smurfs`,newSmurf)
+        .then(res=>{
+            console.log(res.data)
+            dispatch({type:ADD_SMURF, payload:res.data})
+            
+        })
+    })
+};
+
+
+
+
 
 //Task List:
 //1. Add fetch smurfs action: 
