@@ -1,8 +1,38 @@
+import {  SMURF, ADD, FAIL, DATA_FAIL } from "../actions/index";
 
 export const initialState = {
+    smurfs: [],
+    loading: false,
+    error: ""
 }
 
-const reducer = ()=>{
+export const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        
+        case (SMURF):
+            return ({ ...state, smurfs: action.payload, loading: false });
+        case (ADD):
+            return ({ ...state, smurfs: 
+                [...state.smurfs,
+                {
+                        name: action.payload.name,
+                        position: action.payload.position,
+                        description: action.payload.description,
+                        nickname: action.payload.nickname
+                        
+                }
+                ],
+                
+            });
+        case (FAIL):
+            return ({ ...state, loading: false, err: 
+                        action.payload });
+        case (DATA_FAIL):
+            return ({ ...state, loading: false, 
+                        err: action.payload });
+        default:
+            return state;
+    }
 }
 
 export default reducer;

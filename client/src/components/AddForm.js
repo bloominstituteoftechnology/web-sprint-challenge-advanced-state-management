@@ -1,24 +1,69 @@
 import React from 'react';
+import { connect } from "react-redux";
+
+import { smurfData, addNewSmurf, setError,  } from "../actions/index";
 
 class AddForm extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            position: "",
+            nickname: "",
+            description: ""
+        }
+    }
+
+    handleChange = (e) => {
+        
+        this.setState({
+            ...this.state, [e.target.name]: e.target.value
+        });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+      
+    };
+    
 
     render() {
-        return(<section>
-            <h2>Add Smurf</h2>
-            <form>
+
+        return <div>
+            <h1>New Blue Tyke</h1>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="name">Name:</label><br/>
-                    <input onChange={this.handleChange} name="name" id="name" />
+                    <label>name</label>
+                    <input onChange={this.handleChange} value={this.state.name} />
+
+                    <label>position</label>
+                    <input onChange={this.handleChange} value={this.state.position}  />
+
+                    <label>description</label>
+                    <input onChange={this.handleChange} value={this.state.description}  />
+
+                    <label>nickName</label>
+                    <input onChange={this.handleChange} value={this.state.nickname}  />
+
+                   
                 </div>
 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
-                <button>Submit Smurf</button>
+              
+                <button>submit</button>
             </form>
-        </section>);
+            </div>;
     }
 }
 
-export default AddForm;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs,
+        loading: state.loading,
+        error: state.error
+    }
+}
+
+export default connect(mapStateToProps, { smurfData, addNewSmurf, setError  })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.
