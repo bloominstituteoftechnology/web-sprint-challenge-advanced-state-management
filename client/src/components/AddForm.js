@@ -14,10 +14,10 @@ class AddForm extends React.Component {
         }
     }
 
-    handleChange = (event) => {
-        const value = event.target.value;
+    handleChange = (e) => {
+        
         this.setState({
-            ...this.state, [event.target.name]: value
+            ...this.state, [e.target.name]: e.target.value
         });
     }
 
