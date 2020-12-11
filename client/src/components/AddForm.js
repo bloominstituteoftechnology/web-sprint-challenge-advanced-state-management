@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchSmurfs, addSmurfs } from './../actions';
+import { addSmurfs } from './../actions';
 
-class AddForm extends React.Component {
+const AddForm = (props) => {
+    const { addSmurfs } = props;
+    const { newSmurfMember, setNewSmurfMember } = useState({
+        name: 
+    })
 
 
-
-    render() {
-        return(<section>
+    return(
+        <section>
             <h2>Add Smurf</h2>
             <form>
                 <div className="form-group">
@@ -25,9 +28,9 @@ class AddForm extends React.Component {
                 </div>
                 <button>Submit Smurf</button>
             </form>
-        </section>);
-    }
-}
+        </section>
+    );
+};
 
 export default AddForm;
 
