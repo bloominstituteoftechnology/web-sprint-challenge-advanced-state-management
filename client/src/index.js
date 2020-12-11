@@ -1,13 +1,24 @@
+// React imports
 import React from "react";
 import ReactDOM from "react-dom";
 
+// Redux imports
+import { applyMiddleware, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+// App/Local imports
 import "./index.css";
 import App from "./App";
+import { reducer } from './reducers';
 
 const rootElement = document.getElementById("root");
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <App />, 
+    <Provider store={store}>
+        <App />
+    </Provider>, 
     rootElement
 );
 

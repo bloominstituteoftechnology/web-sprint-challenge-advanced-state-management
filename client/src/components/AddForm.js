@@ -1,6 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { fetchSmurfs, addSmurfs } from './../actions';
 
 class AddForm extends React.Component {
+
+
 
     render() {
         return(<section>
@@ -8,10 +13,16 @@ class AddForm extends React.Component {
             <form>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label><br/>
-                    <input onChange={this.handleChange} name="name" id="name" />
+                    <input 
+                        onChange={this.handleChange}
+                        name="name"
+                        id="name"
+                    />
                 </div>
 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
+                <div data-testid="errorAlert" className="alert alert-danger" role="alert">
+                    Error: 
+                </div>
                 <button>Submit Smurf</button>
             </form>
         </section>);

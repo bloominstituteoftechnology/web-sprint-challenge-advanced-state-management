@@ -1,8 +1,7 @@
 // may import actions here
-import smurfData from '../../../server/server';
 
 export const initialState = {
-    smurfs: smurfData,
+    smurfs: [],
     appLoading: false, 
     error: ''
 };

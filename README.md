@@ -69,8 +69,8 @@ Your finished project must include all of the following requirements:
 * Complete the tasks listed within:
   *  [x] - `./reducers/index.js`
   *  [x] - `./actions/index.js`
-  *  [ ] - `./index.js`
-  *  [ ] - `./App.js`
+  *  [x] - `./index.js`
+  *  [x] - `./App.js`
   *  [ ] - `./components/AddForm.js`
   *  [ ] - `./components/Smurf.js`
   *  [ ] - `./components/SmurfDisplay.js`
