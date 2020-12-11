@@ -48,7 +48,7 @@ class AddForm extends React.Component {
                 </div>
 
                
-                <button>Submit Smurf</button>
+                <button>Submit </button>
             </form>
             </div>
         );
