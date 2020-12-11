@@ -1,34 +1,39 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {getSmurfs} from '../actions/index';
-import Smurf from '../components/Smurf';
-export class SmurfDisplay extends React.Component {
-    state = {
-        smurfs: this.props.smurfs,
-        error: this.props.error,
-        appLoading: this.props.appLoading
-        
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getSmurfs } from "../actions/index";
+import Smurf from "../components/Smurf";
+function SmurfDisplay({ getSmurfs, smurf, error, appLoading }) {
+  useEffect(() => {
+    getSmurfs();
+  }, []);
+  if (error) {
+    return <h2>Error! {error}</h2>;
+  }
+  if (appLoading) {
+    return <h2>Loading data...</h2>;
+  }
 
-    }
-   componentDidMount(props){
-      getSmurfs()
-   }
-    render() {
-    {this.props.smurfs ? <div>{this.props.smurfs.map((item)=>{<Smurf key={item.id} smurfs={item.smurfs}/>})}</div> : <div><h2>No Smurfs to display</h2></div> }
-        return(
-            
-        )
-    }
+  return smurf ? (
+    <div>
+      {smurf.map((item, idx) => (
+        <Smurf key={idx} item={item} />
+      ))}
+    </div>
+  ) : (
+    <div>
+      <h2>No Smurfs to display</h2>
+    </div>
+  );
 }
 
-const mapStateToProps = state => {
-    return({
-        smurfs: state.smurfs,
-        error: state.error,
-        appLoading: state.appLoading
-    })
-}
-export default connect(mapStateToProps)(SmurfDisplay)
+const mapStateToProps = (state) => {
+  return {
+    smurf: state.smurf,
+    error: state.error,
+    appLoading: state.appLoading,
+  };
+};
+export default connect(mapStateToProps, { getSmurfs })(SmurfDisplay);
 
 //Task List:
 //1. Import in all needed components and library methods.

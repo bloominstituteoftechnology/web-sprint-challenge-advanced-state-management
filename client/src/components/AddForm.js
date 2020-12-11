@@ -1,24 +1,34 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import { postSmurf } from "../actions/index";
+function AddForm(props, { addSmurf }) {
+  const handleName = () => {
+    postSmurf();
+  };
 
-class AddForm extends React.Component {
+  return (
+    <section>
+      <h2>Add Smurf</h2>
+      <form>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <br />
+          <input onChange={props.handleChange} name="name" id="name" />
+        </div>
 
-    render() {
-        return(<section>
-            <h2>Add Smurf</h2>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label><br/>
-                    <input onChange={this.handleChange} name="name" id="name" />
-                </div>
-
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
-                <button>Submit Smurf</button>
-            </form>
-        </section>);
-    }
+        {/* <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div> */}
+        <button onClick={handleName}>Submit Smurf</button>
+      </form>
+    </section>
+  );
 }
+const mapStateToProps = (state) => {
+  return {
+    smurfs: state.smurfs,
+  };
+};
 
-export default AddForm;
+export default connect(mapStateToProps, { postSmurf })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.
