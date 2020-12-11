@@ -33,7 +33,7 @@ export class SmurfDisplay extends React.Component {
 const mapStateToProps = state => {
     return {
         smurfs: state.smurfs,
-        isLoading: state.isLoading,
+        loading: state.loading,
         error: state.error
     }
 }
