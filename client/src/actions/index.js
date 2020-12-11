@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 
 //Task List:
 //1. Add fetch smurfs action: 
@@ -13,3 +13,32 @@ import axios from 'axios';
 //3. Add set error text action:
 //              - return action object setting error text
 //4. Any other actions you deem nessiary to complete application.
+import axios from 'axios';
+
+export const START = "FETCH_START";
+export const SMURFS = "FETCH_SMURF";
+export const ADD_SMURF = "ADD_SMURF";
+export const FAIL = "FETCH_FAIL";
+
+
+export const findSmurf = () => dispatch => {
+    dispatch({ type: START });
+
+    axios
+        .get("http://localhost:3333/smurfs")
+        .then(res => {
+            dispatch({ type: SMURFS, payload: res.data });
+        })
+        .catch(err => dispatch({ type: FETCH_FAIL, payload: error }));
+}
+
+export const addSmurf = (smurfData) => dispatch => {
+    axios
+        .post("http://localhost:3333/smurfs", smurfData)
+        .then(res => {
+            dispatch({ type: ADD_SMURF, payload: smurfData });
+        })
+        .catch(err => dispatch({ type: FAIL, payload: error }));
+}
+
+
