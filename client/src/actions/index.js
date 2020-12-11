@@ -1,4 +1,29 @@
 import axios from 'axios';
+export const FETCHING_DATA_START = "FETCHING_DATA_START";
+export const FETCHING_DATA_SUCCESS = "FETCHING_DATA_SUCCESS";
+export const FETCHING_DATA_FAIL = "FETCHING_DATA_FAIL";
+export const ADD_SMURF = "ADD_SMURF";
+export const HANDLE_ERROR = "HANDLE_ERROR";
+
+export const fetchSmurfs = () => dispatch => {
+    dispatch({type: FETCHING_DATA_START});
+    axios
+        .get("http://localhost:3333/smurfs")
+        .then(res => {
+            dispatch({ type: FETCHING_DATA_SUCCESS, payload: res.data})
+        })
+        .catch(err => {
+            dispatch({type: FETCHING_DATA_FAIL, payload: err.response.message});
+        })
+};
+
+export const addSmurf = (smurf) => {
+    return({ type: ADD_SMURF, payload: smurf});
+}
+
+export const handleError = (error) => {
+    return({ type: HANDLE_ERROR, payload: error})
+}
 
 //Task List:
 //1. Add fetch smurfs action: 
