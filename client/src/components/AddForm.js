@@ -39,6 +39,13 @@ const AddForm = (props) => {
           onChange={handleChange}
           placeholder='Height'
         ></input>
+        <div
+          data-testid='errorAlert'
+          className='alert alert-danger'
+          role='alert'
+        >
+          Error:{" "}
+        </div>
         <button>SUBMIT</button>
       </form>
     </div>
