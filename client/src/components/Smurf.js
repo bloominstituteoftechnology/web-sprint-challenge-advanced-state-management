@@ -6,7 +6,7 @@ import { getSmurfs } from "../actions";
 const Smurf = props => {
     useEffect(() => {
         props.getSmurfs();
-    }, []);
+    }, [props]);
 
     if (props.isFetching) {
         return <h3>Loading...</h3>;
