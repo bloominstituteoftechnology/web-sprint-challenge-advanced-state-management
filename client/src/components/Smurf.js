@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import SmurfDisplay from "./SmurfDisplay";
+import { getSmurfs } from "../actions";
 
-class Smurf extends React.Component {
-    render() {
-        const { smurf } = this.props;
+const Smurf = props => {
+    useEffect(() => {
+        props.getSmurfs();
+    }, []);
 
-        return(<div data-testid="smurf" className="card">
-             <h3>{smurf.name}</h3>
-            <p>Position: {smurf.position}</p>
-         <p>Nickname: {smurf.nickname}</p>
-         <p>Description: {smurf.description}</p>
-        </div>);
+    if (props.isFetching) {
+        return <h3>Loading...</h3>;
     }
-}
+    return (
+        <div>
+            {props.error && (<div>Smurfs!!</div>)}
+            {props.smurfData && props.smurfData.map(info => (
+                <SmurfDisplay key={info.id} info={info} />
+            ))}
+        </div>
+    );
+};
 
-export default Smurf;
+const mapStateToProps = state => {
+    return {
+        smurfData: state.smurfData,
+        isFetching: state.isFetching,
+        error: state.error
+    };
+};
+
+export default connect(mapStateToProps, { getSmurfs })(Smurf);
 
 //Task List:
 //1. Access smurf to be displayed through props.

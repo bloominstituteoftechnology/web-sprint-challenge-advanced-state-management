@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import AddForm from './components/AddForm';
-import SmurfDisplay from './components/SmurfDisplay';
+import Smurf from './components/Smurf';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
@@ -15,7 +15,7 @@ class App extends Component {
         </nav>
         <main>
           <AddForm/>
-          <SmurfDisplay/>
+          <Smurf/>
         </main>
       </div>
     );

@@ -2,7 +2,7 @@ import {
     FETCH_SMURF_DATA,
     ADD_SMURF_SUCCESS,
     SMURF_DATA_FAILURE,
-    ADD_SMURF
+    
 } from '../actions'
 
 export const initialState = {
@@ -31,19 +31,7 @@ export const smurfsReducer = (state=initialState, action)=>{
                   isLoading: false,
                   errors: action.payload,
                 };
-                case ADD_SMURF: 
-                  return {
-                      ...state, 
-                      smurfs: [
-                          ...state.smurfs, 
-                          {
-                              name: action.payload,
-                              height: "5cm",
-                              age: 100,
-                              id: new Date()
-                          }
-                      ]
-                    }
+               
                     default: 
                     return state;
       }
