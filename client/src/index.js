@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import App from "./App";
+import {createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk"
 
-const rootElement = document.getElementById("root");
+let store = createStore([], applyMiddleware(thunk));
 
-ReactDOM.render(
-    <App />, 
-    rootElement
-);
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
 
 //Task List:
 //1. Add in all necessary components and libary methods.

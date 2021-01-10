@@ -1,8 +1,24 @@
 
 export const initialState = {
+    smurfs: [],
+    isLoading:false,
+    error: "App is not working"
 }
 
-const reducer = ()=>{
+const reducer = (state=initialState, action)=>{
+    switch (action.type){
+        case 'FETCH_SMURF_DATA_START':{
+            return {
+                ...state,
+                smurfs: [
+                    ...state.smurfs,
+                    {
+                        is
+                    }
+                ]
+            }
+        }
+    }
 }
 
 export default reducer;
