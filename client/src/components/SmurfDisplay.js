@@ -1,9 +1,10 @@
 import React from 'react';
+import Smurf from './Smurf';
 
 export class SmurfDisplay extends React.Component {
     render() {
         return(<div>
-            
+            <Smurf/>
         </div>)
     }
 }

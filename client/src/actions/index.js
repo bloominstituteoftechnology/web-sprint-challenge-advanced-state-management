@@ -25,8 +25,18 @@ export const getSmurfs = () =>(dispatch) =>{
  
 }
 
- export const addNewSmurf =(smurf)=>{
-    return {type: ADD_SMURF, payload: smurf}
+ export const addNewSmurf =(newSmurf)=>{
+    return dispatch => {
+        dispatch({ type: ADD_SMURF });
+        axios
+            .post("http://localhost:3333/smurfs", newSmurf)
+            .then(response =>
+                dispatch({ type:ADD_SMURF_SUCCESS , payload: response.data })
+            )
+            .catch(error =>
+                dispatch({ type: SMURF_DATA_FAILURE, payload: error.response })
+            );
+    };
  }
  
 
