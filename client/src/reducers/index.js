@@ -11,7 +11,7 @@ export const initialState = {
     error: ""
 }
 
-const reducer = (state=initialState, action)=>{
+export const smurfsReducer = (state=initialState, action)=>{
     switch (action.type){
         case FETCH_SMURF_DATA:
             return {
@@ -31,16 +31,29 @@ const reducer = (state=initialState, action)=>{
                   isLoading: false,
                   errors: action.payload,
                 };
-                case ADD_SMURF:
-                    return {
-                        payload: smurf
+                case ADD_SMURF: 
+                  return {
+                      ...state, 
+                      smurfs: [
+                          ...state.smurfs, 
+                          {
+                              name: action.payload,
+                              height: "5cm",
+                              age: 100,
+                              id: new Date()
+                          }
+                      ]
                     }
-          default:
-            return state;
-        }
-      };
+                    default: 
+                    return state;
+      }
+      
+      
+    }
+    
+  
 
-export default reducer;
+export default smurfsReducer;
 
 //Task List:
 //1. Add in the initialState needed to hold: 
