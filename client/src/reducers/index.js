@@ -1,25 +1,44 @@
+import {
+    FETCH_SMURF_DATA,
+    ADD_SMURF_SUCCESS,
+    SMURF_DATA_FAILURE,
+    ADD_SMURF
+} from '../actions'
 
 export const initialState = {
     smurfs: [],
     isLoading:false,
-    error: "App is not working"
+    error: ""
 }
 
 const reducer = (state=initialState, action)=>{
     switch (action.type){
-        case 'FETCH_SMURF_DATA_START':{
+        case FETCH_SMURF_DATA:
             return {
-                ...state,
-                smurfs: [
-                    ...state.smurfs,
-                    {
-                        is
+              ...state,
+              isLoading: true,
+              errors: ""
+            };
+          case ADD_SMURF_SUCCESS:
+            return {
+              ...state,
+              isLoading: false,
+              smurfs: action.payload
+            };
+            case SMURF_DATA_FAILURE:
+                return {
+                  ...state,
+                  isLoading: false,
+                  errors: action.payload,
+                };
+                case ADD_SMURF:
+                    return {
+                        payload: smurf
                     }
-                ]
-            }
+          default:
+            return state;
         }
-    }
-}
+      };
 
 export default reducer;
 
