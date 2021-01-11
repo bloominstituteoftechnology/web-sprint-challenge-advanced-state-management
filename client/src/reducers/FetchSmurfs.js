@@ -1,8 +1,21 @@
+import * as actions from "../actions/GetDataCreators";
 
 export const initialState = {
+    smurfs: [],
+    loading: false,
+    error: "",
 }
 
-const reducer = ()=>{
+const reducer = (state = initialState, action) => {
+    switch(action.type) {
+        case actions.FETCH_SMURFS:
+            return {...state, loading: true};
+        case actions.FETCH_SMURFS_SUCCESS:
+            return {...state, error:"", smurfs: action.payload};
+        case actions.FETCH_SMURFS_FAIL:
+            return {...state, error: action.payload};
+        default: return state;
+    }
 }
 
 export default reducer;

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as actions from "./GetDataCreators.js"
 
 //Task List:
 //1. Add fetch smurfs action: 
@@ -13,3 +14,21 @@ import axios from 'axios';
 //3. Add set error text action:
 //              - return action object setting error text
 //4. Any other actions you deem nessiary to complete application.
+
+const GetSmurfs = (dispatch) => {
+    dispatch({type: actions.FETCH_SMURFS});
+    axios.get('http://localhost:3333/smurfs')
+    .then(res => {
+        dispatch({type: actions.FETCH_SMURFS_SUCCESS, payload: res.data})
+    })
+    .catch( error => {
+        dispatch({type: actions.FETCH_SMURFS_FAIL,
+            payload:
+            error.response && error.response.data.message
+              ? error.response.data.message
+              : error.message,
+        })
+    })
+}
+
+export default GetSmurfs;
