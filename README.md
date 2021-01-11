@@ -60,8 +60,8 @@ You are expected to be able to answer questions in these areas. Your responses c
 ### Task 2: Project Requirements
 Your finished project must include all of the following requirements:
 
-* [ ] Plan and implement how you are going to manage your state for your application
-* [ ] You _must_ use Redux as your state management system
+* [x] Plan and implement how you are going to manage your state for your application
+* [x] You _must_ use Redux as your state management system
 * [ ] Complete the tasks listed within:
   * `./reducers/index.js`
   * `./actions/index.js`
