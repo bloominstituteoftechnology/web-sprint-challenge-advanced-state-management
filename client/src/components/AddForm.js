@@ -1,14 +1,38 @@
+import axios from 'axios';
 import React, {useState} from 'react';
+import {UpdateSmurfs} from "../actions/GetSmurfs";
+import {useDispatch } from "react-redux";
 
-function AddForm() {
+const mapStateToProps = (state) => {
+    return state;
+}
+
+const mapDispatchToProps = {UpdateSmurfs}
+
+function AddForm(state) {
 
         const [name, setName] = useState("");
         const [position, setPosition] = useState("");
         const [nickname, setNickname] = useState("");
         const [description, setDescription] = useState("");
+
+        const dispatch = useDispatch();
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const newSmurf = {
+                id: Date.now(),
+                name,
+                position,
+                nickname,
+                description, 
+            }
+            dispatch({type: UpdateSmurfs(newSmurf)})
+            console.log(state)
+        }
         return(<section>
             <h2>Add Smurf</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Name:</label><br/>
                     <input onChange={(e) => setName(e.target.value)} name="name" id="name" />

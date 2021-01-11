@@ -31,4 +31,14 @@ const GetSmurfs = (dispatch) => {
     })
 }
 
+export const UpdateSmurfs =(newSmurf) => (dispatch) => {
+    axios.post('http://localhost:3333/smurfs', {
+        headers: newSmurf
+    })
+    .then(res => {
+        dispatch({type: actions.ADD_NEW_SMURF, payload: res.data})
+    })
+}
+
 export default GetSmurfs;
+

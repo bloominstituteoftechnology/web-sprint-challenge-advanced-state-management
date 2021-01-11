@@ -14,6 +14,8 @@ const reducer = (state = initialState, action) => {
             return {...state, error:"", smurfs: action.payload};
         case actions.FETCH_SMURFS_FAIL:
             return {...state, error: action.payload};
+        case actions.ADD_NEW_SMURF:
+            return {...state, error:"", smurfs:[...state.smurfs, action.payload]}
         default: return state;
     }
 }

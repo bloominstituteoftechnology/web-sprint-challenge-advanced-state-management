@@ -1,3 +1,2 @@
-export const NEW_SMURF_REQUEST = "NEW_SMURF_REQUEST";
-export const NEW_SMURF_SUCCESS = "NEW_SMURF_SUCCESS";
-export const NEW_SMURF_FAIL = "NEW_SMURF_FAIL";
+export const ADD_NEW_SMURF = "ADD_NEW_SMURF"; // moved to getdatacreators
+export const ADD_NEW_SMURF_FAIL = "ADD_NEW_SMURF_FAIL"; // Can not use because it throws an error. 
