@@ -1,0 +1,8 @@
+export const FETCH_SMURFS = "FETCH_SMURFS";
+export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
+export const FETCH_SMURFS_FAIL = "FETCH_SMURFS_FAIL";
+
+export const ADD_NEW_SMURF = "ADD_NEW_SMURF";
+
+
+
