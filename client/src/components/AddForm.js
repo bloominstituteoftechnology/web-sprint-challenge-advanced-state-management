@@ -7,6 +7,8 @@ const mapStateToProps = (state) => {
     return state;
 }
 
+
+
 const mapDispatchToProps = {UpdateSmurfs}
 
 function AddForm(state) {
@@ -27,8 +29,8 @@ function AddForm(state) {
                 nickname,
                 description, 
             }
-            dispatch({type: UpdateSmurfs(newSmurf)})
-            console.log(state)
+            axios.post('http://localhost:3333/smurfs', newSmurf)
+            .then(res => console.log(res.data))
         }
         return(<section>
             <h2>Add Smurf</h2>
@@ -44,7 +46,8 @@ function AddForm(state) {
                     <input onChange={(e) => setDescription(e.target.value)} name="description" id="description" />
                 </div>
 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
+                {state.error ? <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div> : ""}
+                
                 <button>Submit Smurf</button>
             </form>
         </section>);

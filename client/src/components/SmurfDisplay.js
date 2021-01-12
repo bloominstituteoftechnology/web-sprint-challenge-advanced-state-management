@@ -15,7 +15,7 @@ function SmurfDisplay(state) {
     useEffect(() => {
         dispatch(GetSmurfs)
         console.log(state.smurfs)
-    }, [])
+    }, [state])
     console.log("state", state.smurfs)
 
     return (
