@@ -1,54 +1,76 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
-import { addSmurf, setError } from "../actions/index";
+import { addSmurf, setError } from "../actions/";
 
 class AddForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
             name: "",
             position: "",
             nickname: "",
             description: ""
         };
-    }
 
     handleChange = (e) => {
         this.setState({ ...this.state, [e.target.name]: e.target.value })
     };
 
-    handleSubmit = e => {
+    handleSubmit = (e) => {
         e.preventDefault();
 
         const checkName = this.props.smurfs.filter(smurf => smurf.name === this.state.name);
             if (checkName.length > 0){
-                return this.props.setError( 'Smurf name is already assigned');
+                this.setState({
+                    ...this.state
+                })
+                this.props.setError( 'Must include a name');
+                return
             }
 
             if (this.state.name === '' ){
-                return this.props.setError( 'Must include a name');
+                this.setState({
+                    ...this.state
+                })
+                this.props.setError( 'Smurf name is already assigned');
             }
 
-            if(this.state.position === '' ){
-                return this.props.setError( 'A position must be included');
+            else if(this.state.position === '' ){
+                this.setState({
+                    ...this.state
+                })
+                this.props.setError( 'A position must be included');
             }
 
-            if (this.state.nickname === ''){
-                return this.props.setError( 'A nickname must be included');
+            else if (this.state.nickname === ''){
+                this.setState({
+                    ...this.state
+                })
+                this.props.setError( 'A nickname must be included');
             }
-                this.props.addSmurf(this.state);
+            else {
+                const newSmurf = {
+                    id: Date.now(),
+                    name: this.state.name,
+                    position: this.state.position,
+                    nickname: this.state.nickname,
+                    description: this.state.description
+                }
+
+                this.props.addSmurf(newSmurf);
                 this.setState({
                     name: "",
                     position: "",
                     nickname: "",
-                    description: ""
+                    description: "",
+                    error: ""
                 });
+            }
     };
 
     render() {
         return (<section>
             <h2>Add Smurf</h2>
-            <form >
+            <form onSubmit={this.handleSubmit}>
+
                 <div className="form-group">
                     <label htmlFor="name">Name:</label><br />
                     <input onChange={this.handleChange} name="name" id="name" value={this.state.name} />
@@ -71,9 +93,10 @@ class AddForm extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         smurfs: state.smurfs,
+        isLoading: state.isLoading,
         error: state.error
     }
 }

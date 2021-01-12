@@ -4,29 +4,25 @@ import { fetchSmurfs } from "../actions";
 import  Smurf  from "./Smurf";
 
 export class SmurfDisplay extends React.Component {
-    constructor(props) {
-        super (props);
-    }
 
     componentDidMount() {
         this.props.fetchSmurfs();
     }
 
     render() {
-        return !this.props.smurfs ? 
-        (<h1>Loading</h1> ) : (
-                <div>
-                    {this.props.smurfs.map(smurf => {
-                        <Smurf key={smurf.id} smurf={smurf} />
-                    })}
-                </div>
-        )
+        return (
+        <div>{this.props.isLoading ? <p>The Smurfs are heading this way!</p>: <div>
+           {this.props.smurfs.map(smurf => (<Smurf key={smurf.id} smurf={smurf} />))}
+        </div>}
+      </div>)
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         smurfs: state.smurfs,
+        isLoading: state.loading, 
+        error: state.error
     }
 }
 

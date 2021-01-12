@@ -1,38 +1,43 @@
 import axios from 'axios';
 
-export const FETCHING_START = 'FETCHING_START';
-export const FETCHING_SUCCESS = 'FETCHING_SUCCESS';
-export const FETCHING_FAILURE = 'FETCHING_FAILURE';
-export const ADD_SMURF = 'ADD_SMURF';
-export const ERROR = 'ERROR';
-
-const headers = { 
-    Accept: 'Application/json'
-}
+export const FETCH_SMURF_START = 'FETCH_SMURF_START';
+export const FETCH_SMURF_SUCCESS = 'FETCH_SMURF_SUCCESS';
+export const FETCH_SMURF_ERROR = 'FETCH_SMURF_ERROR';
+export const ADD_SMURF_START = 'ADD_SMURF_START';
+export const ADD_SMURF_SUCCESS = 'ADD_SMURF_SUCCESS';
+export const ADD_SMURF_ERROR = 'ADD_SMURF_ERROR';
+export const ADD_FORM_ERROR = 'ADD_FORM_ERROR';
 
 export const fetchSmurfs = () => (dispatch) => {
-    dispatch({ type: "FETCH_SMURF_START" });
-
-    axios.get("http://localhost:3333/smurfs", { headers: headers})
-        .then((res) => {
-            dispatch({ type: "FETCH_SMURF_SUCCESS", payload: res.data });
-            console.log(res);
-        })
-        .catch(err => {
-            dispatch({ type: "FETCH_SMURF_ERROR", payload: err });
-            console.log(err);
-        })
+  dispatch({ type: 'FETCH_SMURF_START'});
+  axios.get('http://localhost:3333/smurfs')
+  .then((res) => {
+    console.log(res);
+    dispatch({ type: 'FETCH_SMURF_SUCCESS', payload: res.data });
+  })
+  .catch((err) => {
+    console.log(err);
+    dispatch({ type: 'FETCH_SMURF_ERROR', payload: err})
+  })
 }
 
-export const addSmurf = (newSmurf) => (dispatch) => {
-    dispatch({ type: "ADD_SMURF", payload: newSmurf });
-
-
-export const setError = (err) =>  (dispatch) => {
-    return ({ type: "SET_ERROR", payload: err });
+export const addSmurf = (smurf) => (dispatch) => {
+  console.log("adding:", smurf);
+  dispatch({ type: 'ADD_SMURF_START'});
+  axios.post('http://localhost:3333/smurfs', smurf)
+  .then((res) => {
+    console.log(res);
+    dispatch({ type: 'ADD_SMURF_SUCCESS', payload: res.data });
+  })
+  .catch((err) => {
+    console.log(err);
+    dispatch({ type: 'ADD_SMURF_ERROR', payload: err })
+  })
 }
 
-export default fetchSmurfs;
+export const setError = (error) => {
+  return ({ type: "ADD_FORM_ERROR", payload: error })
+}
 
 //Task List:
 //1. Add fetch smurfs action: 

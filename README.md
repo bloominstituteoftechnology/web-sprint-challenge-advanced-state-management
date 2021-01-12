@@ -62,7 +62,7 @@ Your finished project must include all of the following requirements:
 
 * [x] Plan and implement how you are going to manage your state for your application
 * [x] You _must_ use Redux as your state management system
-* [ ] Complete the tasks listed within:
+* [x] Complete the tasks listed within:
   * `./reducers/index.js`
   * `./actions/index.js`
   * `./index.js`
@@ -70,7 +70,7 @@ Your finished project must include all of the following requirements:
   * `./components/AddForm.js`
   * `./components/Smurf.js`
   * `./components/SmurfDisplay.js`
-* [ ] You completed application should do the following:
+* [x] You completed application should do the following:
   * Fetch and display data from the included server code on mounting.
   * Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
   * Allow new smurfs to be added to the list when the submit smurf button is pressed.
