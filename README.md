@@ -37,6 +37,10 @@ You are expected to be able to answer questions in these areas. Your responses c
 - [ ] `fork & clone` this repository.
 - [ ] `cd` into the forked copy of this repository.
 
+**Setting up the CodeGrade webhook**
+
+Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begin.
+
 #### Setup Client Code
 - [ ] **LOOK** at your `src` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
 - [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
