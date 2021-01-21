@@ -36,20 +36,73 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 - [ ] `fork & clone` this repository.
 - [ ] `cd` into the forked copy of this repository.
-- [ ] `cd` into the server folder of this repository.
-
-#### Setup Server Code
-- [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
 
 #### Setup Client Code
-- [ ] `cd ../client` into the client folder of this repository.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [ ] **LOOK** at your `src` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
 - [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
 - [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
-**LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
+**LOOK** at all the files you've been given for this project. Note that you will be interacting with an api during this project. Below is documentation on how to interact with the **API**.
+
+#### Resource: API documentation 
+
+##### GET '/smurfs'
+
+- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+- [ ] Double check that your response from the server is an array of smurfs.
+
+```js
+[
+  {
+    id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    name:'Poppa Smurf',
+    position:'Village Leader',
+    nickname: 'Pops',
+    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+  }
+];
+```
+
+##### POST '/smurfs'
+
+- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all five fields. `name`, `position`, and `nickname`, `description`.
+
+Example of the shape of data to be sent to the `POST` endpoint. Note that id does not need to be sent and will be generated on the server:
+
+```js
+{
+  name:'Poppa Smurf',
+  position:'Village Leader',
+  nickname: 'Pops',
+  description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+}
+```
+
+- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
+
+Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
+
+**HINT** if you are going to be working on Stretch Problem, you'll need to use that unique `id`.
+
+Example of object created in Smurf DB:
+
+```js
+[
+  {
+    name:'Poppa Smurf',
+    position:'Village Leader',
+    nickname: 'Pops',
+    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+  },
+  {
+    id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
+    name:'Smurfette',
+    position:'Beautician',
+    nickname: 'Smurfette',
+    description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
+  }
+];
+```
 
 ### Task 2: Project Requirements
 Your finished project must include all of the following requirements:
@@ -76,63 +129,6 @@ Your finished project must include all of the following requirements:
         - DO NOT REMOVE ANY data-testid FIELDS FROM THE CODE. These fields are used for internal grading of your sprints. While we don't recommend using testid in most cases, it is necessary our grading systems currently.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
-
-#### Resource: API documentation 
-
-##### GET '/smurfs'
-
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
-
-```js
-[
-  {
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0
-  }
-];
-```
-
-##### POST '/smurfs'
-
-- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
-
-Example of the shape of data to be sent to the `POST` endpoint:
-
-```js
-{
-  name: 'Brainey',
-  age: 200,
-  height: '5cm'
-}
-```
-
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
-
-Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
-
-**HINT** if you are going to be working on Stretch Problem, you'll need to use that unique `id`.
-
-Example of object created in Smurf DB:
-
-```js
-[
-  {
-    name: "Brainey",
-    age: 200,
-    height: "5cm",
-    id: 0
-  },
-  {
-    name: "Sleepy",
-    age: 200,
-    height: "5cm",
-    id: 1
-  }
-];
-```
 
 
 ### Task 3: Stretch Goals 
