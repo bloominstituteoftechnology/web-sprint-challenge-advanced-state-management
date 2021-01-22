@@ -33,7 +33,7 @@ export const smurfData = () => dispatch => {
         })
         .catch(err => dispatch({ type: FAIL, payload: err }));
 }
-
+   
 export const addNewSmurf = (smurfData) => dispatch => {
     axios
         .post("http://localhost:3333/smurfs", smurfData)
