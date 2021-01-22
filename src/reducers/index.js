@@ -8,6 +8,7 @@ import {
 export const initialState = {
   smurfs: [],
   newSmurf: {
+    id: Math.floor(Math.random()),
     name: '',
     nickname: '',
     position: '',
@@ -26,12 +27,7 @@ export const reducer = (state = initialState, action) => {
     case FETCH_SMURF_FAIL:
       return { ...state, error: action.payload };
     case ADD_SMURF:
-      const newSmurf = {
-        name: action.payload,
-        position: action.payload,
-        nickname: action.payload,
-        description: action.payload,
-      };
+      const newSmurf = action.payload;
       return {
         ...state,
         smurfs: [...state.smurfs, newSmurf],

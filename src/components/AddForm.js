@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addSmurf } from '../actions/index';
+import { addSmurf, getSmurf } from '../actions/index';
 
 class AddForm extends React.Component {
   constructor() {
@@ -12,7 +12,9 @@ class AddForm extends React.Component {
       description: '',
     };
   }
-
+  componentDidMount() {
+    this.props.getSmurf();
+  }
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ ...this.state, [name]: value });
@@ -66,7 +68,7 @@ class AddForm extends React.Component {
   }
 }
 
-export default connect(() => {}, { addSmurf })(AddForm);
+export default connect(() => {}, { addSmurf, getSmurf })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.
