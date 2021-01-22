@@ -1,6 +1,13 @@
 import React from 'react';
 
 class AddForm extends React.Component {
+    state={
+        name:"",
+        nickname:"",
+        description:"",
+        postion:""
+ 
+    }
 
     render() {
         return(<section>
@@ -9,6 +16,14 @@ class AddForm extends React.Component {
                 <div className="form-group">
                     <label htmlFor="name">Name:</label><br/>
                     <input onChange={this.handleChange} name="name" id="name" />
+                    <label htmlFor="description">Description:</label>
+                    <input onChange={this.handleChange} name="description" id="description" />
+                    <label htmlFor="nickname">NickName:</label>
+                    <input onChange={this.handleChange} name="nickname" id="nickname" />
+                    <label htmlFor = "position">Position:</label>
+                    <input onChange={this.handleChange} name="position" id=="position"/>
+                    
+                </div>
                 </div>
 
                 <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>

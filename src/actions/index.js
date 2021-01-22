@@ -1,5 +1,46 @@
 import axios from 'axios';
+import axios from 'axios';
 
+export const FETCH_SMURFS_START ="FETCH__SMURFS_START"
+export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS"
+export const FETCH_SMURFS_FAILURE ="FETCH_SMURFS_FAILURE"
+export const ADD_SMURF_START = "ADD_SMURF_START"
+export const ADD_SMURF_SUCCESS = "ADD_SMURF_SUCCESS"
+export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE"
+
+export const getSmurfData = () =>dispatch=>{
+
+    dispatch({type:FETCH_SMURFS_START})
+        console.log(FETCH_SMURFS_START)
+   axios.get(' http://localhost:3333/smurfs')
+      .then((res)=>{
+        //   console.log(res.data)
+          dispatch({type:FETCH_SMURFS_SUCCESS, payload:res.data.message})
+
+      })
+          
+      .catch((err)=> {
+          dispatch({type:FETCH_SMURFS_FAILURE, payload:err.message})
+      })
+
+}
+
+export const putSmurfData = () =>dispatch=>{
+
+    dispatch({type:ADD_SMURF_START})
+        console.log(ADD_SMURF_START)
+   axios.put(' http://localhost:3333/smurfs')
+      .then((res)=>{
+        //   console.log(res.data)
+          dispatch({type:ADD_SMURF_SUCCESS, payload:res.data.message})
+
+      })
+          
+      .catch((err)=> {
+          dispatch({type:ADD_SMURF_FAILURE, payload:err.message})
+      })
+
+}
 //Task List:
 //1. Add fetch smurfs action: 
 //              - fetch and return initial list of smurfs
