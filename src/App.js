@@ -1,27 +1,14 @@
-import React, { Component } from "react";
-
-import AddForm from './components/AddForm';
-import SmurfDisplay from './components/SmurfDisplay';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 import "./App.css";
+import SmurfForm from "./SmurfForm";
 
-class App extends Component {
-  
-  render() {
-    return (
-      <div className="App">
-        <nav className="navbar navbar-dark bg-primary">
-          <a className="navbar-brand">Smurf Village Database</a>
-        </nav>
-        <main>
-          <AddForm/>
-          <SmurfDisplay/>
-        </main>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <SmurfForm />
+    </div>
+  );
+};
 
 export default App;
 
