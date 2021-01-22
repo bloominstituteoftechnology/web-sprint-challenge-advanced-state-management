@@ -1,8 +1,48 @@
-
+import {GET_SMURF_START, GET_SMURF_SUCCESS, GET_SMURF_FAIL, POST_SMURF_START, POST_SMURF_SUCCESS, POST_SMURF_FAIL} from "../actions/index"
 export const initialState = {
+    smurfs: [],
+    isFetching: false,
+    isPosting: false,
+    error: ''
 }
 
-const reducer = ()=>{
+const reducer = (state = initialState, action) => {
+    switch(action.type){
+        case(GET_SMURF_START):
+            return({
+                ...state,
+                isFetching: true,
+            })
+        case(GET_SMURF_SUCCESS):
+            return({
+                ...state,
+                smurfs: [...action.payload],
+                isFetching: false,
+            })
+        case(GET_SMURF_FAIL):
+            return({
+                ...state,
+                isFetching: false,
+                error: " You done Smur*ed up "
+            })
+        case(POST_SMURF_START):
+            return({
+                ...state,
+                isPosting: true,
+            })
+        case(POST_SMURF_SUCCESS):
+            return({
+                ...state,
+                smurfs: [...action.payload],
+                isPosting: false,
+            })
+        case(POST_SMURF_FAIL):
+            return({
+                ...state,
+                isPosting: false,
+                error: 'Could not post'
+            })
+    }
 }
 
 export default reducer;

@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+export const GET_SMURF_START = "GET_SMURF_START"
+export const GET_SMURF_SUCCESS = "GET_SMURF_SUCCESS"
+export const GET_SMURF_FAIL = "GET_SMURF_FAIL"
+
+export const POST_SMURF_START = "POST_SMURF_START"
+export const POST_SMURF_SUCCESS = "POST_SMURF_SUCCESS"
+export const POST_SMURF_FAIL = "POST_SMURF_FAIL"
 //Task List:
 //1. Add fetch smurfs action: 
 //              - fetch and return initial list of smurfs
@@ -13,3 +20,27 @@ import axios from 'axios';
 //3. Add set error text action:
 //              - return action object setting error text
 //4. Any other actions you deem nessiary to complete application.
+
+export const getSmurf = () => (dispatch) => {
+    dispatch({type: GET_SMURF_START});
+        axios  
+            .get('http://localhost:3333/smurfs')
+            .then((res) => {
+                dispatch({type: GET_SMURF_SUCCESS, payload: res.data})
+            })
+            .catch(err => {
+                dispatch({type: GET_SMURF_FAIL, payload: err.response})
+            })
+}
+
+export const postSmurf = () => (dispatch) => {
+    dispatch({type: POST_SMURF_START});
+        axios  
+            .post('http://localhost:3333/smurfs')
+            .then((res) => {
+                dispatch({type: POST_SMURF_SUCCESS, payload: res.data})
+            })
+            .catch(err => {
+                dispatch({type: POST_SMURF_FAIL, payload: err.response})
+            })
+}
