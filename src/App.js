@@ -13,6 +13,7 @@ class App extends Component {
       <div className="App">
         <nav className="navbar navbar-dark bg-primary">
           <a className="navbar-brand">Smurf Village Database</a>
+          
         </nav>
         <main>
           <AddForm/>
