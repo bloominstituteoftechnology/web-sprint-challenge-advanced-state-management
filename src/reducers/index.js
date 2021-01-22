@@ -6,12 +6,13 @@ export const initialState = {
     error: ''
 }
 
-const reducer = (state = initialState, action) => {
+ export const reducer = (state = initialState, action) => {
     switch(action.type){
         case(GET_SMURF_START):
             return({
                 ...state,
                 isFetching: true,
+                error: ''
             })
         case(GET_SMURF_SUCCESS):
             return({
@@ -40,12 +41,13 @@ const reducer = (state = initialState, action) => {
             return({
                 ...state,
                 isPosting: false,
-                error: 'Could not post'
+                error: "You smurfed up"
             })
+        default:
+            return state;
     }
 }
 
-export default reducer;
 
 //Task List:
 //1. Add in the initialState needed to hold: 
