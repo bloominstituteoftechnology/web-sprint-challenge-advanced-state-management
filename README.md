@@ -52,7 +52,7 @@ Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begi
 
 ##### GET '/smurfs'
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `http:/localhost:3333/smurfs`.
 - [ ] Double check that your response from the server is an array of smurfs.
 
 ```js
