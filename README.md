@@ -144,7 +144,7 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-Follow these steps for completing your project.
+Follow these steps for completing your project
 
 - [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your team lead as a reviewer on the pull-request
