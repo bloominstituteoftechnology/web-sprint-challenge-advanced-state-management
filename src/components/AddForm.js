@@ -6,22 +6,21 @@ class AddForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      formData: {
-        name: '',
-        position: '',
-        nickname: '',
-        description: '',
-      },
+      name: '',
+      position: '',
+      nickname: '',
+      description: '',
     };
   }
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ ...this.state.formData, [name]: value });
+    this.setState({ ...this.state, [name]: value });
+    console.log(this.state);
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addSmurf();
+    this.props.addSmurf(this.state);
   };
   render() {
     return (
