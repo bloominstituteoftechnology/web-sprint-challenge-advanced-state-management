@@ -1,18 +1,36 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import { getSmurfData, putSmurfData } from "../actions";
 
-export class SmurfDisplay extends React.Component {
+
+ class SmurfDisplay extends React.Component {
+   
+
+     componentDidMount(){
+         getSmurfData()
+         putSmurfData()
+     }
+    
+     if(error) {
+         return <h2>We have an Error: {error}</h2>
+     }
+
+     
+
+     
+
     render() {
-        return(<div>
-            
-        </div>)
+        return (
+            <div>
+                
+            </div>
+        )
     }
 }
-
-export default SmurfDisplay;
-
-//Task List:
-//1. Import in all needed components and library methods.
-//2. Connect all needed redux state props and action functions to the component before exporting.
-//3. Fetch all smurfs when the component first mounts.
-//4. Render loading text or graphic if the application is currently loading.
-//5. Render a list of all Smurfs using the Smurf component if the application is not currently loading.
+const mapStateToProps = (state) => {
+    return{
+        smurfData:state.smurfData,
+        newSmurfData:state.newSmurfData
+    }
+}
+export default connect(mapStateToProps,{})(SmurfDisplay)

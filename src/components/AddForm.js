@@ -1,39 +1,70 @@
-import React from 'react';
-
+import React from "react";
+import { connect } from "react-redux"
 class AddForm extends React.Component {
-    state={
-        name:"",
-        nickname:"",
-        description:"",
-        postion:""
- 
+  state = 
+    {
+      id: Date.now(),
+      name: "",
+      nickname: "",
+      description: "",
+      position: "",
     }
+  
 
-    render() {
-        return(<section>
-            <h2>Add Smurf</h2>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label><br/>
-                    <input onChange={this.handleChange} name="name" id="name" />
-                    <label htmlFor="description">Description:</label>
-                    <input onChange={this.handleChange} name="description" id="description" />
-                    <label htmlFor="nickname">NickName:</label>
-                    <input onChange={this.handleChange} name="nickname" id="nickname" />
-                    <label htmlFor = "position">Position:</label>
-                    <input onChange={this.handleChange} name="position" id=="position"/>
-                    
-                </div>
-                </div>
+  render() {
+    return (
+      <section>
+        <h2>Add Smurf</h2>
+        <form>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <br />
+            <input onChange={this.handleChange} name="name" id="name" />
+            <label htmlFor="description">Description:</label> <br />
+            <input
+              onChange={this.handleChange}
+              name="description"
+              id="description"
+            />
+            <label htmlFor="nickname">NickName:</label>
+            <br />
+            <input
+              onChange={this.handleChange}
+              name="nickname"
+              id="description"
+            />
+            <label htmlFor="position">Position:</label>
+            <br />
+            <input onChange={this.handleChange} name="position" id="position" />
+          </div>
 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>
-                <button>Submit Smurf</button>
-            </form>
-        </section>);
-    }
+          <div
+            data-testid="errorAlert"
+            className="alert alert-danger"
+            role="alert"
+          >
+            Error:{" "}
+          </div>
+          <button>Submit Smurf</button>
+        </form>
+      </section>
+    );
+  }
+}
+const mapStateToProps = (state) => {
+  return{
+      id:state.id,
+      position:state.position,
+      description:state.description,
+      name:state.name,
+      nickname:state.nickname
+      
+  }
+
+
 }
 
-export default AddForm;
+export default connect(mapStateToProps,{})(AddForm)
 
 //Task List:
 //1. Add in all necessary import components and library methods.

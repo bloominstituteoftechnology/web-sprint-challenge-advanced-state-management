@@ -4,11 +4,23 @@ import { FETCH_SMURFS_START,FETCH_SMURFS_SUCCESS,ADD_SMURF_START,ADD_SMURF_SUCCE
 export const initialState = {
        
         isLoading: false,
-        smurfData : [],
+        smurfData : [{
+            id:"",
+            name:"",
+            position:"",
+            nickname:"",
+            description:""
+
+        }],
         error:"There is an error in Fetching Smurfs",
         isAddingSmurf:false,
-        addingError:"",
-        newSmurfData:[{}],
+        newSmurfData:[{
+            id:"",
+            name:"",
+            position:"",
+            nickname:"",
+            description:""
+        }],
      
         
         }
@@ -66,7 +78,7 @@ export const reducer = (state = initialState,action) =>{
 
 export default reducer;
 
-export default reducer;
+
 
 //Task List:
 //1. Add in the initialState needed to hold: 
