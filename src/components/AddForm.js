@@ -6,12 +6,14 @@ import { putSmurfData } from "../actions";
     class AddForm extends React.Component {
 
         State = {
-            newSmurf:"",
+            newSmurf = {
             description:"",
+            name: "",
             nickname:"",
-            name:"",
-            id:Date.now(),
-            position:""
+            position:"",
+            id:Date.now()
+            }
+         
 
         }
 
@@ -20,7 +22,8 @@ import { putSmurfData } from "../actions";
 
         }
 
-        onSubmit = () =>{
+        onSubmit = (e) =>{
+            e.preventDefault()
             putSmurfData()
         }
 

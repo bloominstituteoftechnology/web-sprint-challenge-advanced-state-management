@@ -21,9 +21,9 @@ import { getSmurfData } from "../actions";
         return (
             
             <div>
-                {this.props.smurfData.map((smurf, index) => (
+                {this.props.smurfData.map((smurf, id) => (
           <div>
-            <h4 key={index}></h4>
+            <h4 key={id}></h4>
             <p>  {smurf.name}</p>
             <p>{smurf.description}</p>
             <p>{smurf.nickname}</p>

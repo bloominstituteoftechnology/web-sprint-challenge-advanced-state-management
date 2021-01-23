@@ -6,11 +6,12 @@ class Smurf extends React.Component {
        
 
         return(<div data-testid="smurf" className="card">
-            { props.smurfData.map(smurf => {
-                  return(
+            { props.smurfData.map(smurf,index) => {
+                  return
 
             <div className="smurf-container">
             <div>
+             <p key={index}</p>
             <p>{smurf.name}</p>
             <p>{smurf.description}</p>
             <p>{smurf.nickname}</p>
@@ -19,11 +20,11 @@ class Smurf extends React.Component {
             </div>
             </div>
 
-                  )
+                  
 
 
 
-           })} 
+           }} 
 
         
         </div>);
