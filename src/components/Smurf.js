@@ -6,7 +6,7 @@ class Smurf extends React.Component {
        
 
         return(<div data-testid="smurf" className="card">
-            { props.smurfData.map(smurf,index) => {
+            { this.props.newSmurfData.map(smurf,index) => {
                   return
 
             <div className="smurf-container">
@@ -32,8 +32,13 @@ class Smurf extends React.Component {
 }
 const mapStateToProps = (state) =>{
     return{
-    newSmurfData:state.newSmurfData,
-    smurfData:state.smurfData
+        newSmurfData:[{
+            id:state.id,
+            name:state.name,
+            position:state.position,
+            nickname:state.nickname,
+            description:state.description
+        }],
     }
 }
 

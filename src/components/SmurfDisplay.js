@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getSmurfData } from "../actions";
+import { getSmurfData, putSmurfData } from "../actions";
 
 
  class SmurfDisplay extends React.Component {
@@ -12,7 +12,9 @@ import { getSmurfData } from "../actions";
      }
     
     
-
+   componentDidUpdate(){
+       putSmurfData()
+   }
      
 
      
@@ -21,13 +23,14 @@ import { getSmurfData } from "../actions";
         return (
             
             <div>
-                {this.props.smurfData.map((smurf, id) => (
+                {this.props.smurfData.map((smurf,index) => (
           <div>
-            <h4 key={id}></h4>
-            <p>  {smurf.name}</p>
+            <h4 key={smurf.id}></h4>
+            <p>  {index}</p>
             <p>{smurf.description}</p>
             <p>{smurf.nickname}</p>
-            <p>{smurf.positon}</p>
+            <p>{smurf.name}</p>
+            <p>{smurf.position}</p>
              
         </div>
         ))}
@@ -38,10 +41,17 @@ import { getSmurfData } from "../actions";
 
 const mapStateToProps = (state) =>{
 return{
-    smurfData:state.smurfData,
+    smurfData : [{
+        id: state.id,
+        name:state.name,
+        position:state.position,
+        nickname: state.nickname,
+        description:state.description
+
+    }],
+    
 
 }
-
 
 
 }

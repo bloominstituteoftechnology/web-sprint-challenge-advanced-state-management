@@ -6,7 +6,7 @@ import { putSmurfData } from "../actions";
     class AddForm extends React.Component {
 
         State = {
-            newSmurf = {
+            
             description:"",
             name: "",
             nickname:"",
@@ -15,7 +15,7 @@ import { putSmurfData } from "../actions";
             }
          
 
-        }
+        
 
       handleChange = (e) => {
             this.setState ={newSmurf:e.target.value}
@@ -73,7 +73,15 @@ import { putSmurfData } from "../actions";
 
 const mapStateToProps = (state) =>{
     return{
-        newSmurf:state.newSmurf,
+      newSmurfData:[{
+        id:state.id,
+        name:state.name,
+        position:state.position,
+        nickname:state.nickname,
+        description:state.description
+    }],
+ 
+        
 
     }
 }
