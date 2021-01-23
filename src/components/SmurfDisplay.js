@@ -19,14 +19,32 @@ import { getSmurfData } from "../actions";
 
     render() {
         return (
+            
             <div>
-                
-            </div>
+                {this.props.smurfData.map((smurf, index) => (
+          <div>
+            <h4 key={index}></h4>
+            <p>  {smurf.name}</p>
+            <p>{smurf.description}</p>
+            <p>{smurf.nickname}</p>
+            <p>{smurf.positon}</p>
+             
+        </div>
+        ))}
+          </div>   
         )
     }
 }
 
+const mapStateToProps = (state) =>{
+return{
+    smurfData:state.smurfData,
 
+}
+
+
+
+}
 
 
 
