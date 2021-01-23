@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getSmurfData, putSmurfData } from "../actions";
+import { getSmurfData } from "../actions";
 
 
  class SmurfDisplay extends React.Component {
@@ -8,12 +8,10 @@ import { getSmurfData, putSmurfData } from "../actions";
 
      componentDidMount(){
          getSmurfData()
-         putSmurfData()
+         
      }
     
-     if(error) {
-         return <h2>We have an Error: {error}</h2>
-     }
+    
 
      
 
@@ -27,10 +25,10 @@ import { getSmurfData, putSmurfData } from "../actions";
         )
     }
 }
-const mapStateToProps = (state) => {
-    return{
-        smurfData:state.smurfData,
-        newSmurfData:state.newSmurfData
-    }
-}
+
+
+
+
+
+
 export default connect(mapStateToProps,{})(SmurfDisplay)

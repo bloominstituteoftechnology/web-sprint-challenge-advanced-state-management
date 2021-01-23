@@ -1,21 +1,35 @@
 import React from "react";
 import { connect } from "react-redux"
+import { putSmurfData } from "../actions";
 class AddForm extends React.Component {
   state = 
     {
+      newSmurf,
       id: Date.now(),
       name: "",
       nickname: "",
       description: "",
-      position: "",
-    }
-  
+      position: ""
 
+
+    }
+    const handleChange = (evt) => {
+        this.setState({newSmurf:evt.target.value})
+        const { name} = evt.target;
+        
+      };
+
+
+      const onSubmit = (evt) => {
+        evt.preventDefault();
+        putSmurfData()
+      };
+    
   render() {
     return (
       <section>
         <h2>Add Smurf</h2>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <br />
@@ -42,10 +56,13 @@ class AddForm extends React.Component {
             data-testid="errorAlert"
             className="alert alert-danger"
             role="alert"
-          >
-            Error:{" "}
+          > 
+          {props.isLoading ? <p>Loading Smurfs...</p> : null }
+
+            Error:{props.error? <p style={{color: "red"}}>{props.error}</p> : null } 
+
           </div>
-          <button>Submit Smurf</button>
+          <button onClick={putSmurfData}>Submit Smurf</button>
         </form>
       </section>
     );

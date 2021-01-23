@@ -6,6 +6,26 @@ class Smurf extends React.Component {
        
 
         return(<div data-testid="smurf" className="card">
+            { props.smurfData.map(smurf => {
+                  return(
+
+            <div className="smurf-container">
+            <div>
+            <p>{smurf.name}</p>
+            <p>{smurf.description}</p>
+            <p>{smurf.nickname}</p>
+            <p>{smurf.position}</p>
+            
+            </div>
+            </div>
+
+                  )
+
+
+
+           })} 
+
+        
         </div>);
     }
 }
