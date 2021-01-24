@@ -2,30 +2,18 @@
 import { FETCH_SMURFS_START,FETCH_SMURFS_SUCCESS,ADD_SMURF_START,ADD_SMURF_SUCCESS ,FETCH_SMURFS_FAILURE,ADD_SMURF_FAILURE} from "../actions"
 
 export const initialState = {
-        error:"",
-        isLoading: false,
-        smurfData : [{
-            id:"",
-            name:"",
-            position:"",
-            nickname:"",
-            description:""
-
-        }],
-
-        error:"",
-        isAddingSmurf:false,
-        newSmurfData:[{
-            id:"",
-            name:"",
-            position:"",
-            nickname:"",
-            description:""
-        }],
+       error:"",
+        isLoading:false,
+       
+        smurfData :[],
+        newSmurfData:[]
+         
+        
+        
+    }
      
         
-        }
-        
+      
 
 
 

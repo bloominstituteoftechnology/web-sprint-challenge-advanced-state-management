@@ -8,6 +8,7 @@ class Smurf extends React.Component {
     constructor(props){
         super(props)
     }
+    
     render() {
         console.log(this.props);
         return (
@@ -49,14 +50,7 @@ class Smurf extends React.Component {
 const mapStateToProps = (state) =>{
     return{
 
-        newSmurfData:[{
-            error:state.error,
-            id:state.id,
-            name:state.name,
-        position:state.position,
-            nickname:state.nickname,
-            description:state.description
-        }],
+        newSmurfData:state.newSmurfData
         
 
     }

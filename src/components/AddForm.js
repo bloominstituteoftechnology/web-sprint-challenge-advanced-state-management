@@ -8,7 +8,7 @@ import { putSmurfData } from "../actions";
         super(props)
       }
 
-      
+    
 
          State = {
           
@@ -39,12 +39,13 @@ import { putSmurfData } from "../actions";
         onSubmit = (e) =>{
           this.setState({...this.state})
           e.preventDefault()
-          putSmurfData()
+          this.props.putSmurfData()
           console.log(this.props)
           alert (`${this.state.position} ${this.state.name} ${this.state.description} ${this.state.nickname}`)
         }
 
     render() {
+      console .log(this.state)
         return (
             <section>
             <h2>Add Smurf</h2>
@@ -59,18 +60,20 @@ import { putSmurfData } from "../actions";
                   name="description"
                   id="description"
                   
-                />
+                  />
                 <label htmlFor="nickname">NickName:</label>
                 <br />
                 <input
                   onChange={this.handleChange}
                   name="nickname"
                   id="nickname"
+                
+                  
                   
                 />
                 <label htmlFor="position">Position:</label>
                 <br />
-                <input onChange={this.handleChange} name="position" id="position" 
+                <input onChange={this.handleChange} name="position" id="position"/>
                  />
               </div>
     
@@ -94,12 +97,7 @@ import { putSmurfData } from "../actions";
 const mapStateToProps = (state) =>{
     return{
     
-        error:state.error,
-        id:state.id,
-        name:state.name,
-        position:state.position,
-        nickname:state.nickname,
-        description:state.description
+      newSmurfData:state.newSmurfData
     }
  
         

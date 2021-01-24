@@ -35,16 +35,14 @@ const mapStateToProps = (state) =>{
   return{
     
       error:state.error,
-      description:state.description,
-      name:state.name,
-      nickname:state.nickname,
-      position:state.position
+      SmurfData:state.smurfData,
+
     }
   
    
   }
 
-export default connect(mapStateToProps,{getSmurfData})(App)
+export default connect(mapStateToProps,{})(App)
 
 //Task List:
 //1. Add in SmurfDisplay and AddForm into your application.

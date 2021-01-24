@@ -13,9 +13,9 @@ export const getSmurfData = () =>dispatch=>{
     dispatch({type:FETCH_SMURFS_START})
         console.log(FETCH_SMURFS_START)
    axios.get(' http://localhost:3333/smurfs')
-      .then((res)=>{
-         console.log(res.data)
-          dispatch({type:FETCH_SMURFS_SUCCESS, payload:res.datay})
+      .then((response)=>{
+        //  console.log(res.data)
+          dispatch({type:FETCH_SMURFS_SUCCESS, payload:response.data})
 
       })
           
@@ -28,12 +28,11 @@ export const getSmurfData = () =>dispatch=>{
 export const putSmurfData = () =>dispatch=>{
 
     dispatch({type:ADD_SMURF_START})
-        console.log(ADD_SMURF_START)
-        dispatch({ADD_SMURF_SUCCESS})
+    
    axios.put(' http://localhost:3333/smurfs')
-      .then((res)=>{
+      .then((response)=>{
           
-          dispatch({type:ADD_SMURF_SUCCESS, payload:res.data})
+          dispatch({type:ADD_SMURF_SUCCESS, payload:response.data})
 
       })
           

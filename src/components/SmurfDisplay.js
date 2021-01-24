@@ -7,11 +7,13 @@ class SmurfDisplay extends React.Component {
     super(props)
   }
   componentDidMount() {
-    getSmurfData();
+    this.props.getSmurfData();
   }
 
   render() {
-    return (
+    console.log(this.props)  
+      return (
+      
         <>
       <div>
         {this.props.smurfData ? this.props.smurfData.map((smurf) => (
@@ -33,17 +35,8 @@ class SmurfDisplay extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-       smurfData:[{
-  
-        error:state.error,
-        id: state.id,
-        name: state.name,
-        position: state.position,
-        nickname: state.nickname,
-        description: state.description,
-
-       }],
-    
+       smurfData:state.smurfData,
+       error:state.error
   };
 };
 
