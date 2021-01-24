@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux"
 import AddForm from './components/AddForm';
 import SmurfDisplay from './components/SmurfDisplay';
+import Smurf from './components/Smurf'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import { getSmurfData } from "./actions";
 
 class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:3333/smurfs').then(res=>{
-      // console.log(res);
+      getSmurfData(res.data)
     })
   }
   
@@ -22,6 +24,7 @@ class App extends Component {
         <main>
           <AddForm/>
           <SmurfDisplay/>
+          <Smurf/>
         </main>
       </div>
     );
@@ -30,12 +33,18 @@ class App extends Component {
 
 const mapStateToProps = (state) =>{
   return{
-    smurfData:state.smurfData,
-    newSmurfData:state.newSmurfData
+    
+      error:state.error,
+      description:state.description,
+      name:state.name,
+      nickname:state.nickname,
+      position:state.position
+    }
+  
+   
   }
-}
 
-export default connect(mapStateToProps,{})(App)
+export default connect(mapStateToProps,{getSmurfData})(App)
 
 //Task List:
 //1. Add in SmurfDisplay and AddForm into your application.

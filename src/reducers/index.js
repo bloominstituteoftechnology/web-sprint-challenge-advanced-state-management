@@ -2,7 +2,7 @@
 import { FETCH_SMURFS_START,FETCH_SMURFS_SUCCESS,ADD_SMURF_START,ADD_SMURF_SUCCESS ,FETCH_SMURFS_FAILURE,ADD_SMURF_FAILURE} from "../actions"
 
 export const initialState = {
-       
+        error:"",
         isLoading: false,
         smurfData : [{
             id:"",
@@ -12,7 +12,8 @@ export const initialState = {
             description:""
 
         }],
-        error:"There is an error in Fetching Smurfs",
+
+        error:"",
         isAddingSmurf:false,
         newSmurfData:[{
             id:"",
@@ -47,7 +48,7 @@ export const reducer = (state = initialState,action) =>{
             return{
                 ...state,
                 isLoading:false,
-                error:action.payload
+                error:"there was an error getting your smurfs"
             }
                 
         case ADD_SMURF_START:
@@ -60,13 +61,14 @@ export const reducer = (state = initialState,action) =>{
             return{
                 ...state,
                 isAddingSmurf:true,
-                error: ""
+                error: "",
+                newSmurfData:action.payload
             }
         case ADD_SMURF_FAILURE:
             return{
                 ...state,
                 isAddingSmurf:false,
-                addingError:""
+                addingError:"Error"
             }
                     default:
                     return state

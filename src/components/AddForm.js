@@ -4,27 +4,44 @@ import { putSmurfData } from "../actions";
 
 
     class AddForm extends React.Component {
+      constructor(props){
+        super(props)
+      }
 
-        State = {
+      
+
+         State = {
+          
+          
+             name: "",
+             nickname:"",
+             position:"",
+             id:Date.now()
             
-            description:"",
-            name: "",
-            nickname:"",
-            position:"",
-            id:Date.now()
+         }
+
+            handleChange = (event) => {
+              this.setState ({
+                name:event.target.value,
+                description:event.target.value,
+                nickname:event.target.value,
+                position:event.target.value
+
+              })
+            
+            
+              
+            
             }
-         
-
-        
-
-      handleChange = (e) => {
-            this.setState ={newSmurf:e.target.value}
-
-        }
+          
+            
 
         onSubmit = (e) =>{
-            e.preventDefault()
-            putSmurfData()
+          this.setState({...this.state})
+          e.preventDefault()
+          putSmurfData()
+          console.log(this.props)
+          alert (`${this.state.position} ${this.state.name} ${this.state.description} ${this.state.nickname}`)
         }
 
     render() {
@@ -35,23 +52,26 @@ import { putSmurfData } from "../actions";
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
                 <br />
-                <input onChange={this.handleChange} name="name" id="name" />
+                <input onChange={this.handleChange} name="name" id="name"  />
                 <label htmlFor="description">Description:</label> <br />
                 <input
                   onChange={this.handleChange}
                   name="description"
                   id="description"
+                  
                 />
                 <label htmlFor="nickname">NickName:</label>
                 <br />
                 <input
                   onChange={this.handleChange}
                   name="nickname"
-                  id="description"
+                  id="nickname"
+                  
                 />
                 <label htmlFor="position">Position:</label>
                 <br />
-                <input onChange={this.handleChange} name="position" id="position" />
+                <input onChange={this.handleChange} name="position" id="position" 
+                 />
               </div>
     
               <div
@@ -69,21 +89,22 @@ import { putSmurfData } from "../actions";
           </section>
         )
     }
-}
 
+  }
 const mapStateToProps = (state) =>{
     return{
-      newSmurfData:[{
+    
+        error:state.error,
         id:state.id,
         name:state.name,
         position:state.position,
         nickname:state.nickname,
         description:state.description
-    }],
+    }
  
         
 
     }
-}
 
-export default connect(mapStateToProps,{})(AddForm)
+
+ export default connect(mapStateToProps,{putSmurfData})(AddForm)

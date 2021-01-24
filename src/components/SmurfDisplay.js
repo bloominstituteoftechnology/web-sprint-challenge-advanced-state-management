@@ -1,62 +1,50 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getSmurfData, putSmurfData } from "../actions";
+import { getSmurfData } from "../actions";
 
+class SmurfDisplay extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  componentDidMount() {
+    getSmurfData();
+  }
 
- class SmurfDisplay extends React.Component {
-   
-
-     componentDidMount(){
-         getSmurfData()
-         
-     }
-    
-    
-   componentDidUpdate(){
-       putSmurfData()
-   }
-     
-
-     
-
-    render() {
-        return (
-            
-            <div>
-                {this.props.smurfData.map((smurf,index) => (
+  render() {
+    return (
+        <>
+      <div>
+        {this.props.smurfData ? this.props.smurfData.map((smurf) => (
           <div>
-            <h4 key={smurf.id}></h4>
-            <p>  {index}</p>
+            <h4 key={Math.random().toString(36).substr(2, 9)}></h4>
             <p>{smurf.description}</p>
             <p>{smurf.nickname}</p>
             <p>{smurf.name}</p>
             <p>{smurf.position}</p>
-             
-        </div>
-        ))}
-          </div>   
-        )
-    }
+          </div>
+        ))
+      : <p>"Loading..." }</p>}
+      </div>
+      
+      </>
+    );
+  }
 }
 
-const mapStateToProps = (state) =>{
-return{
-    smurfData : [{
+const mapStateToProps = (state) => {
+  return {
+       smurfData:[{
+  
+        error:state.error,
         id: state.id,
-        name:state.name,
-        position:state.position,
+        name: state.name,
+        position: state.position,
         nickname: state.nickname,
-        description:state.description
+        description: state.description,
 
-    }],
+       }],
     
+  };
+};
 
-}
-
-
-}
-
-
-
-
-export default connect(mapStateToProps,{})(SmurfDisplay)
+export default connect(mapStateToProps, {getSmurfData})(SmurfDisplay);

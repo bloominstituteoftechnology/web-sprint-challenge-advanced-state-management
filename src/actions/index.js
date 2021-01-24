@@ -9,13 +9,13 @@ export const ADD_SMURF_SUCCESS = "ADD_SMURF_SUCCESS"
 export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE"
 
 export const getSmurfData = () =>dispatch=>{
-
+         
     dispatch({type:FETCH_SMURFS_START})
         console.log(FETCH_SMURFS_START)
    axios.get(' http://localhost:3333/smurfs')
       .then((res)=>{
-        //   console.log(res.data)
-          dispatch({type:FETCH_SMURFS_SUCCESS, payload:res.data})
+         console.log(res.data)
+          dispatch({type:FETCH_SMURFS_SUCCESS, payload:res.datay})
 
       })
           
@@ -29,10 +29,11 @@ export const putSmurfData = () =>dispatch=>{
 
     dispatch({type:ADD_SMURF_START})
         console.log(ADD_SMURF_START)
+        dispatch({ADD_SMURF_SUCCESS})
    axios.put(' http://localhost:3333/smurfs')
       .then((res)=>{
-        //   console.log(res.data)
-          dispatch({type:ADD_SMURF_SUCCESS, payload:res.data.message})
+          
+          dispatch({type:ADD_SMURF_SUCCESS, payload:res.data})
 
       })
           

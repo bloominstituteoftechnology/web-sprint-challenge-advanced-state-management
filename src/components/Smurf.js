@@ -1,51 +1,65 @@
-import React from 'react';
+
+
+import React from 'react'
 import { connect } from "react-redux"
 
+
 class Smurf extends React.Component {
+    constructor(props){
+        super(props)
+    }
     render() {
-       
-
-        return(<div data-testid="smurf" className="card">
-            { this.props.newSmurfData.map(smurf,index) => {
-                  return
-
-            <div className="smurf-container">
-            <div>
-             <p key={index}</p>
-            <p>{smurf.name}</p>
-            <p>{smurf.description}</p>
-            <p>{smurf.nickname}</p>
-            <p>{smurf.position}</p>
+        console.log(this.props);
+        return (
+            <>
             
-            </div>
-            </div>
+                  {this.props.newSmurfData ? this.props.newSmurfData.map(function(smurf) {
+                      return(
+                      
+                <div>
+                      <h4 key={Math.random().toString(36).substr(2, 9)}></h4>
+                      <p>{smurf.description}</p>
+                      <p>{smurf.nickname}</p>               
+                      <p>{smurf.name}</p>
+                      <p>{smurf.position}</p>
+                   
+              </div>
+                      )  
+                  })
+                :"Loading..."}
 
                   
-
-
-
-           }} 
-
-        
-        </div>);
+            
+    </>
+            
+                  
+        )
     }
 }
+
+
+
+
+
+
+
+
+
+
 const mapStateToProps = (state) =>{
     return{
+
         newSmurfData:[{
+            error:state.error,
             id:state.id,
             name:state.name,
-            position:state.position,
+        position:state.position,
             nickname:state.nickname,
             description:state.description
         }],
+        
+
     }
+
 }
-
 export default connect(mapStateToProps,{})(Smurf)
-
-//Task List:
-//1. Access smurf to be displayed through props.
-//2. Display the name, position, nickname and description of the provided smurf as needed.
-//3. Style as needed. (feel free to make use of the bootstrap card structure: https://getbootstrap.com/docs/4.0/components/card/)
-//4. DO NOT DELETE THE data-testid FIELD! It is used for sprint grading.
