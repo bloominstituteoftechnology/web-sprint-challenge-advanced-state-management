@@ -29,7 +29,7 @@ export const putSmurfData = () =>dispatch=>{
 
     dispatch({type:ADD_SMURF_START})
     
-   axios.put(' http://localhost:3333/smurfs')
+   axios.put(' http://localhost:3333/smurfs, putSmurfData')
       .then((response)=>{
           
           dispatch({type:ADD_SMURF_SUCCESS, payload:response.data})
