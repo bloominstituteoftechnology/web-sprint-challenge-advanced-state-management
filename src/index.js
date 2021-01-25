@@ -14,8 +14,6 @@ ReactDOM.render(
     rootElement
 );
 
-//this is a new change to my code!!!
-
 //Task List:
 //1. Add in all necessary components and libary methods.
 //2. Create a store that includes thunk middleware support.
