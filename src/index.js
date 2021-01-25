@@ -2,15 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
-import App from "./App";
+import App from "./App"
+import logger from "redux-logger"
+import   reducer  from "./reducers/index"
+import  thunk  from "redux-thunk"
+import {  applyMiddleware, createStore } from "redux"
+import { Provider} from "react-redux"
 
 const { worker } = require('./mocks/browser');
 worker.start();
+// const ReactDevTools  = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+const store = createStore(reducer,(applyMiddleware(thunk,logger)))
+
+
 
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <App />, 
+    <Provider store={store}>
+    <App />
+    </Provider>, 
     rootElement
 );
 
