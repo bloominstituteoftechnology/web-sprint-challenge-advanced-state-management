@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSmurfs } from '../actions';
+import Smurf from './Smurf';
 
 export class SmurfDisplay extends React.Component {
     
@@ -14,7 +15,7 @@ export class SmurfDisplay extends React.Component {
         return(
             loading ? <div>Loading</div> 
             : <div>
-                {smurfs.map((item) => <ul><p>{item.name}</p><p>{item.description}</p></ul>)}
+                {smurfs.map((item,index) => <Smurf key={index} smurf={item}/>)}
             </div>
         )
     }
