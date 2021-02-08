@@ -27,14 +27,37 @@ export const fetchSmurfSucess = (smurfs) =>{
     }
 }
 
+export const addSmurf = (smurf) => {
+    return{
+        type: ADD_SMURFS,
+        payload: smurf
+    }
+}
+
+
 export const fetchSmurfs = () => {
     return(dispatch) => {
-        dispatch(fetchSmurfRequest);
+        dispatch(fetchSmurfRequest());
         axios.get("http://localhost:3333/smurfs")
              .then( res => {
                  const smurfs = res.data;
                  console.log(smurfs);
                  dispatch(fetchSmurfSucess(smurfs));
+                }
+             )
+             .catch( err => {
+                 const error = err.message;
+                 dispatch(fetchSmurfFailure(error));
+                }
+             );
+    }
+}
+
+export const postSmurf = (smurf) => {
+    return(dispatch) => {
+        axios.post("http://localhost:3333/smurfs", smurf)
+             .then( res => {
+                 console.log(res);
                 }
              )
              .catch( err => {

@@ -14,8 +14,7 @@ export class SmurfDisplay extends React.Component {
         const smurfs = this.props.state.smurfs;
         return(
             loading ? <div>Loading</div> 
-            : <div>
-                {smurfs.map((item,index) => <Smurf key={index} smurf={item}/>)}
+            : <div>{smurfs.map((item,index) => <Smurf key={index} smurf={item}/>)}
             </div>
         )
     }
