@@ -1,13 +1,21 @@
 import React from 'react';
+import styled from "styled-components"
 
+const StyledSmurf = styled.div`
+   background-image: linear-gradient(to left, white, lightblue);
+`
 class Smurf extends React.Component {
     render() {
         const { smurf } = this.props;
-
-        return(<div data-testid="smurf" className="card">
-        </div>);
+        return(<StyledSmurf data-testid="smurf" className="card">
+            <h2>{smurf.name}</h2>
+            <p>Position: {smurf.position}</p>
+            <p>Description: {smurf.description}</p>
+            <p>Nickname: {smurf.nickname}</p>
+        </StyledSmurf>);
     }
 }
+
 
 export default Smurf;
 
