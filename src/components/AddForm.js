@@ -11,9 +11,7 @@ class AddForm extends React.Component {
     };
 
     handleChange = e => {
-        if(e.target.className === 'required' && e.target.value != ''){
-            this.setState({...this.state,[e.target.name]:e.target.value});
-        }
+        this.setState({...this.state,[e.target.name]:e.target.value});
     }
 
     handleAddSmurf =  e => {
