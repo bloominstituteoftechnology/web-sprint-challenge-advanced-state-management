@@ -14,13 +14,6 @@ let smurfs = [
     position:'Beautician',
     nickname: 'Smurfette',
     description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
-  },
-  {
-    id:"G4gRG9lIiwiaWF0IjoxNTE2MjM5MDIy",
-    name:'Brainy Smurf',
-    position:'Lab Assistant',
-    nickname: 'Brainy',
-    description: 'Brainy is the village intellectual who\'s not afraid to share his "wisdom" with his fellow Smurfs, even though it usually results in his being booted to the village limits or whacked in the head with a mallet.'
   }
 ];
 
