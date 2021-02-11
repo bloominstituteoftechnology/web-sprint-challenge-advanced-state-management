@@ -12,7 +12,7 @@ This is an individual assessment. All work must be your own. All projects will b
 
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support by dropping a :wave: in your help channel when needed.
 
-_You have **three hours** to complete this challenge. Plan your time accordingly._
+_Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Friday. You will receive feedback on what you have finished and submitted by 5pm when the submissions will be closed. No retakes will be accepted._
 
 ## Introduction
 
