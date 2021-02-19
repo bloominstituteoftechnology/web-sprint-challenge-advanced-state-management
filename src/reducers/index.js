@@ -1,10 +1,47 @@
+import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, SET_ERROR, ADD_SMURF } from '../actions';
 
 export const initialState = {
+  smurfs: [{
+    name: 'Poppa Smurf',
+    position: 'Village Leader',
+    nickname: 'Pops',
+    description: 'The man, man!'
+  }],
+  isFetching: false,
+  error: '',
 }
-
-const reducer = ()=>{
+const reducer = (state = initialState, action) => {
+  switch(action.type){
+    case(FETCH_SMURFS_START):
+      return({
+        ...state,
+        isFetching: true,
+        error: '',
+      })
+      case(FETCH_SMURFS_SUCCESS):
+      return({
+        ...state,
+        isFetching: false,
+        error: '',
+        smurfs: action.payload,
+      })
+      case(ADD_SMURF):
+      return({
+        ...state,
+        isFetching: false,
+        error: '',
+        smurfs: [...state.smurfs, { id: state.smurfs.length, ...action.payload}]
+      })
+      case(SET_ERROR):
+      return({
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      })
+    default:
+      return state;
+  }
 }
-
 export default reducer;
 
 //Task List:
