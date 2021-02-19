@@ -1,59 +1,47 @@
-import {
-  FETCH_SMURFS_FAILURE,
-  FETCH_SMURFS_SUCCESS,
-  FETCH_SMURFS_START,
-  ADD_SMURF_SUCCESS,
-  ADD_SMURF_FAILURE,
-} from "../actions/index";
+import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, SET_ERROR, ADD_SMURF } from '../actions';
 
 export const initialState = {
-  smurfs: [],
-  isLoading: false,
-  error: "",
-   newSmurf:[{
-     
-   }]
-};
-
+  smurfs: [{
+    name: 'Poppa Smurf',
+    position: 'Village Leader',
+    nickname: 'Pops',
+    description: 'The man, man!'
+  }],
+  isFetching: false,
+  error: '',
+}
 const reducer = (state = initialState, action) => {
-  console.log(state);
-  switch (action.type) {
-    case FETCH_SMURFS_START:
-      return {
+  switch(action.type){
+    case(FETCH_SMURFS_START):
+      return({
         ...state,
-        isLoading: true,
-        error: "",
-      };
-    case FETCH_SMURFS_SUCCESS:
-      return {
+        isFetching: true,
+        error: '',
+      })
+      case(FETCH_SMURFS_SUCCESS):
+      return({
         ...state,
+        isFetching: false,
+        error: '',
         smurfs: action.payload,
-        isloading: false,
-        error: "",
-      };
-    case FETCH_SMURFS_FAILURE:
-      return {
+      })
+      case(ADD_SMURF):
+      return({
         ...state,
-        isLoading: false,
+        isFetching: false,
+        error: '',
+        smurfs: [...state.smurfs, { id: state.smurfs.length, ...action.payload}]
+      })
+      case(SET_ERROR):
+      return({
+        ...state,
+        isFetching: false,
         error: action.payload,
-      };
-
-    case ADD_SMURF_SUCCESS:
-      return {
-        ...state,
-         newSmurf:[...state.newSmurf, action.payload]
-      };
-
-    case ADD_SMURF_FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-      };
+      })
     default:
       return state;
   }
-};
-
+}
 export default reducer;
 
 //Task List:
