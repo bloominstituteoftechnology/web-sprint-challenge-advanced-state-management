@@ -1,11 +1,24 @@
 
-export const initialState = {
+import { FETCH_SMURFS, FETCH_SMURFS_SUCCESS } from "../actions";
+
+const initialState = {
+    smurfs: []
 }
 
-const reducer = ()=>{
-}
+export default (state = initialState, action) => {
 
-export default reducer;
+    switch (action.type) {
+
+        case FETCH_SMURFS:
+            console.log('Fetching Smurfs')
+            return {...state, smurfs: action.payload}
+
+        case FETCH_SMURFS_SUCCESS:
+            return {...state, smurfs: action.payload}
+        default:
+            return state;
+    }
+}
 
 //Task List:
 //1. Adds the following state values into the initialState:
