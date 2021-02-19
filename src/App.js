@@ -8,16 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import axios from "axios"
 class App extends Component {
+  
 
-  componentDidMount() {
-    axios.get('http://localhost:3333/smurfs')
-    .then((response ) =>{
-      // console.log(response)
-
-      fetchSmurfs(response.data);
-
-    })
-  }
+    
+  
 
 
 

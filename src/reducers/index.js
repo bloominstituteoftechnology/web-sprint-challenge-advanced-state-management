@@ -7,9 +7,15 @@ import {FETCH_SMURFS_FAILURE,
 
 export const initialState = {
     smurfs:[],
-    isloading:false,
+    isLoading:false,
     error:"",
-    newSmurf:[]
+    newSmurf:{
+        name:"",
+        nickname:"",
+        position:"",
+        description:""
+    }
+    
 }
 
  const reducer = (state=initialState,action)=>{
@@ -18,26 +24,27 @@ export const initialState = {
         case FETCH_SMURFS_START:
             return{
                 ...state,
-                isloading:true,
+                isLoading:true,
                 error:""
             }
         case FETCH_SMURFS_SUCCESS:
             return{
                 ...state,
+                smurfs:action.payload,
                 isloading:false,
                 error:""
             }
         case FETCH_SMURFS_FAILURE:
             return {
                 ...state,
-                isloading:false,
+                isLoading:false,
                 error:action.payload
             }
 
         case ADD_SMURF_SUCCESS:
+            
             return{
                 ...state,
-                isLoading:true,
                 newSmurf:action.payload
                 
               
@@ -46,7 +53,7 @@ export const initialState = {
         case ADD_SMURF_FAILURE:
             return{
                 ...state,
-                error:action.payload.error
+                error:action.payload
             }
          default:
              return state

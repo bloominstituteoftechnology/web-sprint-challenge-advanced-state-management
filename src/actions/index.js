@@ -3,14 +3,13 @@ import axios from 'axios';
 export const FETCH_SMURFS_START = "FETCH__SMURFS_START";
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
 export const FETCH_SMURFS_FAILURE = "FETCH_SMURFS_FAILURE";
-export const ADD_SMURF_START = "ADD_SMURF_START";
 export const ADD_SMURF_SUCCESS = "ADD_SMURF_SUCCESS";
 export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
 
 
 export const fetchSmurfs = () =>(dispatch) =>{
     dispatch({type:FETCH_SMURFS_START})
-    console.log(FETCH_SMURFS_START)
+
     axios.get('http://localhost:3333/smurfs')
     .then((response)=>{
         console.log(response)
@@ -18,18 +17,16 @@ export const fetchSmurfs = () =>(dispatch) =>{
     })
     .catch((err)=>{
         console.log(err)
-        dispatch({FETCH_SMURFS_FAILURE, payload:err.message})
+        dispatch({type:FETCH_SMURFS_FAILURE, payload:err.message})
     })
 
 }
 
-export const addSmurf = (input) => {
-    return ({type:ADD_SMURF_SUCCESS, payload:input})
+export const addSmurf = (newSmurf) =>dispatch=> {
+    if(newSmurf.name ==="" || newSmurf.nickname==="" ||newSmurf.description ==="")
+    dispatch({type:ADD_SMURF_FAILURE, payload:"These are required fields"})
     
 
-}
-export const errorSmurf = (error) =>{
-    return({type:ADD_SMURF_FAILURE, payload:error})
 }
 
 //Task List:
