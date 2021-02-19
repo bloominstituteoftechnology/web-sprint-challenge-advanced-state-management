@@ -1,74 +1,62 @@
-import {FETCH_SMURFS_FAILURE,
-    FETCH_SMURFS_SUCCESS,
-    FETCH_SMURFS_START,
-    ADD_SMURF_START,
-    ADD_SMURF_SUCCESS, 
-    ADD_SMURF_FAILURE} from "../actions/index"
+import {
+  FETCH_SMURFS_FAILURE,
+  FETCH_SMURFS_SUCCESS,
+  FETCH_SMURFS_START,
+  ADD_SMURF_START,
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_FAILURE,
+} from "../actions/index";
 
 export const initialState = {
-    smurfs:[],
-    isLoading:false,
-    error:"",
-    newSmurf:{
-        name:"",
-        nickname:"",
-        position:"",
-        description:""
-    }
-    
-}
+  smurfs: [],
+  isLoading: false,
+  error: "",
+  // newSmurf:{
+  //     name:"",
+  //     nickname:"",
+  //     position:"",
+  //     description:""
+  // }
+};
 
- const reducer = (state=initialState,action)=>{
-     console.log(state)
-    switch(action.type){
-        case FETCH_SMURFS_START:
-            return{
-                ...state,
-                isLoading:true,
-                error:""
-            }
-        case FETCH_SMURFS_SUCCESS:
-            return{
-                ...state,
-                smurfs:action.payload,
-                isloading:false,
-                error:""
-            }
-        case FETCH_SMURFS_FAILURE:
-            return {
-                ...state,
-                isLoading:false,
-                error:action.payload
-            }
+const reducer = (state = initialState, action) => {
+  console.log(state);
+  switch (action.type) {
+    case FETCH_SMURFS_START:
+      return {
+        ...state,
+        isLoading: true,
+        error: "",
+      };
+    case FETCH_SMURFS_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        isloading: false,
+        error: "",
+      };
+    case FETCH_SMURFS_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
 
-        case ADD_SMURF_SUCCESS:
-            
-            return{
-                ...state,
-                newSmurf:action.payload
-                
-              
-            }
+    case ADD_SMURF_SUCCESS:
+      return {
+        ...state,
+        // newSmurf:action.payload
+      };
 
-        case ADD_SMURF_FAILURE:
-            return{
-                ...state,
-                error:action.payload
-            }
-         default:
-             return state
-
-
-
-
-
-
-
-
-
-
-    }
-}
+    case ADD_SMURF_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;
 

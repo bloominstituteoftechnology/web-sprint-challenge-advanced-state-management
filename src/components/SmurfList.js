@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import Smurf from "./Smurf";
 import { connect } from "react-redux";
 import { fetchSmurfs } from "../actions/index";
@@ -7,13 +7,9 @@ const SmurfList = (props) => {
   const { smurfs, isLoading, error } = props;
 
   useEffect(() => {
-    props.fetchSmurfs()
-      
-    
- }, [])
-  console.log(props)
-
-  console.log(smurfs)
+    props.fetchSmurfs();
+  }, []);
+  
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -21,12 +17,14 @@ const SmurfList = (props) => {
 
   return (
     <div className="listContainer">
-      {smurfs.map((smurf) => {
-          return <div key={smurf.id}>
-        
-         <Smurf smurf={smurf}/>;
-         </div>
-      })}
+      {smurfs &&
+        smurfs.map((smurf, idx) => {
+          return (
+            <div key={idx}>
+              <Smurf smurf={smurf} />;
+            </div>
+          );
+        })}
     </div>
   );
 };
