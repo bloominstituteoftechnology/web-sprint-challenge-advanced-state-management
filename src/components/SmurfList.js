@@ -10,8 +10,10 @@ const SmurfList = (props) => {
     props.fetchSmurfs()
       
     
-  }, [])
+ }, [])
   console.log(props)
+
+  console.log(smurfs)
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -20,7 +22,10 @@ const SmurfList = (props) => {
   return (
     <div className="listContainer">
       {smurfs.map((smurf) => {
-        return <Smurf smurf={smurf}/>;
+          return <div key={smurf.id}>
+        
+         <Smurf smurf={smurf}/>;
+         </div>
       })}
     </div>
   );
