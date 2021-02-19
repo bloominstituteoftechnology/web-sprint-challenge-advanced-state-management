@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import {fetchSmurfs} from "./actions/index"
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-import { connect } from "react-redux"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import axios from "axios"
 class App extends Component {
   
 

@@ -2,7 +2,6 @@ import {
   FETCH_SMURFS_FAILURE,
   FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS_START,
-  ADD_SMURF_START,
   ADD_SMURF_SUCCESS,
   ADD_SMURF_FAILURE,
 } from "../actions/index";
@@ -11,12 +10,9 @@ export const initialState = {
   smurfs: [],
   isLoading: false,
   error: "",
-  // newSmurf:{
-  //     name:"",
-  //     nickname:"",
-  //     position:"",
-  //     description:""
-  // }
+   newSmurf:[{
+     
+   }]
 };
 
 const reducer = (state = initialState, action) => {
@@ -45,7 +41,7 @@ const reducer = (state = initialState, action) => {
     case ADD_SMURF_SUCCESS:
       return {
         ...state,
-        // newSmurf:action.payload
+         newSmurf:[...state.newSmurf, action.payload]
       };
 
     case ADD_SMURF_FAILURE:
