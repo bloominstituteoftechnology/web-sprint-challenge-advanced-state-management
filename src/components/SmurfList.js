@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const SmurfList = (props)=> {
 
-    console.log("props from sl: ", props)
+    // console.log("props from sl: ", props)
     
     if (props.isLoading) {
         return <h1>Loading...</h1>;

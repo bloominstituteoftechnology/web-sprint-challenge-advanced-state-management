@@ -22,7 +22,6 @@ export const FETCH_SMURFS_FAILURE = "FETCH_SMURF_FAILURE";
 
 export const setErrorMessage = (errorMessage) => {
   console.log("action creator setErrorMessage is fired")
-
   return {type: SET_ERROR_MESSAGE, payload: errorMessage };
 }
 
