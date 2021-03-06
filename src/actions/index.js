@@ -2,14 +2,28 @@ import axios from 'axios';
 
 
 export const ADD_SMURF = "ADD_SMURF";
-export const ADD_ERROR_MESSAGE = "ADD_ERROR_MESSAGE";
+export const SET_ERROR_MESSAGE = "SET_ERROR_MESSAGE";
 export const FETCH_SMURFS_START = "FETCH_SMURF_START";
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURF_SUCCESS";
 export const FETCH_SMURFS_FAILURE = "FETCH_SMURF_FAILURE";
 
-export const addSmurf = () => {
+// export const addSmurf = (name, position, nickname, summary) => (dispatch) => {
+  export const addSmurf = (name, position, nickname, description) => {
   console.log("action creator addSmurf is fired")
-  return {type: ADD_SMURF, payload: "" };
+  const newSmurf = {
+    name: name,
+    position: position,
+    nickname: nickname,
+    description: description,
+  }
+  console.log("new smurf:", newSmurf)
+  return ({type: ADD_SMURF, payload: newSmurf });
+}
+
+export const setErrorMessage = (errorMessage) => {
+  console.log("action creator setErrorMessage is fired")
+
+  return {type: SET_ERROR_MESSAGE, payload: errorMessage };
 }
 
 export const fetchSmurfs = () => (dispatch) => {
