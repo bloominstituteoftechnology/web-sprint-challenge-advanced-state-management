@@ -22,19 +22,19 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
 ### Task 1: Project Setup
 
-* [ ] Fork and clone this repository.
-* [ ] Create a new working branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
-* [ ] **RUN** `npm install` to install your dependencies.
+* [x] Fork and clone this repository.
+* [x] Create a new working branch: git checkout -b `<firstName-lastName>`.
+* [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [x] Push commits: git push origin `<firstName-lastName>`.
+* [x] **RUN** `npm install` to install your dependencies.
 * [ ] **RUN** `npm start` to start your application.
 
 ### Task 2: CodeGrade Setup
 
-* [ ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
-* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
-* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
-* [ ] Check to see that Codegrade has accepted your git submission.
+* [x] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
+* [x] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
+* [x] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
+* [x] Check to see that Codegrade has accepted your git submission.
 
 ### Task 3: Project Requirements
 
@@ -43,17 +43,17 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 #### reducers/index.js
   Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-  * [ ] Adds the following state values into the initialState:
+  * [x] Adds the following state values into the initialState:
       - an array of smurfs
       - a boolean indicating if the app is loading
       - a string indicating a possible error message
 
-  * [ ] Add in the arguments needed to complete a standard reducer function.
-  * [ ] Add in a reducer case to accomidate the start of a smurf fetch.
-  * [ ] Add in a reducer case to accomidate the successful smurf api fetch.
-  * [ ] Add in a reducer cases to accomidate the failed smurf api fetch.
-  * [ ] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
-  * [ ] Add in a reducer case that adds in a value to the error message.
+  * [x] Add in the arguments needed to complete a standard reducer function.
+  * [x] Add in a reducer case to accomidate the start of a smurf fetch.
+  * [x] Add in a reducer case to accomidate the successful smurf api fetch.
+  * [x] Add in a reducer cases to accomidate the failed smurf api fetch.
+  * [x] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
+  * [x] Add in a reducer case that adds in a value to the error message.
 
 #### index.js
   Connect your application to reducer through redux with the thunk and logger middleware packages attached.
@@ -61,7 +61,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 #### actions/index.js
   Add in the action creators and action constants needed to add a smurf to state and fetch smurfs from the server. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.
+  * [] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.
   * [ ] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
   * [ ] Add a standard action that allows us to set the value of the error message slice of state.
   
