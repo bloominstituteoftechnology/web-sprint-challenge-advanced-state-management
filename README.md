@@ -107,7 +107,8 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
   After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-* [ ] Build a smurf profile page with using react-router and dynamic url params  
+* [x] Build a smurf profile page with using react-router and dynamic url params
+npm install --save react-router-dom  
 * [ ] Using React Testing Library, test one or more of your components (not any component that fetches data though)
 
 ### Reference Materials
