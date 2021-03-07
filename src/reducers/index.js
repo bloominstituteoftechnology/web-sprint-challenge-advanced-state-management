@@ -12,7 +12,7 @@ export const initialState = {
       name: "Loca Smurf",
       position: "Smurf Warlord",
       nickname: "Old One Eye",
-      description: " Don't mess with loca... and don't feed the bears",
+      description: " Don't mess with loca... She's crazy... also don't feed the bears",
     },
   ],
   isLoading: true,

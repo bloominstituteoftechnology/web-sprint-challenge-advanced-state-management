@@ -88,20 +88,24 @@ connect to redux passing in fetchSmurfs action only
 
 1. connect fetchSmurfs to App components
 2. call the fetchSmurfs action when the component first loads
-
+**?????????????????**
 
 -In the components/SmurfList.js file
 
 1. Connect Smurf and and loading state values to the smurf list component
  using 
+ * passed props into SmurfList
+ * map props.smurfs (from the list) returning a smurf with the key of smurf.id and passing the smurf as smurf to Smurf
+ **Complete**
  * variable mapStateToProps that takes in state => returns smurf: state.smurf 
+ **Complete**
  * variable mapDispatchToProps = (dispatch) => returns smurf: (smurf) => dispatch(addMember(smurf))
-
-export default connect(mapStateToProps, {smurf})(SmurfList)
-2. replace the single smurf component instance with 
-
-3. replace the static isLoading variable with FETCHING_API_SUCCESS
-
+ **NO DISPATCH TO MAP THROUGH ** WHAT IS THE FIX?????**
+ * set dispatch value in connect to null when no dispatch needed *
+  
+export default connect(mapStateToProps, note: null)(SmurfList)
+2. replace the static isLoading variable with stateful version props.isLoading
+**COMPLETE**
 -FORM COMPONENT/SMURF DO NOT MODIFY-
 
 -In AddForm.js
