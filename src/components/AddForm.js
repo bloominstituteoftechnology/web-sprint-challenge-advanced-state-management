@@ -27,7 +27,6 @@ const AddForm = (props) => {
         }
     }
 
-    const errorMessage= '';
 
     return(<section>
         <h2>Add Smurf</h2>

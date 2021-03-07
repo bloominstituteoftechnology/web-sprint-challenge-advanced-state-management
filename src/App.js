@@ -11,6 +11,7 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
+    const { fetchSmurfs } = this.props;
     console.log('component mounting!')
     fetchSmurfs()
   }
@@ -28,8 +29,9 @@ class App extends Component {
     );
   }
 }
+const mapDispatchToProps = {fetchSmurfs}
 
-export default connect(null, {fetchSmurfs})(App)
+export default connect(null, mapDispatchToProps)(App)
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
