@@ -10,7 +10,7 @@ PREP_LIST:
 1. add needed state and reducer cases to hold and modify smurf error messages, loading status, smurf data
 
  This adds the following state values into the initialState
-  - smurfs: [],     array of smurfs
+  - smurfs: [{name: 'loca smurf...}],     array of smurfs
   - isLoading: true,   boolean on state of loading
   - error: '',  indicative of a possible error message
 
@@ -49,6 +49,8 @@ wrap the app in a provider taking in the store ={store}
 -In the actions/index.js file
 add action creators and constants needed to add a smurf to state and fetch from server
 
+**COMPLETE**
+
 1. import axios from axios
 2. export all const
 FETCHING_API_START = 'FETCHING_API_START'
@@ -56,6 +58,8 @@ FETCHING_API_SUCCESS = 'FETCHING_API_SUCCESS'
 FETCHING_API_FAILURE = 'FETCHING_API_FAILURE'
 ADD_SMURF = 'ADD_SMURF'
 ADD_SMURF_ERROR = 'ADD_SMURF_ERROR'
+
+**COMPLETE**
 
 3. include an export fetchSmurfs = () => (dispatch) => {}     //tricky bit to remember double arrows
 
@@ -74,6 +78,8 @@ ADD_SMURF_ERROR = 'ADD_SMURF_ERROR'
         dispatches type: ADD_SMURF as well as payload: data
     })
     .catch that takes in error dispatching type: FETCHING_API_FAILURE with a payload: error
+
+5. ADD a conditional that allows us to set the value of error messages if an error is made on the form
 
 
 -In App.js file
