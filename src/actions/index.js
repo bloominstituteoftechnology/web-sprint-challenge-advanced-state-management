@@ -1,21 +1,44 @@
 import axios from 'axios';
-import Feedback from 'react-bootstrap/esm/Feedback';
+
 
 export const FETCHING_START = 'FETCHING_START'
 export const FETCHING_SUCCESS = 'FETCHING_SUCCESS'
 export const FETCHING_FAILURE = 'FETCHING_FAILURE'
+export const ADDING_SMURF = 'ADDING_SMURF'
+export const DISPLAY_ERROR = 'DISPLAY_ERROR'
+
+
 
 export const fetchSmurfs = () => (dispatch) => {
   dispatch({ type: FETCHING_START })
   
-  axios.get(`http://localhost:3333/smurfs`)
+  axios
+  .get(`http://localhost:3333/smurfs`)
   .then(res => {
-    dispatch({ type: FETCHING_SUCCESS, payload: res.data})
+    dispatch({ type: FETCHING_SUCCESS, payload: res.data })
   })
   .catch(err => {
+    console.log('failure to load', err)
     dispatch({ type: FETCHING_FAILURE, payload: err })
   })
 }
+
+export const addSmurf = (newSmurf) => (dispatch) => {
+  axios
+  .post('http://localhost:3333/smurfs', newSmurf)
+  .then(res => {
+    dispatch({ type: ADDING_SMURF, payload: res.data })
+  })
+  .catch(err => {
+    console.log('failure to load', err)
+    dispatch({ type: FETCHING_FAILURE, payload: err })
+  })
+}
+
+export const displayError = () => (dispatch) => {
+  dispatch({ type: DISPLAY_ERROR })
+}
+
 
 //Task List:
 //1. Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.

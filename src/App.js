@@ -11,6 +11,7 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
+    console.log('component mounting!')
     fetchSmurfs()
   }
 

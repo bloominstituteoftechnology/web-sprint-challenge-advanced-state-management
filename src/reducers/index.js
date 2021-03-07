@@ -1,4 +1,4 @@
-import { FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILURE } from '../actions/index'
+import { FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILURE, ADDING_SMURF, DISPLAY_ERROR } from '../actions/index'
 
 export const initialState = {
   smurfs: [],
@@ -6,21 +6,23 @@ export const initialState = {
   error: ''
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch(action.type){
-    case FETCHING_START:
-      return {...state, isLoading: true}
+    case(FETCHING_START):
+      return ({...state, isLoading: true})
     
-    case FETCHING_SUCCESS:
-      return {...state, smurfs: action.payload, isLoading: false}
+    case(FETCHING_SUCCESS):
+      return ({...state, isLoading: false, smurfs: action.payload})
     
-    case FETCHING_FAILURE:
-      return {...state, error: 'we were unable to perform that action!' + action.payload}
-      ///finish new smurf later
+    case (FETCHING_FAILURE):
+      return ({...state, error: 'we were unable to perform that action!' + action.payload})
     
-    case 'ADD_NEW_SMURF':
-      return {...state, smurfs: [...state.smurfs, action.payload] }
+    case(ADDING_SMURF):
+      return ({...state, smurfs: [...state.smurfs, action.payload] })
 
+    case(DISPLAY_ERROR):
+      return ({...state, isLoading: false, error: "Missing form requirements"})
+      
     default: 
       return state;
   }
@@ -28,6 +30,7 @@ export const reducer = (state = initialState, action) => {
 }
 
 export default reducer;
+
 
 //Task List:
 //1. Adds the following state values into the initialState:
