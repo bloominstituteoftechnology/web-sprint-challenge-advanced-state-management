@@ -7,7 +7,8 @@ const AddForm = (props) => {
         name:"",
         position:"",
         nickname:"",
-        description:""
+        description:"",
+        id: '',
     });
 
     const handleChange = e => {
@@ -22,7 +23,7 @@ const AddForm = (props) => {
         if (state.name === "" || state.position === "" || state.nickname === "") {
             return props.displayError()
         } else {
-            props.addSmurf(state.id, state.name, state.position, state.nickname, state.description)
+            props.addSmurf(state.name, state.position, state.nickname, state.description, state.id)
         }
     }
 

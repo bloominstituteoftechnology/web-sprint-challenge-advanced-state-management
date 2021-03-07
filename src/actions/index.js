@@ -25,11 +25,11 @@ export const fetchSmurfs = () => (dispatch) => {
 
 export const addSmurf = (name, position, nickname, description) => {
   const newSmurf = {
-    id: Date.now(),
     name: name,
     position: position,
     nickname: nickname,
-    description: description
+    description: description,
+    id: Date.now()
   }
 
   return ({ type: ADDING_SMURF, payload: newSmurf })
