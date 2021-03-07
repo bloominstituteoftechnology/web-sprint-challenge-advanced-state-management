@@ -5,15 +5,18 @@ PREP_LIST:
 *Ignore Server Warnings* 
 
 
+secret: 727c263d80994e0aa46b65a9cdc493140c82fb5c0bcfd873f3ebbd2d49e535fb
+
+
 -In the reducers/index.js file
 
 1. add needed state and reducer cases to hold and modify smurf error messages, loading status, smurf data
-
+**COMPLETE**
  This adds the following state values into the initialState
   - smurfs: [{name: 'loca smurf...}],     array of smurfs
   - isLoading: true,   boolean on state of loading
   - error: '',  indicative of a possible error message
-
+**COMPLETE**
   Reducer will take in ( state = initialState, action ) as an arrow function handling..
   -switch(action.type)
   *Add arguments to complete standard reducer function
@@ -28,27 +31,26 @@ PREP_LIST:
   *add a reducer to accommodate ADD_SMURF_ERROR to include: 
    return {...state, error: action.payload}
   *as well as default returning state
-
+**COMPLETE**
   since both are error messages - making the decision to have one error handler
 
 **COMPLETE**
 
 -In the index.js file
 connect application to reducer through redux with thunk and logger middleware packages already included
-
+**COMPLETE**
 1. import { createStore and applyMiddleware} from 'redux'
 2. import Provider from react-redux
 3. import thunk from 'redux-thunk'
 4. import reducer from reducers/index 
-
+**COMPLETE**
 create store to equal createStore function taking in reducer and applyMiddleware(thunk)
-
+**COMPLETE**
 wrap the app in a provider taking in the store ={store}
-
+**COMPLETE**
 
 -In the actions/index.js file
 add action creators and constants needed to add a smurf to state and fetch from server
-
 **COMPLETE**
 
 1. import axios from axios
@@ -58,7 +60,6 @@ FETCHING_API_SUCCESS = 'FETCHING_API_SUCCESS'
 FETCHING_API_FAILURE = 'FETCHING_API_FAILURE'
 ADD_SMURF = 'ADD_SMURF'
 ADD_SMURF_ERROR = 'ADD_SMURF_ERROR'
-
 **COMPLETE**
 
 3. include an export fetchSmurfs = () => (dispatch) => {}     //tricky bit to remember double arrows
@@ -69,7 +70,7 @@ ADD_SMURF_ERROR = 'ADD_SMURF_ERROR'
         dispatches type: FETCHING_API_SUCCESS with a payload: data
     })
     .catch that takes in error dispatching type: FETCHING_API_FAILURE with a payload: error
-
+**COMPLETE**
 4. include an export addSmurf = () => (dispatch) => {}        // Don't Forget about me... don't don't don't don't
 
     this function performs an axios request with 
@@ -78,9 +79,9 @@ ADD_SMURF_ERROR = 'ADD_SMURF_ERROR'
         dispatches type: ADD_SMURF as well as payload: data
     })
     .catch that takes in error dispatching type: FETCHING_API_FAILURE with a payload: error
-
+**COMPLETE**
 5. ADD a conditional that allows us to set the value of error messages if an error is made on the form
-
+**COMPLETE**
 
 -In App.js file
 connect to redux passing in fetchSmurfs action only

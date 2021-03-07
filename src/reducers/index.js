@@ -1,50 +1,56 @@
-import { FETCHING_API_START, FETCHING_API_SUCCESS, ADD_SMURF, ADD_ERROR } from '../actions/index'
+import {
+  FETCHING_API_START,
+  FETCHING_API_SUCCESS,
+  ADD_SMURF,
+  ADD_ERROR,
+} from "../actions/index";
 
 export const initialState = {
-    smurfs: [{
-        id: 1,
-        name: 'Loca Smurf',
-        position: 'Smurf Warlord',
-        nickname: 'Old One Eye',
-        description: " Don't mess with loca... and don't feed the bears"
-    }],
-    isLoading: true,
-    error: ''
-}
+  smurfs: [
+    {
+      id: 1,
+      name: "Loca Smurf",
+      position: "Smurf Warlord",
+      nickname: "Old One Eye",
+      description: " Don't mess with loca... and don't feed the bears",
+    },
+  ],
+  isLoading: true,
+  error: "",
+};
 
-const reducer = ( state = initialState, action ) => {
-    switch (action.type) {
-        case "FETCHING_API_START": 
-            return {
-            ...state,
-            isLoading: true,
-            error: ''
-        }
-        case "FETCHING_API_SUCCESS": 
-            return {
-            ...state,
-            isLoading: false,
-            error: '',
-            smurf: action.payload
-            }
-        case 'ADD_SMURF': 
-            return {
-            ...state,
-            loading: false,
-            smurf: action.payload,
-            error: ''
-            }
-        case 'ADD_ERROR': 
-            return {
-            ...state,
-            isLoading: false,
-            error: action.payload
-            }
-        default: 
-        return state;
-    }
-
-}
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case { FETCHING_API_START }:
+      return {
+        ...state,
+        isLoading: true,
+        error: "",
+      };
+    case { FETCHING_API_SUCCESS }:
+      return {
+        ...state,
+        isLoading: false,
+        error: "",
+        smurf: action.payload,
+      };
+    case { ADD_SMURF }:
+      return {
+        ...state,
+        loading: false,
+        smurf: action.payload,
+        error: "",
+      };
+    case { ADD_ERROR }:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
 export default reducer;
 
