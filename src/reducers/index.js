@@ -1,8 +1,12 @@
 
-export const initialState = {
-}
+export const initialState = { id:' ', name:' ', position:' ', nickname:' ', description:' ' }
 
-const reducer = ()=>{
+
+
+const reducer = (state = initialState, action) => {
+    switch(action.type) {
+        
+    }
 }
 
 export default reducer;
