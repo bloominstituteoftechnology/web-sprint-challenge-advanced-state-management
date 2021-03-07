@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
       return {...state, smurfs: [...state.smurfs, action.payload] }
 
     case DISPLAY_ERROR:
-      return {...state, isLoading: false, errorMessage: "Missing form requirements"}
+      return {...state, isLoading: false, errorMessage: 'missing form requirements'}
       
     default: 
       return state;

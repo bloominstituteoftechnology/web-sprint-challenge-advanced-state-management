@@ -27,6 +27,7 @@ const AddForm = (props) => {
         }
     }
 
+    
 
     return(<section>
         <h2>Add Smurf</h2>
