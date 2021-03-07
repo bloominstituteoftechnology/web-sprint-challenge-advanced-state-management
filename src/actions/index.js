@@ -23,20 +23,20 @@ export const fetchSmurfs = () => (dispatch) => {
   })
 }
 
-export const addSmurf = (newSmurf) => (dispatch) => {
-  axios
-  .post('http://localhost:3333/smurfs', newSmurf)
-  .then(res => {
-    dispatch({ type: ADDING_SMURF, payload: res.data })
-  })
-  .catch(err => {
-    console.log('failure to load', err)
-    dispatch({ type: FETCHING_FAILURE, payload: err })
-  })
+export const addSmurf = (name, position, nickname, description) => {
+  const newSmurf = {
+    id: Date.now(),
+    name: name,
+    position: position,
+    nickname: nickname,
+    description: description
+  }
+
+  return ({ type: ADDING_SMURF, payload: newSmurf })
 }
 
-export const displayError = () => (dispatch) => {
-  dispatch({ type: DISPLAY_ERROR })
+export const displayError = (error) => {
+  return ({ type: DISPLAY_ERROR, payload: error })
 }
 
 

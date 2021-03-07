@@ -17,19 +17,19 @@ export const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type){
     case FETCHING_START:
-      return {...state, isLoading: true}
+      return {...state, isLoading: true, smurfs: action.payload}
     
     case FETCHING_SUCCESS:
       return {...state, isLoading: false, smurfs: action.payload}
     
     case FETCHING_FAILURE:
-      return {...state, error: 'we were unable to perform that action!' + action.payload}
+      return {...state, isLoading: false, error: action.payload}
     
     case ADDING_SMURF:
       return {...state, smurfs: [...state.smurfs, action.payload] }
 
     case DISPLAY_ERROR:
-      return {...state, isLoading: false, error: "Missing form requirements"}
+      return {...state, isLoading: false, errorMessage: "Missing form requirements"}
       
     default: 
       return state;
