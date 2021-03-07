@@ -110,15 +110,17 @@ export default connect(mapStateToProps, note: null)(SmurfList)
 
 -In AddForm.js
 
-1. connect this component to redux passing in 
-const [ error, setError ] = useState(errorMessage)
-2. replace all instances or error message with state value of error
-3. inside of the handleSubmit function replace static errorMessage with a call to error => {setError(error)} 
+1. 
+  a. connect this component to redux passing using connect from react-redux
+  b. import setError and add smurf from actions/index.js
+  **COMPLETE**
+3. inside of the handleSubmit function replace static errorMessage with a conditional call to return props.setError('error message) if state.name or state.position or state.nickname are blank. these are required fields and should throw error if not filled
 4. inside the handleSubmit function call addSmurf action with 
-name: value,
+<!-- name: value,
 position: value,
 nickname: value,
-summary: value passed as arguments. 
+summary: value passed as arguments.  -->
+props.addSmurf(state.id, state.name, state.position, state.nickname, state.description)
 
 5. test to make sure it's all working, submit, and celebrate! 
 
