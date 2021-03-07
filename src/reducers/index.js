@@ -1,27 +1,35 @@
 import { FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILURE, ADDING_SMURF, DISPLAY_ERROR } from '../actions/index'
 
 export const initialState = {
-  smurfs: [],
+  smurfs: [
+    {
+      id: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+      name: 'Poppa Smurf',
+      position: 'Village Leader',
+      nickname: 'Pops',
+      description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+    }  
+  ],
   isLoading: false,
   error: ''
 }
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
-    case(FETCHING_START):
-      return ({...state, isLoading: true})
+    case FETCHING_START:
+      return {...state, isLoading: true}
     
-    case(FETCHING_SUCCESS):
-      return ({...state, isLoading: false, smurfs: action.payload})
+    case FETCHING_SUCCESS:
+      return {...state, isLoading: false, smurfs: action.payload}
     
-    case (FETCHING_FAILURE):
-      return ({...state, error: 'we were unable to perform that action!' + action.payload})
+    case FETCHING_FAILURE:
+      return {...state, error: 'we were unable to perform that action!' + action.payload}
     
-    case(ADDING_SMURF):
-      return ({...state, smurfs: [...state.smurfs, action.payload] })
+    case ADDING_SMURF:
+      return {...state, smurfs: [...state.smurfs, action.payload] }
 
-    case(DISPLAY_ERROR):
-      return ({...state, isLoading: false, error: "Missing form requirements"})
+    case DISPLAY_ERROR:
+      return {...state, isLoading: false, error: "Missing form requirements"}
       
     default: 
       return state;
