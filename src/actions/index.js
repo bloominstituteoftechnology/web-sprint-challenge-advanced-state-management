@@ -12,6 +12,7 @@ export const getSmurfs = () => (dispatch) =>{
   axios
   .get("")
   .then((""))
+  .error("")
 }
 
 
