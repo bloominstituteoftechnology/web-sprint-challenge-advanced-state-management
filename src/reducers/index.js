@@ -3,11 +3,13 @@ import React, {useState, useReducer} from 'react'
 export const initialState = {
     smurfs: [],
     isLoading: false,
+    error: '',
+
 }
 
 const reducer = (state = initialState, action)=>{
 
-  switch(action,type) {
+  switch(action.type) {
     default:
       return state;
   }  
