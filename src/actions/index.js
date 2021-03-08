@@ -36,9 +36,11 @@ export const addSmurf = (id, name, position, nickname, description ) => (dispatc
     return ({ type: ADD_SMURF, payload: newSmurf})
 };
 
-export const setError = (error) => {
+export const setError = (errorMessage) => {
+    console.log('4. error message from setError in Actions/index.js', errorMessage)
     return { 
-        type: ADD_ERROR, payload: error
+        
+        type: ADD_ERROR, payload: errorMessage
     }
 }
 
