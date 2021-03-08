@@ -13,7 +13,7 @@ class App extends Component {
 
   componentDidMount() {
     const { fetchSmurfs } = this.props;
-    console.log('3. component did mount')
+    console.log('3. component did mount', fetchSmurfs)
     fetchSmurfs();
   }
 

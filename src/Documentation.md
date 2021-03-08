@@ -89,6 +89,9 @@ connect to redux passing in fetchSmurfs action only
 1. connect fetchSmurfs to App components
 2. call the fetchSmurfs action when the component first loads
 **?????????????????**
+import connect and fetchSmurf
+use componentDidMount making {fetchSmurfs} = this.props
+call fetchSmurfs inside componentDidMount
 
 -In the components/SmurfList.js file
 
