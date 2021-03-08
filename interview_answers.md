@@ -16,5 +16,3 @@ Redux Thunk allows us to make the reducer flow asynchronous. It allows us to mak
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
 
 I prefer Context API due the lack of set up. It is difficult to implement Redux and see the need with the simplicity of our projects, while it makes sense on a much larger, production level application.
-
-Testing code grade!
