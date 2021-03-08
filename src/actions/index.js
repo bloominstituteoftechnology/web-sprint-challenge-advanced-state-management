@@ -26,7 +26,7 @@ export const fetchSmurfs = () => (dispatch) => {
 export const addSmurf = (id, name, position, nickname, description ) => (dispatch) => {
     
     const newSmurf = {
-        id: id++,
+        id: Date.now(),
         name: name,
         position: position,
         nickname: nickname,
