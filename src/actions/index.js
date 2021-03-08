@@ -8,7 +8,7 @@ export const ADD_SMURF = "ADD_SMURF";
 export const fetchSmurfs = dispatch => {
     dispatch({ type: FETCHING_SMURFS_START })
 
-    axios.get('../mocks/server')
+    axios.get('http://localhost:3333/smurfs')
         .then(res => 
             dispatch({ type: FETCHING_SMURFS_SUCCESS, payload: res.data }))
         .catch(err => 
