@@ -2,32 +2,37 @@ import axios from "axios";
 
 export const FETCHING_API_START = "FETCHING_API_START";
 export const FETCHING_API_SUCCESS = "FETCHING_API_SUCCESS";
+export const FETCHING_API_FAILURE = 'FETCHING_API_FAILURE'
 export const ADD_SMURF = "ADD_SMURF";
 export const ADD_ERROR = "ADD_ERROR";
 
-export const fetchSmurfs = (smurf) => (dispatch) => {
+export const fetchSmurfs = () => (dispatch) => {
+    console.log('1. fetch smurf has fired')
 
   dispatch({ type: FETCHING_API_START });
   axios
-    .get("http://localhost:333/smurfs")
-    .then((res) => {
+    .get("http://localhost:3333/smurfs")
+    .then( res => {
+      console.log(res)
       dispatch({ type: FETCHING_API_SUCCESS, payload: res.data });
     })
-    .catch((error) => {
-      dispatch({ type: ADD_ERROR, payload: error });
+    .catch( error => {
+      console.log("2. Error from api failure", error)
+      dispatch({ type: FETCHING_API_FAILURE, payload: error });
     });
 };
 
-export const addSmurf = (smurf) => (dispatch) => {
-  dispatch({ type: FETCHING_API_START });
-  axios
-    .post("http://localhost:3333/smurfs", smurf)
-    .then((res) => {
-      dispatch({ type: ADD_SMURF, payload: smurf });
-    })
-    .catch((error) => {
-      dispatch({ type: ADD_ERROR, payload: error.response.data.error });
-    });
+export const addSmurf = (id, name, position, nickname, description ) => (dispatch) => {
+    
+    const newSmurf = {
+        id: id,
+        name: name,
+        position: position,
+        nickname: nickname,
+        description: description
+    }
+    console.log("A new smurf is born!", newSmurf)
+    return ({ type: ADD_SMURF, payload: newSmurf})
 };
 
 export const setError = (error) => {

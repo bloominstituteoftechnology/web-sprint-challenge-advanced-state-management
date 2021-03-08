@@ -4,6 +4,7 @@ import { addSmurf, setError } from '../actions/index'
 
 const AddForm = (props) => {
     const [state, setState] = useState({
+        id: '',
         name:"",
         position:"",
         nickname:"",

@@ -1,6 +1,7 @@
 import {
   FETCHING_API_START,
   FETCHING_API_SUCCESS,
+  FETCHING_API_FAILURE,
   ADD_SMURF,
   ADD_ERROR,
 } from "../actions/index";
@@ -15,37 +16,44 @@ export const initialState = {
       description: " Don't mess with loca... She's crazy... also don't feed the bears",
     },
   ],
-  isLoading: true,
+  isLoading: false,
   error: "",
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case { FETCHING_API_START }:
+    case FETCHING_API_START:
       return {
         ...state,
         isLoading: true,
         error: "",
       };
-    case { FETCHING_API_SUCCESS }:
+    case FETCHING_API_SUCCESS:
       return {
         ...state,
         isLoading: false,
         error: "",
-        smurf: action.payload,
+        smurfs: action.payload,
       };
-    case { ADD_SMURF }:
+    case  FETCHING_API_FAILURE:
       return {
         ...state,
+        isLoading: false,
+        error: action.payload
+      }
+
+    case  ADD_SMURF :
+      return {
+        ...state.smurfs,
         loading: false,
-        smurf: action.payload,
+        smurfs: action.payload,
         error: "",
       };
-    case { ADD_ERROR }:
+    case  ADD_ERROR :
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
+        errorMessage: action.payload,
       };
     default:
       return state;
