@@ -47,9 +47,7 @@ const AddForm = (props) => {
                 <label htmlFor="description">Description:</label><br/>
                 <textarea onChange={handleChange} value={state.description} name="description" id="description" />
             </div>
-            {
-                props.errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {props.errorMessage}</div>
-            }
+
              {
                 props.errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {props.errorMessage}</div>
             }
