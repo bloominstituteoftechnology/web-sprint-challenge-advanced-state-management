@@ -1,12 +1,39 @@
+// import {UPDATE_NAME, UPDATE_NICKNAME, UPDATE_POSITION, UPDATE_SUMMARY} from '../actions'
+import {} from '../actions'
 
+// export const initialState = {
+// }
+
+// const reducer = ()=>{
+// }
+
+// export default reducer;
+
+
+// Reducer creation flow this is step 1 of the redux building pattern
 export const initialState = {
+    smurfs: [],
+    isFetching: false,
+    error: ''
 }
 
-const reducer = ()=>{
+const smurfReducer = (state= initialState, action ) =>{
+    switch(action.type){
+        case UPDATE_NAME:
+            return {
+                ...state,
+                smurfs: action.payload
+            };
+            case UPDATE_NICKNAME:
+                return{
+                    ...state,
+                    isFetching
+                }
+    }   
+
 }
 
-export default reducer;
-
+export default smurfReducer
 //Task List:
 //1. Adds the following state values into the initialState:
 //  - an array of smurfs
