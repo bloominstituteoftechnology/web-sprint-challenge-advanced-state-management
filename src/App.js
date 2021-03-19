@@ -7,8 +7,12 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
+import { fetchSmurfs } from './actions/index.js'
+
 class App extends Component {
+
   render() {
+    fetchSmurfs()
     return (
       <div className="App">
         <Header />
