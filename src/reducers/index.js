@@ -1,8 +1,54 @@
+import {
+    ADD_SMURF,
+    FETCH_SMURF_START,
+    FETCH_SMURF_SUCCESS,
+    FETCH_SMURF_ERROR,
+    ERROR_MESSAGE_SET,
+} from '../actions';
+
 
 export const initialState = {
-}
+    smurfsList: [],
+    isLoading: false,
+    error: '',
 
-const reducer = ()=>{
+}
+//sets axios call to state 
+const reducer = (state = initialState, action)=> {
+    switch (action.type) {
+        case ERROR_MESSAGE_SET: 
+        return{
+            ...state,
+            error: action.payload
+        }
+        case ADD_SMURF:
+            return {
+                ...state, 
+                smurfsList: [...state.smurfsList, action.payload],
+            }
+     
+        case FETCH_SMURF_START:
+            return {
+                ...state,
+                isLoading:true,
+            }
+        case FETCH_SMURF_SUCCESS:
+            return {
+                ...state,
+                smurfsList: action.payload,
+                isLoading: false,
+                error: '',
+            }
+            case FETCH_SMURF_ERROR:
+                return{
+                    ...state,
+                    isLoading: false,
+                    error: action.payload,
+                }
+
+        default: return state;
+        
+    }
 }
 
 export default reducer;
