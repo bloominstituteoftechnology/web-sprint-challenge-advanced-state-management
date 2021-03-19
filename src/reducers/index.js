@@ -3,25 +3,9 @@ import {
     FETCH_SMURF_START,
     FETCH_SMURF_SUCCESS,
     FETCH_SMURF_ERROR,
-    SMURF_ERROR,
+    ERROR_MESSAGE_SET,
 } from '../actions';
 
-const initialList = [
-    {
-      id:1,
-      name:'Poppa Smurf',
-      position:'Village Leader',
-      nickname: 'Pops',
-      description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-    },
-    {
-      id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
-      name:'Smurfette',
-      position:'Beautician',
-      nickname: 'Smurfette',
-      description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
-    }
-  ];
 
 export const initialState = {
     smurfsList: [],
@@ -32,8 +16,9 @@ export const initialState = {
 //sets axios call to state 
 const reducer = (state = initialState, action)=> {
     switch (action.type) {
-        case SMURF_ERROR: 
+        case ERROR_MESSAGE_SET: 
         return{
+            ...state,
             error: action.payload
         }
         case ADD_SMURF:
@@ -41,11 +26,7 @@ const reducer = (state = initialState, action)=> {
                 ...state, 
                 smurfsList: [...state.smurfsList, action.payload],
             }
-        // case SMURF_ERROR:
-        //     return {
-        //         ...state,
-        //         error: action.payload
-        //     }
+     
         case FETCH_SMURF_START:
             return {
                 ...state,

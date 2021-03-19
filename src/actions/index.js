@@ -6,14 +6,14 @@ export const FETCH_SMURF_START = 'FETCH_SMURF_START';
 export const FETCH_SMURF_SUCCESS = 'FETCH_SMURF_SUCCESS';
 export const FETCH_SMURF_ERROR = 'FETCH_SMURF_ERROR';
 export const ADD_SMURF = 'ADD_SMURF';
-export const SMURF_ERROR = 'SMURF_ERROR';
+export const ERROR_MESSAGE_SET = 'ERROR_MESSAGE_SET';
 
 export const addSmurf = (name, nickname,position, summary) => {
     return { type: ADD_SMURF, payload:name, nickname, position, summary}
 }
 
-export const errorMessage = (error) => {
-    return {type: SMURF_ERROR, payload: error}
+export const errorMessageSet = (error) => {
+    return {type: ERROR_MESSAGE_SET, payload: error}
 }
 
 export const fetchSmurfs = () => {
