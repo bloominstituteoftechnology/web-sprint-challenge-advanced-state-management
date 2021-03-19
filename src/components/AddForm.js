@@ -22,15 +22,15 @@ const AddForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(addSmurf)
         props.addSmurf({
-            name: addSmurf.name,
-            position: addSmurf.position,
-            nickname: addSmurf.nickname,
-            description: addSmurf.description,
+            name: state.name,
+            position: state.position,
+            nickname: state.nickname,
+            description: state.description,
         })
         if (state.name === "" || state.position === "" || state.nickname === "") {
             errorMessage = {errorMessage};
+            alert({errorMessage})
         }
     }
 
@@ -65,11 +65,12 @@ const AddForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        errorMessage: state.errorMessage,
+        isLoading: state.isLoading,
+        errorMessage : state.error,
     }
 }
 
-export default connect(mapStateToProps, {errorMessage,addSmurf})(AddForm) ;
+export default connect(mapStateToProps, {errorMessage, addSmurf})(AddForm) ;
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.

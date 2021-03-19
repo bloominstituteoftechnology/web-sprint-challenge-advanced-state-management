@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Feedback from 'react-bootstrap/esm/Feedback';
+import { bindActionCreators } from 'redux';
 
 export const FETCH_SMURF_START = 'FETCH_SMURF_START';
 export const FETCH_SMURF_SUCCESS = 'FETCH_SMURF_SUCCESS';
@@ -7,8 +8,8 @@ export const FETCH_SMURF_ERROR = 'FETCH_SMURF_ERROR';
 export const ADD_SMURF = 'ADD_SMURF';
 export const SMURF_ERROR = 'SMURF_ERROR';
 
-export const addSmurf = (smurfData) => {
-    return { type: ADD_SMURF, payload: smurfData}
+export const addSmurf = (name, nickname,position, summary) => {
+    return { type: ADD_SMURF, payload:name, nickname, position, summary}
 }
 
 export const errorMessage = (error) => {
@@ -19,14 +20,14 @@ export const fetchSmurfs = () => {
     return (dispatch) => {
         dispatch({type: FETCH_SMURF_START});
 
-        axios
-        .get(`http://localhost:3333/smurfs`)
+        axios 
+        .get('http://localhost:3333/smurfs')
         .then(res => {
             console.log(res)
             dispatch({type: FETCH_SMURF_SUCCESS, payload: res.data})
         })
         .catch(err => {
-            dispatch({tyoe: FETCH_SMURF_ERROR, payload: err.message})
+            dispatch({type: FETCH_SMURF_ERROR, payload: err.message})
         });
     };
 };

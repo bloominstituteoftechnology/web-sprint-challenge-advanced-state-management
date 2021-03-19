@@ -27,25 +27,25 @@ export const initialState = {
     smurfsList: [],
     isLoading: false,
     error: '',
-    
+
 }
 //sets axios call to state 
 const reducer = (state = initialState, action)=> {
     switch (action.type) {
+        case SMURF_ERROR: 
+        return{
+            error: action.payload
+        }
         case ADD_SMURF:
             return {
-                ...state,
-                name: action.payload,
-                nickname: action.payload,
-                position: action.payload,
-                summary: action.payload,
-                id: new Date(),
+                ...state, 
+                smurfsList: [...state.smurfsList, action.payload],
             }
-        case SMURF_ERROR:
-            return {
-                ...state,
-                error: action.payload
-            }
+        // case SMURF_ERROR:
+        //     return {
+        //         ...state,
+        //         error: action.payload
+        //     }
         case FETCH_SMURF_START:
             return {
                 ...state,
@@ -54,7 +54,7 @@ const reducer = (state = initialState, action)=> {
         case FETCH_SMURF_SUCCESS:
             return {
                 ...state,
-                smurfsList: action.payload,
+                smurfsList:[action.payload],
                 isLoading: false,
                 error: '',
             }
@@ -65,7 +65,7 @@ const reducer = (state = initialState, action)=> {
                     error: action.payload,
                 }
 
-        default:return state;
+        default: return state;
         
     }
 }

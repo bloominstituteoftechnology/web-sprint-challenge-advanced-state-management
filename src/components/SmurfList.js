@@ -14,7 +14,7 @@ import Smurf from './Smurf';
     return(
     <div className="listContainer">
         {
-            smurfsList.map(soloSmurf => <Smurf key={soloSmurf.id} smurf={soloSmurf}/>)
+            smurfsList.map(smurf => <Smurf key={smurf.id} smurf={smurf}/>)
         }
         
     </div>);
