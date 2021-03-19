@@ -7,7 +7,7 @@ import Smurf from './Smurf';
 
     const{isLoading, smurfsList} = props;
 
-    if (isLoading) {
+    if (props.isLoading) {
         return <h1>Loading...</h1>;
     }
 
