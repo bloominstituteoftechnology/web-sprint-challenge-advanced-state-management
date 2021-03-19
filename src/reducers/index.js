@@ -1,8 +1,73 @@
+import {
+    ADD_SMURF,
+    FETCH_SMURF_START,
+    FETCH_SMURF_SUCCESS,
+    FETCH_SMURF_ERROR,
+    SMURF_ERROR,
+} from '../actions';
+
+const initialList = [
+    {
+      id:1,
+      name:'Poppa Smurf',
+      position:'Village Leader',
+      nickname: 'Pops',
+      description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+    },
+    {
+      id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
+      name:'Smurfette',
+      position:'Beautician',
+      nickname: 'Smurfette',
+      description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
+    }
+  ];
 
 export const initialState = {
+    smurfsList: [],
+    isLoading: false,
+    error: '',
+    
 }
+//sets axios call to state 
+const reducer = (state = initialState, action)=> {
+    switch (action.type) {
+        case ADD_SMURF:
+            return {
+                ...state,
+                name: action.payload,
+                nickname: action.payload,
+                position: action.payload,
+                summary: action.payload,
+                id: new Date(),
+            }
+        case SMURF_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
+        case FETCH_SMURF_START:
+            return {
+                ...state,
+                isLoading:true,
+            }
+        case FETCH_SMURF_SUCCESS:
+            return {
+                ...state,
+                smurfsList: action.payload,
+                isLoading: false,
+                error: '',
+            }
+            case FETCH_SMURF_ERROR:
+                return{
+                    ...state,
+                    isLoading: false,
+                    error: action.payload,
+                }
 
-const reducer = ()=>{
+        default:return state;
+        
+    }
 }
 
 export default reducer;
