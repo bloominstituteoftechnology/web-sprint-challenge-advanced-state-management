@@ -13,12 +13,10 @@ import { Form } from "react-bootstrap";
 class App extends Component {
 
   //on Mount axios call
- 
-      componentDidMount(){fetchSmurfs()}
+  componentDidMount(){
+    this.props.fetchSmurfs()}
 
   render() {
-
-    console.log(fetchSmurfs())
     return (
       <div className="App">
         <Header />
