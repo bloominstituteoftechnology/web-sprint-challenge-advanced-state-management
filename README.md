@@ -17,7 +17,7 @@ _Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Frid
 ## Introduction 
 
 In this challenge, you are to build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
-
+ 
 ## Instructions
 
 ### Task 1: Project Setup
