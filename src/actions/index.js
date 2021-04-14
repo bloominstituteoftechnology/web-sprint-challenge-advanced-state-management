@@ -9,11 +9,7 @@ export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 export const ADD_SMURF = "ADD_SMURF";
 export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
-//Task List:
-//1. Add fetch smurfs action:
-//              - fetch and return initial list of smurfs
-//              - dispatch actions that indicate if we are waiting for a server response
-//              - dispatch an error text action if an error is returned from the server
+
 export const fetchData = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_DATA_START });
