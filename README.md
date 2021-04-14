@@ -14,10 +14,10 @@ You are not allowed to collaborate during the sprint challenge. However, you are
 
 _Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Friday. You will receive feedback on what you have finished and submitted by 5pm when the submissions will be closed. No retakes will be accepted._
 
-## Introduction
+## Introduction 
 
 In this challenge, you are to build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
-
+ 
 ## Instructions
 
 ### Task 1: Project Setup
