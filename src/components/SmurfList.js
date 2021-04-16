@@ -11,6 +11,7 @@ import { fetchSmurfs } from '../actions/index';
 
 
     const isLoading = props.isLoading;
+    const errorMessage = props.errorMessage;
     // const testSmurf = {
     //     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
     //     name:'Poppa Smurf',
@@ -21,6 +22,10 @@ import { fetchSmurfs } from '../actions/index';
 
     if (isLoading) {
         return <h1>Loading...</h1>;
+    }
+
+    if (errorMessage) {
+        return <h1>Gargamel casts an error upon thee.</h1>
     }
 
     return(<div className="listContainer">
@@ -40,7 +45,8 @@ import { fetchSmurfs } from '../actions/index';
 const mapStateToProps = (state) => {
     return {
         smurfs: state.smurfs,
-        isLoading: state.isLoading
+        isLoading: state.isLoading,
+        errorMessage: state.errorMessage
     }
 }
 
