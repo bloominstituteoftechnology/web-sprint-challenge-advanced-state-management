@@ -1,5 +1,8 @@
 
 export const initialState = {
+    smurfs: [],
+    isLoading: false,
+    errorMessage: 'Gargamel casts an error upon thee.'
 }
 
 const reducer = ()=>{
