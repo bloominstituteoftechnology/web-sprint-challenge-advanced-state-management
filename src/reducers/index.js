@@ -20,6 +20,7 @@ export const initialState = {
   error: "",
 };
 
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_API_START:
