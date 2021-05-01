@@ -29,18 +29,18 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/* <Switch> */}
-            {/* <Route path='/smurfs/:smurfId'> */}
+        <Switch>
+            <Route path='/smurfs/:smurfId'>
                 <SmurfProfile/>
-            {/* </Route> */}
+            </Route>
 
-            {/* <Route exact path={'/'}> */}
+            <Route exact path={'/'}>
                 <main>
                   <SmurfList/>
                   <AddForm/>
                 </main>
-            {/* </Route> */}
-        {/* </Switch> */}
+            </Route>
+        </Switch>
       </div>
     );
   }

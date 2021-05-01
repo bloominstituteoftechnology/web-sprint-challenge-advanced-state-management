@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'; 
 import logger from 'redux-logger'; 
 import reducer from './reducers/index'; 
-// import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 
 const { worker } = require('./mocks/browser');
@@ -22,9 +22,9 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
     <Provider store={store}>
-        {/* <Router> */}
+        <Router>
             <App />
-        {/* </Router> */}
+        </Router>
     </Provider>,
     rootElement
 ); 
