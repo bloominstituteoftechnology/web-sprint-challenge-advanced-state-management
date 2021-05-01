@@ -1,9 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 const Smurf = (props)=> {
     const { smurf } = props;
+
+    const history = useHistory();
     
-    return(<div data-testid="smurf" className="card">
+    return(<div data-testid="smurf" onClick={(evt) => history.push(`/smurfs/${smurf.id}`)} className="card">
         <div className="card-body">
         <h3 className="card-title">{smurf.name}</h3>
             <hr/>
