@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { applyMiddleware, createStore } from 'redux'; 
+import { Provider } from 'react-redux'; 
+import thunk from 'redux-thunk'; 
+import logger from 'redux-logger'; 
+import reducer from './reducers/index'; 
+import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 
@@ -9,8 +14,16 @@ worker.start();
 
 const rootElement = document.getElementById("root");
 
+const store = createStore(reducer, applyMiddleware(thunk, logger)); 
+
 ReactDOM.render(
-    <App />, 
+    <React.StrictMode>
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>
+    </React.StrictMode>,
     rootElement
 );
 
