@@ -1,5 +1,6 @@
 
 import axios from 'axios';
+//import { data } from 'msw/lib/types/context';
 
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
@@ -28,7 +29,8 @@ export const addSmurf = ({name, position, nickname, description}) => {
             {name,
             position,
             nickname,
-            description}
+            description,
+            id: Date.now()}
       
     }
 }
