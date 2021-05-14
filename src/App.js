@@ -7,16 +7,16 @@ import Header from './components/Header';
 
 import { useEffect } from "react";
 
-import { getSmurfs } from "./actions/index"
+import { fetchSmurfs } from "./actions"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const App = (props) => {
-    const { getSmurfs } = props
+    const { fetchSmurfs } = props
 
     useEffect(() => {
-      getSmurfs();
+      fetchSmurfs();
     });
 
     return (
@@ -31,7 +31,7 @@ const App = (props) => {
     );
   }
 
-export default connect(null, { getSmurfs })(App);
+export default connect(null, { fetchSmurfs })(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.

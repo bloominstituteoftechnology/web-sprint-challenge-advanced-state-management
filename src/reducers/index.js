@@ -1,4 +1,5 @@
-import { SMURF_START, SMURF_SUCCESS, SMURF_FAIL, ADD_SMURF } from "./../actions/index"
+import { SMURF_START, SMURF_SUCCESS, SET_ERROR, ADD_SMURF } from "../actions"
+
 
 
 export const initialState = {
@@ -8,9 +9,6 @@ export const initialState = {
 }
 
 
-
- console.log(initialState.smurfs)
-
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case SMURF_START:
@@ -19,6 +17,14 @@ const reducer = (state = initialState, action) => {
                 loading: true,
                 error: "",
             }
+        case ADD_SMURF:
+            const addSmurf = {
+                ...action.payload
+            }
+            return {
+                ...state,
+                smurfs: [...state.smurfs, addSmurf]
+            }
         case SMURF_SUCCESS:
             return {
                 ...state,
@@ -26,40 +32,17 @@ const reducer = (state = initialState, action) => {
                 smurfs: action.payload,
                 error: "",
             }
-        case SMURF_FAIL:
+        case SET_ERROR:
             return {
                 ...state,
                 error: action.payload,
             }
         default:
-            return(state);
+            return state;
     }
 }
 
 
-export const formReducer = (state = initialState, action) => {
-    
-    switch(action.type){
-        case ADD_SMURF:
-            const newSmurf = {
-                name: action.payload,
-                position: action.payload,
-                nickname: action.payload,
-                description: action.payload,
-            }
-            return {
-                ...state,
-                smurfs: [...state.smurfs, newSmurf]
-            }
-        case SMURF_FAIL:
-            return {
-                ...state,
-                error: action.payload,
-            }
-        default:
-            return(state);
-        }
-} 
 
 
 
