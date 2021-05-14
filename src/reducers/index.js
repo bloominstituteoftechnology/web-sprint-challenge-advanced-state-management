@@ -23,7 +23,8 @@ const reducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                smurfs: [...state.smurfs, addSmurf]
+                smurfs: [...state.smurfs, addSmurf],
+                error: ""
             }
         case SMURF_SUCCESS:
             return {

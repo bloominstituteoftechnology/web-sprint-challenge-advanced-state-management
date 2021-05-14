@@ -10,7 +10,8 @@ const AddForm = (props) => {
         nickname:"",
         description:""
     });
-
+    const { errorMessage } = props;
+    console.log('props:', props)
 
 
     const handleChange = (e) => {
@@ -20,17 +21,17 @@ const AddForm = (props) => {
         });
     }
 
-    console.log(smorf)
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.addSmurf(smorf)
         if (name === "" || position === "" || nickname === "") {
-            errorMessage = "Name, position and nickname fields are required.";
+            props.setError("Name, position and nickname fields are required.");
+        }
+        else {
+        props.addSmurf(smorf)
         }
     }
 
-    const errorMessage = "";
+    
 
     const { name, position, nickname, description } = smorf;
 
@@ -56,7 +57,7 @@ const AddForm = (props) => {
                 <textarea onChange={handleChange} value={description} name="description" id="description" />
             </div>
             {
-                errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {errorMessage}</div>
+                !!errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {errorMessage}</div>
             }
             <input type="submit" className="btn btn-success" value="Add"/>
             
@@ -64,7 +65,15 @@ const AddForm = (props) => {
     </section>);
 }
 
-export default connect(null, {addSmurf, setError})(AddForm);
+const mapStateToProps = (state) => {
+
+    console.log(state)
+    return({
+        errorMessage: state.error
+    })
+}
+
+export default connect(mapStateToProps, {addSmurf, setError})(AddForm);
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
