@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Smurf from './Smurf';
 
  const SmurfList = (props)=> {
-    const isLoading = false;
+    const isLoading = props.isLoading;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
         name:'Poppa Smurf',
@@ -20,7 +20,7 @@ import Smurf from './Smurf';
         {
             props.smurfs.map(smurf => {
                 return (
-                    <Smurf smurf={smurf}/>
+                    <Smurf key={smurf.id} smurf={smurf}/>
                 )
             })
         }
