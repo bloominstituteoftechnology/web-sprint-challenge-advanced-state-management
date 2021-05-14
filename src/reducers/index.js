@@ -1,9 +1,10 @@
-
 export const initialState = {
-}
+  smurfArr: [],
+  isLoading: null,
+  errorMessage: "",
+};
 
-const reducer = ()=>{
-}
+const reducer = () => {};
 
 export default reducer;
 
