@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import SmurfContext from "../contexts/SmurfContext";
+
 import Smurf from "./Smurf";
+import Smurfs from "./Smurf";
 import { connect } from "react-redux";
 import { fetchSmurf, fetchFail } from "./../actions";
 
+
+export default function SmurfList() {
+    const smurfs = useContext(SmurfContext);
+}
 const SmurfList = () => {
   const isLoading = false;
   const testSmurf = {
@@ -25,8 +32,7 @@ const SmurfList = () => {
   );
 };
 
-export default connect(null, { fetchSmurf, fetchFail })(SmurfList);
-
+export default SmurfList();
 //Task List:
 //1. Connect the smurfs and loading state values to the SmurfList component.
 //2. Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.

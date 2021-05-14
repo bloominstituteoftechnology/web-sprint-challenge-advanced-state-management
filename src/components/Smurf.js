@@ -1,26 +1,9 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useContext } from "react";
 
-import { fetchFail, fetchSmurf } from "./../actions";
+import SmurfContext from "./../contexts/SmurfContext";
 
-const Smurf = (props) => {
-  const { smurf, isFetching, error } = props;
-
-  useEffect(() => {
-    props.fetchSmurf();
-  }, []);
-
-  const handleClick = () => {
-    props.fetchSmurf();
-  };
-
-  if (error) {
-    return <h2>We got an error: {error}</h2>;
-  }
-
-  if (isFetching) {
-    return <h2>Fetching Smurf for you!</h2>;
-  }
+const Smurfs = () => {
+  const smurf = useContext(SmurfContext);
 
   return (
     <div data-testid="smurf" className="card">
@@ -41,12 +24,4 @@ const Smurf = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    smurf: state.smurf,
-    isFetching: state.isFetching,
-    error: state.error,
-  };
-};
-
-export default connect(mapStateToProps, { fetchSmurf, fetchFail })(Smurf);
+export default Smurfs;
