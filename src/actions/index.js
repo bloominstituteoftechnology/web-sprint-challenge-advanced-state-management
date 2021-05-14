@@ -24,10 +24,10 @@ export const errorAction = (error) => {
   };
 };
 
-export const addSmurf = ({ name, nickname, position, summary }) => {
+export const addSmurf = ({ name, nickname, position, summary, id }) => {
   return {
     type: ADD_SMURF,
-    payload: { name, nickname, position, summary },
+    payload: { name, nickname, position, summary, id },
   };
 };
 
