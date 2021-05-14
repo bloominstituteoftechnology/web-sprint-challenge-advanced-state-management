@@ -22,10 +22,9 @@ const AddForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // props.addSmurf(name, position, nickname, description);
-        // if (state.name === "" || state.position === "" || state.nickname === "") {
-        //     props.setError(props.erroMessage);
-        // }
+        if (state.name === "" || state.position === "" || state.nickname === "") {
+            props.setError(`Please fill out this form`);
+        }
     }
 
     const errorMessage = props.errorMessage;
@@ -70,3 +69,4 @@ export default connect(mapStateToProps, { setError, addSmurf })(AddForm);
 //2. Replace all instances of the errorMessage static variable with your error message state value. 
 //3. Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
 //4. Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+//Final
