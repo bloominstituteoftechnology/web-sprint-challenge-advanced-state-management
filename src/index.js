@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import reducer from "./reducers/index";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { logger } from "redux-logger}";
+import { logger } from "redux-logger";
 import { Provider } from "react-redux";
 
 import "./index.css";
