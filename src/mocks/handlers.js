@@ -17,6 +17,8 @@ let smurfs = [
   }
 ];
 
+export default smurfs
+
 const sendUserError = (msg, ctx, res) => {
   
   return res(
