@@ -4,7 +4,15 @@ export const initialState = {
   errorMessage: "",
 };
 
-const reducer = () => {};
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case START_FETCH:
+      return {
+        ...state,
+        isLoading: true,
+      };
+  }
+};
 
 export default reducer;
 

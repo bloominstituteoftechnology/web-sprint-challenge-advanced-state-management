@@ -44,13 +44,13 @@ Your finished project must include all of the following requirements. **Unlike o
 
 Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-- [ ] Adds the following state values into the initialState:
+- [ x ] Adds the following state values into the initialState:
 
   - an array of smurfs
   - a boolean indicating if the app is loading
   - a string indicating a possible error message
 
-- [ ] Add in the arguments needed to complete a standard reducer function.
+- [ x ] Add in the arguments needed to complete a standard reducer function.
 - [ ] Add in a reducer case to accomidate the start of a smurf fetch.
 - [ ] Add in a reducer case to accomidate the successful smurf api fetch.
 - [ ] Add in a reducer cases to accomidate the failed smurf api fetch.
