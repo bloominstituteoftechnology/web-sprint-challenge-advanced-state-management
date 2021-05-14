@@ -1,3 +1,11 @@
+import {
+  START_FETCH,
+  SUCCESS_FETCH,
+  FAILED_FETCH,
+  ADD_SMURF,
+  ERROR,
+} from "../actions/index";
+
 export const initialState = {
   smurfArr: [],
   isLoading: null,

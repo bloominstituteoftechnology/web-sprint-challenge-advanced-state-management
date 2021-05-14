@@ -54,8 +54,8 @@ Add in the needed state and reducer cases to hold and modify smurf error message
 - [ x ] Add in a reducer case to accomidate the start of a smurf fetch.
 - [ x ] Add in a reducer case to accomidate the successful smurf api fetch.
 - [ x ] Add in a reducer cases to accomidate the failed smurf api fetch.
-- [ ] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
-- [ ] Add in a reducer case that adds in a value to the error message.
+- [ x ] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
+- [ x ] Add in a reducer case that adds in a value to the error message.
 
 #### index.js
 
