@@ -1,11 +1,46 @@
+import { bindActionCreators } from 'redux';
+import {FETCH_SUCCESS,FETCH_START,FETCH_FAIL,ADD_SMURF,SET_ERROR} from '../actions/index';
 
 export const initialState = {
+    smurfArray:[],
+    loading:false,
+    errormessage:''
 }
 
-const reducer = ()=>{
+export const reducer = (state = initialState,action)=>{
+    switch(action.type){
+        case FETCH_START:
+            return{
+                ...state,loading:true
+            }
+        case FETCH_SUCCESS:
+            return{
+                ...state,
+                loading:false,
+                smurfArray:action.payload
+            }
+        case FETCH_FAIL:
+            return{
+                ...state,
+                loading:false,
+                errormessage: action.payload
+            }
+        case ADD_SMURF:
+            return{
+                ...state,
+                smurfArray:[...state.smurfArray, action.payload]
+            }
+        case SET_ERROR:
+            return{
+                ...state,
+                errormessage:action.payload
+            }
+        default:
+            return state;
+    }
 }
 
-export default reducer;
+
 
 //Task List:
 //1. Adds the following state values into the initialState:
