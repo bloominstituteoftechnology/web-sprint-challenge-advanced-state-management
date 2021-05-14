@@ -21,6 +21,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 ## Instructions
 
 ### Task 1: Project Setup
+Initial
 
 * [ ] Fork and clone this repository.
 * [ ] Create a new working branch: git checkout -b `<firstName-lastName>`.
