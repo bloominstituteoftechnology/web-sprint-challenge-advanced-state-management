@@ -27,6 +27,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         smurfArr: [...state.smurfArr, action.payload],
       };
+    case ERROR:
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
+    default:
+      return state;
   }
 };
 
