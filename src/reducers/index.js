@@ -17,6 +17,11 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         smurfArr: action.payload,
       };
+    case FAILED_FETCH:
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
   }
 };
 
