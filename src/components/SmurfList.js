@@ -1,5 +1,7 @@
 import React from "react";
 import Smurf from "./Smurf";
+import { connect } from "react-redux";
+import { fetchSmurf, fetchFail } from "./../actions";
 
 const SmurfList = () => {
   const isLoading = false;

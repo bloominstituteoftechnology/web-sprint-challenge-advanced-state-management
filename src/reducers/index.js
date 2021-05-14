@@ -1,45 +1,41 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from './../actions';
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from "./../actions";
 
-
-
-export const initialState = {
-    smurf: {
+const initialState = {
+  smurf: {
     name: {
       nickname: "",
       position: "",
       summary: "",
-      id: ""
+      id: "",
     },
-},
-isFetching: false,
-error: ''
-
-
-export const reducer = (state = initialState, action) =>{
-    switch (action, type) {
-        case(FETCH_START):
-        return({
-            ...state,
-            isFetching: true
-        })
-        case(FETCH_SUCCESS):
-        return({
-            ...state,
-            smurf: action.payload,
-            isFetching: false
-        })
-        case(FETCH_FAIL):
-        return({
-            ...state,
-            error: action.payload,
-            isFetching: false
-        })
-        default:
-            return state;
-    }
+  },
+  isFetching: false,
+  error: "Houston, we have an error!",
 };
 
-
+export const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_START:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        smurf: action.payload,
+        isFetching: false,
+      };
+    case FETCH_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false,
+      };
+    default:
+      return state;
+  }
+};
 
 //Task List:
 //1. Adds the following state values into the initialState:

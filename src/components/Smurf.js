@@ -43,7 +43,7 @@ const Smurf = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    person: state.person,
+    smurf: state.smurf,
     isFetching: state.isFetching,
     error: state.error,
   };
