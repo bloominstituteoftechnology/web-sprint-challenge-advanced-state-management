@@ -11,7 +11,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 class App extends Component {
   componentDidMount() {
     fetchSmurfs()
-  }
+  };
 
   render() {
     return (
