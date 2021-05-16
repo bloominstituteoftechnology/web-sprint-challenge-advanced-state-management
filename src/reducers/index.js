@@ -21,6 +21,7 @@ export const initialState = {
 };
 
 
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING_API_START:
