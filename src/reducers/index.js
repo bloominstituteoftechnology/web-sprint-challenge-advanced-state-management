@@ -1,4 +1,3 @@
-import { bindActionCreators } from 'redux';
 import { LOADING, ADD_SMURF, FETCH_SUCCESS, ERROR } from '../actions/index'
 
 export const initialState = {
