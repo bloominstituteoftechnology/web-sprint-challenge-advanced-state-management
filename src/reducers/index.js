@@ -1,9 +1,38 @@
+import { LOADING, ADD_SMURF, SMURF_SUCCESS, ERROR } from './actions'
 
 export const initialState = {
+    loading: false
 }
 
-const reducer = ()=>{
-}
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case LOADING:
+            return {
+                ...state,
+                loading: true
+            };
+        case ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+            case SMURF_SUCCESS:
+                return {
+                    ...state,
+                    loading: false,
+                    smurfs: action.payload,
+                }
+        case ADD_SMURF:
+            return {
+                ...state,
+                loading: false,
+                smurfs [action.payload, ...state.smurfs],
+            }
+        default:
+            return state;
+    }
+};
 
 export default reducer;
 
