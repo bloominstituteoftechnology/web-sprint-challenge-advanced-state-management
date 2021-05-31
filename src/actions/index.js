@@ -14,15 +14,21 @@ export const fetchSmurfs = () => (dispatch) => {
     dispatch({ type: LOADING })
     axios.get('http://localhost:3333/smurfs')
         .then(res => {
-            dispatch({ type: ADD_SMURF, payload: res.data });
-
-    console.log(res);
-
+            dispatch({ type: FETCH_SUCCESS, payload: res.data });
+            console.log(res);
             dispatch({ type: FETCH_SUCCESS, payload: res.data.data })
         })
-        .catch(error => {
-            dispatch({ type: ERROR, payload: { error } })
+        .catch(errorMessage => {
+            dispatch({ type: ERROR, payload: { errorMessage } })
 
-    console.log({ error })
+            console.log({ errorMessage })
         })
 };
+
+
+export const addSmurf = ({ name, position, nickname, description }) => {
+    return {
+        type: ADD_SMURF,
+        payload: { name, position, nickname, description }
+    }
+}
