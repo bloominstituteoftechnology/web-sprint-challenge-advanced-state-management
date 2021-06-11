@@ -5,7 +5,8 @@ export const initialState = {
     //     name: "",
     //     position: "",
     //     nickname: "",
-    //     description: ""
+    //     description: "",
+    //     id: ""
     // }],
     smurfs: [],
     isLoading: false,
@@ -23,7 +24,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                smurfs: [...state.smurfs, action.payload]
+                smurfs: action.payload
             }
         case FETCH_FAIL:
             return {

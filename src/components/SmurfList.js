@@ -25,7 +25,7 @@ import Smurf from './Smurf';
     </div>);
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         smurfs: state.smurfs,
         isLoading: state.isLoading
