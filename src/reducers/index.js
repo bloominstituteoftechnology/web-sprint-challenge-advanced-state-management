@@ -1,11 +1,18 @@
 
 export const initialState = {
+    smurfs: [],
+    isLoading: false,
+    error: ''
 }
 
-const reducer = ()=>{
-}
+export const reducer = (state = initialState, action) => {
+    switch(action.type) {
+        default: 
+            return state;
+    }
+};
 
-export default reducer;
+// export default reducer;
 
 //Task List:
 //1. Adds the following state values into the initialState:
