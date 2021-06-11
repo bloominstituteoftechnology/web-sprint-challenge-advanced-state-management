@@ -28,23 +28,43 @@ export default SmurfList;
 //3. Replace the static isLoading variable with the state loading variable.
   
   
+   
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
   
-    
+ 
+ 
+ 
   
-  
-    
-  
-  
-    
-  
-  
-    
-  
-  
-    
-  
-  
-    
-  
-  
-  
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

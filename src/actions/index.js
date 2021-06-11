@@ -46,16 +46,4 @@ import axios from 'axios';
     
   
   
-    
-  
-  
-    
-  
-  
-    
-  
-  
-    
-  
-  
   
