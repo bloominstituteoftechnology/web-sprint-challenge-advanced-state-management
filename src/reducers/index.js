@@ -1,19 +1,12 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, SET_ERROR } from './../actions/index';
 
 export const initialState = {
-    // smurfs: [{
-    //     name: "",
-    //     position: "",
-    //     nickname: "",
-    //     description: "",
-    //     id: ""
-    // }],
     smurfs: [],
     isLoading: false,
     errorMessage: ''
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_START:
             return {
@@ -52,7 +45,7 @@ export const reducer = (state = initialState, action) => {
     }
 };
 
-// export default reducer;
+export default reducer;
 
 //Task List:
 //1. Adds the following state values into the initialState:
