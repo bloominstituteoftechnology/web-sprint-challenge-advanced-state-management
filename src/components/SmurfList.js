@@ -16,7 +16,6 @@ import Smurf from './Smurf';
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
-
     
     return(<div className="listContainer">
         {
