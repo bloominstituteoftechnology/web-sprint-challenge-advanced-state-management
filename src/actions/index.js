@@ -17,7 +17,12 @@ export const fetchSmurfs =()=>(dispatch)=>{
             dispatch({type: FETCH_SMURFS_ERROR, payload: err })
         })
 }
-
+export const addSmurf = ({ name, position, nickname, description})=>{
+    return{
+        type: ADD_SMURF,
+        payload: { name, position, nickname, description}
+    }
+};
 
 
 //Task List:
