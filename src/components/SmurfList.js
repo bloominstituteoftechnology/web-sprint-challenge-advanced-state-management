@@ -17,13 +17,14 @@ import Smurf from './Smurf';
     }
 
     return(<div className="listContainer">
-        { props.smurfArr.map(smurf =>(<Smurf key={smurf.id} smurf={smurf} />))}
+        { props.smurfs.map(smurf =>(<Smurf key={smurf.id} smurf={smurf} />))}
     </div>);
 }
 const mapStateToProps =(state)=>{
     return{
+        smurfs: state.smurfs, 
         isLoading: state.isLoading,
-        smurfArr: state.smurfArr
+        error: state.error
     }
 }
 export default connect(mapStateToProps)(SmurfList);
