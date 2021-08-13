@@ -32,6 +32,7 @@ const AddForm = (props) => {
                     position: state.position,
                     nickname: state.nickname,
                     description: state.description,
+                    // id: Date.now(),
                 }));
         }
     }

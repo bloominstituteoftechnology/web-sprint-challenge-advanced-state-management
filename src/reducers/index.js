@@ -50,6 +50,7 @@ const reducer = (state = initialState, action) => {
             // }]
             return ({
                 ...state,
+                id: Date.now(),
                 smurfs: [...state.smurfs, action.payload]
             });
         //7. Add in a reducer case that adds in a value to the error message.
