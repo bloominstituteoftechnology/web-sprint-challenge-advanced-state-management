@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
-import { connect } from 'react-redux';
-
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-
+import { connect } from 'react-redux';
 import { fetchSmurfs }  from './actions/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
+//could not get class App to work and give me the validation error so I witched to function component. 
 const App = (props) => {
 
   useEffect(() => {
