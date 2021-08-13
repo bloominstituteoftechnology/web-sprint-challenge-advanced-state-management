@@ -11,6 +11,7 @@ import "./App.css";
 //could not get class App to work and give me the validation error so I witched to function component. 
 const App = (props) => {
 
+//1. Connect the fetchSmurfs actions to the App component.
   useEffect(() => {
       props.dispatch(fetchSmurfs());
   }, []);
@@ -33,7 +34,7 @@ const mapStateToProps = state => {
     errorMessage: state.errorMessage,
   };
 };
-
+//1. Connect the fetchSmurfs actions to the App component.
 export default connect(mapStateToProps)(App);
 
 //Task List:
