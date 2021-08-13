@@ -32,7 +32,7 @@ export const fetchStart = () => {
     return ({ type: START_FETCH_SMURF });
 }
 //2. Add a standard action that allows us to add new smurf (including the name, nickname, position, summary)
-export const addSmurf = (smurf) {
+export const addSmurf = (smurf) => {
     return ({ type: ADD_SMURF, payload: smurf });
 }
 //3. Add a standard action that allows us to set the "value of the error message" slice of state.
