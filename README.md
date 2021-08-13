@@ -160,4 +160,4 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
 
 ## Rick Mansfield's pull/push req and trail
-- [Link for Convenience]()
+- [Link for Convenience](https://github.com/LambdaSchool/web-sprint-challenge-advanced-state-management/pull/161)
