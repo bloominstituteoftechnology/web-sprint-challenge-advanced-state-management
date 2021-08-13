@@ -7,7 +7,7 @@ import Header from './components/Header';
 // import axios from 'axios';
 
 import { connect } from 'react-redux';
-import { fetchSmurfs } from './actions';
+import { fetchSmurfs } from './actions/index.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
@@ -25,7 +25,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
         <main>
           <SmurfList/>
           <AddForm/>
@@ -34,6 +33,12 @@ class App extends Component {
     );
   }
 }
+// const mapStateToProps = state => {
+//   return {
+//       smurfs: state.smurfs, 
+//       isLoading: state.isLoading
+//   }
+// }
 
 // export default App;
 

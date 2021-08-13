@@ -11,30 +11,32 @@ export const fetchSmurfs = () => {
     return (dispatch) => {
         dispatch(fetchStart());
         axios.get("http://localhost:3333/smurfs")
-            .then(resp => {
-                dispatch(fetchSuccess(resp.data));
+            .then(res => {
+                console.log('fetchSmurfs res.data:', res.data);
+                dispatch(fetchSuccess(res.data));
             })
             .catch(err => {
                 dispatch(fetchFail(err));
             });
     }
 }
+//2. Add a standard action that allows us to add new smurf (including the name, nickname, position, summary)
+export const addSmurf = (smurf) => {
+    return ({ type: ADD_SMURF, payload: smurf });
+}
 
-export const fetchFail = (err) => {
-    return ({ type: FAIL_FETCH_SMURF, payload: err });
+export const fetchStart = () => {
+    return ({ type: START_FETCH_SMURF });
 }
 
 export const fetchSuccess = (smurfs) => {
     return ({ type: SUCCESS_FETCH_SMURF, payload: smurfs });
 }
 
-export const fetchStart = () => {
-    return ({ type: START_FETCH_SMURF });
+export const fetchFail = (err) => {
+    return ({ type: FAIL_FETCH_SMURF, payload: err });
 }
-//2. Add a standard action that allows us to add new smurf (including the name, nickname, position, summary)
-export const addSmurf = (smurf) => {
-    return ({ type: ADD_SMURF, payload: smurf });
-}
+
 //3. Add a standard action that allows us to set the "value of the error message" slice of state.
 
 export const setError = (err) => {
