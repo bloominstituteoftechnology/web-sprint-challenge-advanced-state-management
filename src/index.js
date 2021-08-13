@@ -21,7 +21,7 @@ const rootElement = document.getElementById("root");
 
 //3. Wrap the App component in a react-redux Provider element.
 ReactDOM.render(
-    <Provider>
+    <Provider store={store}>
     <App />
     </Provider>, 
     rootElement
