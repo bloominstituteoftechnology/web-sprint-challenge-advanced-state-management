@@ -21,22 +21,22 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 ## Instructions
 
 ### Task 1: Transfer Repo
-* Clone this repository.
-* Implement the project on your newly created <firstName-lastName> branch, committing changes regularly.
-* Push commits: git push origin <firstName-lastName>.
-* RUN npm install to install your dependencies.
-* RUN npm start to start your application.
+* Clone this repository. -ok
+* Implement the project on your newly created <firstName-lastName> branch, committing changes regularly. - will do
+* Push commits: git push origin <firstName-lastName>. - will do
+* RUN npm install to install your dependencies. -ok
+* RUN npm start to start your application. - ok
  
 ### Task 2: Project Requirements
  Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.**
 
 #### reducers/index.js
-  Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
+  Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as necessary.**
 
   * [ ] Adds the following state values into the initialState:
-      - an array of smurfs
-      - a boolean indicating if the app is loading
-      - a string indicating a possible error message
+      - an array of smurfs *smurfs: [];
+      - a boolean indicating if the app is loading *isLoading: True
+      - a string indicating a possible error message *Err: '';
 
   * [ ] Add in the arguments needed to complete a standard reducer function.
   * [ ] Add in a reducer case to accommodate the start of a smurf fetch.
