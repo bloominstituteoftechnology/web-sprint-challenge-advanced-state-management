@@ -14,6 +14,7 @@ ReactDOM.render(
     rootElement
 );
 
+const myName = 'Alieze';
 //Task List:
 //1. Add in all necessary components and libary methods.
 //2. Create a store that includes thunk and logger middleware support.
