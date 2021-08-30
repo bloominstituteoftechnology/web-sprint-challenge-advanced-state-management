@@ -34,15 +34,20 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
   Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as necessary.**
 
   * [ ] Adds the following state values into the initialState:
-      - an array of smurfs *smurfs: [];
-      - a boolean indicating if the app is loading *isLoading: True
-      - a string indicating a possible error message *Err: '';
+      - an array of smurfs -ok
+      - a boolean indicating if the app is loading -ok
+      - a string indicating a possible error message  -ok
 
-  * [ ] Add in the arguments needed to complete a standard reducer function.
+  * [x] Add in the arguments needed to complete a standard reducer function.
+
   * [ ] Add in a reducer case to accommodate the start of a smurf fetch.
+
   * [ ] Add in a reducer case to accommodate the successful smurf api fetch.
+
   * [ ] Add in a reducer cases to accommodate the failed smurf api fetch.
+
   * [ ] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
+
   * [ ] Add in a reducer case that adds in a value to the error message.
 
 #### index.js
