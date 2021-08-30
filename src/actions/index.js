@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 export const LOADING = 'LOADING';
+export const ERROR = 'ERROR';
+export const SUCCESS = 'SUCCESS';
 
-export const fetchSmurfs = () => (dispatch) => {
+export const fetchSmurfs = (fetchParam) => (dispatch) => {
     dispatch({type: LOADING})
-    axios.get(`http://localhost:3333/smurfs`)
+    axios.get(`http://localhost:3333/smurfs=${fetchParam}`)
     .then(res => {
         console.log(res)
     })
