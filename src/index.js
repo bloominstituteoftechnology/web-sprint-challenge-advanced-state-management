@@ -19,12 +19,12 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />, 
-    </Provider>
-    
+    <App />, 
+    </Provider>,
+    rootElement
 );
 
-const myName = 'Alieze';
+//const myName = 'Alieze';
 //Task List:
 //1. Add in all necessary components and libary methods.
 

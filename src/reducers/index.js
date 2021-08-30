@@ -8,7 +8,9 @@ export const initialState = {
     error: ''
 }
 
-const reducer = (state = initialState, action ) => {
+
+// ??? why would I need to export this ???
+export const reducer = (state = initialState, action ) => {
     switch(action.type){
         case LOADING:
             return {
