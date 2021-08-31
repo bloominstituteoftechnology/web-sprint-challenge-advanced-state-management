@@ -1,6 +1,6 @@
 import { getDefaultNormalizer } from "@testing-library/react";
 
-import { LOADING, SUCCESS, ERROR } from "../actions/index";
+import { LOADING, SUCCESS, ERROR, ERROR_MESSAGE, ADD_SMURF } from "../actions/index";
 
 export const initialState = {
     loading: false,
@@ -10,7 +10,8 @@ export const initialState = {
 
 
 // ??? why would I need to export this ???
-export const reducer = (state = initialState, action ) => {
+// because you used curlies on reducer import in index.js
+const reducer = (state = initialState, action ) => {
     switch(action.type){
         case LOADING:
             return {
@@ -31,6 +32,22 @@ export const reducer = (state = initialState, action ) => {
                 loading: false,
                 error: action.payload,
             }
+
+            case ADD_SMURF:
+                return {
+                    ...state,
+                    loading: false,
+                    smurfData: [...state.smurfData, action.payload]
+                    //this will add whatever your new smurf object is to the array
+                }
+            
+                // This is an additional case
+                case ERROR_MESSAGE:
+                    return {
+                        ...state,
+                        loading: false,
+                        error: action.payload,
+                    }
         
         default:
             return state;

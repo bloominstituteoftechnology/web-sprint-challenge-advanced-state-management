@@ -8,7 +8,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { reducer } from './reducers/index';
+import reducer from './reducers/index';
+// when you use curly braces on reducer you must 'export your function'
 
 const { worker } = require('./mocks/browser');
 worker.start();
