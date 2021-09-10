@@ -41,7 +41,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
   * [ ] Add in the arguments needed to complete a standard reducer function.
   * [ ] Add in a reducer case to accommodate the start of a smurf fetch.
   * [ ] Add in a reducer case to accommodate the successful smurf api fetch.
-  * [ ] Add in a reducer cases to accommodate the failed smurf api fetch.
+  * [ ] Add in a reducer cases to accommodate an error.
   * [ ] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
   * [ ] Add in a reducer case that adds in a value to the error message.
 
@@ -51,18 +51,18 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 #### actions/index.js
   Add in the action creators and action constants needed to add a smurf to state and fetch smurfs from the server. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive smurfs from our server, saves the result of that call to our state and shows an error if one is made.
+  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive all smurfs from the api. Save the result of to our state and show an error if one is made.
   * [ ] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
   * [ ] Add a standard action that allows us to set the value of the error message slice of state.
   
 #### App.js
-  Connect this component to redux **passing in your fetchSmurfs action only.** 
+  Connect component to the fetchSmurfs action.
   
   * [ ] Connect the fetchSmurfs actions to the App component.
   * [ ] Call the fetchSmurfs action when the component first loads.
 
 #### components/SmurfList.js
-  Connect this component to redux, **passing in your smurf array and loading status state values.** 
+  Connect this component to your smurfs and loading screen state slices.
   
   * [ ] Connect the smurfs and loading state values to the SmurfList component.
   * [ ] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
@@ -72,11 +72,11 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
   You do not need to modify this component.
 
 #### components/AddForm.js
-  Connect this component to redux **passing in your error message state value, setError action and addSmurf action.** Complete the form handling code.
+  Connect this component to the error state slice, setError and addSmurf actions. Complete the form handling code.
 
-  * [ ] Connect the errorMessage, setError and addSmurf actions to the AddForm component.
-  * [ ] Replace all instances of the errorMessage static variable with your error message state value. 
-  * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
+  * [ ] Connect your error state slice, setError and addSmurf actions to the AddForm component.
+  * [ ] Replace all instances of the errorMessage static variable with your error message state slice. 
+  * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
   * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
   **Notes:**
@@ -87,26 +87,15 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
   * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
   * It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
-### Task 4: Stretch Goals
-
- **IMPORTANT:** Only work on stretch goals after completing your MVP!
-
- When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `main` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout main` and `git merge stretch.`
-
-  After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
-
-* [ ] Build a smurf profile page with using react-router and dynamic url params  
-* [ ] Using React Testing Library, test one or more of your components (not any component that fetches data though)
-
 ### Reference Materials
 
 #### Resource: API documentation 
 
-##### GET '/smurfs'
+#### API Documentation
+* **[GET]** to `http://localhost:3333/smurfs`: returns the list of all smurfs objects.
+* **[POST]** to `http://localhost:3333/smurfs`: creates a new smurf object. Pass smurf data through the `body` of the request.
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `http://localhost:3333/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
-
+* **Smurf Object Structure** 
 ```js
 [
   {
@@ -119,37 +108,12 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 ];
 ```
 
-
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out. Initially Poppa and Smurfette will be in the array.
-
-**HINT** if you are going to be working on Stretch Problem, you'll need to use that unique `id`.
-
-Example of object created in Smurf DB:
-
-```js
-[
-  {
-    name:'Poppa Smurf',
-    position:'Village Leader',
-    nickname: 'Pops',
-    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-  },
-  {
-    id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
-    name:'Smurfette',
-    position:'Beautician',
-    nickname: 'Smurfette',
-    description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
-  }
-];
-```
- 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes.
+* [ ] Submit via Codegrade by committing and pushing any new changes.
 * [ ] Check codegrade for automated feedback.
 * [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
+* [ ] Any changes pushed to your <firstName-lastName> branch will resubmitted to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.

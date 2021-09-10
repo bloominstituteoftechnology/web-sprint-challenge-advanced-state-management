@@ -34,7 +34,6 @@ export const handlers = [
     }),
 
     rest.post('http://localhost:3333/smurfs', (req, res, ctx) => {
-      // console.log(req.body);
       const { name, position, nickname, description } = req.body;
       const newSmurf = { name, position, nickname, description, id: Date.now() };
 

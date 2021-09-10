@@ -2,12 +2,11 @@ import React from 'react';
 import MutationObserver from 'mutationobserver-shim';
 import { render as rtlRender, screen, fireEvent, within } from '@testing-library/react';
 
-import App from '../App';
+import App from './App';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-
 
 import reducer from './reducers';
 import { initialState } from './reducers';

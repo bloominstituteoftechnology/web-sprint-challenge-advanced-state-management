@@ -8,6 +8,9 @@ const AddForm = (props) => {
         description:""
     });
 
+    //remove when error state is added
+    const errorMessage = "";
+
     const handleChange = e => {
         setState({
             ...state,
@@ -18,11 +21,9 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            errorMessage = "Name, position and nickname fields are required.";
+            //add in error action
         }
     }
-
-    const errorMessage = "";
 
     return(<section>
         <h2>Add Smurf</h2>
