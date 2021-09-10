@@ -22,7 +22,7 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
 ### Task 1: Transfer Repo
 * Clone this repository.
-* Implement the project on your newly created <firstName-lastName> branch, committing changes regularly.
+* Implement the project on the automatically generated <firstName-lastName> branch, committing changes regularly.
 * Push commits: git push origin <firstName-lastName>.
 * RUN npm install to install your dependencies.
 * RUN npm start to start your application.
