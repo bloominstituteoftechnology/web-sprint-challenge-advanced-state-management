@@ -81,7 +81,7 @@ In this project, you will build the reducer, actions and basic redux connects ne
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 
-## Resource: API documentation 
+## API documentation 
 
 #### API Documentation
 * **[GET]** to `http://localhost:3333/smurfs`: returns the list of all smurfs objects.
