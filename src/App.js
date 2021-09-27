@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <SmurfsContext.Provider value={{smurfs, dispatch}}>
+        <SmurfsContext.Provider value={smurfs, dispatch}>
         <main>
           <SmurfList/>
           <AddForm/>
