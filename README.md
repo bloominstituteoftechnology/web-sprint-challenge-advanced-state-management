@@ -29,17 +29,17 @@ In this project, you will build the reducer, actions and basic redux connects ne
 #### Complete reducers/index.js
   Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-  * [ ] Adds the following state values into the initialState:
+  * [x] Adds the following state values into the initialState:
       - an array of smurfs
       - a boolean indicating if the app is loading
       - a string indicating a possible error message
 
-  * [ ] Add in the arguments needed to complete a standard reducer function.
-  * [ ] Add in a reducer case to accommodate the start of a smurf fetch.
-  * [ ] Add in a reducer case to accommodate the successful smurf api fetch.
-  * [ ] Add in a reducer cases to accommodate an error.
-  * [ ] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
-  * [ ] Add in a reducer case that adds in a value to the error message.
+  * [x] Add in the arguments needed to complete a standard reducer function.
+  * [x] Add in a reducer case to accommodate the start of a smurf fetch.
+  * [x] Add in a reducer case to accommodate the successful smurf api fetch.
+  * [x] Add in a reducer cases to accommodate an error.
+  * [?] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
+  * [?] Add in a reducer case that adds in a value to the error message.
 
 ### Complete index.js
   Connect your application to reducer through redux with the thunk and logger middleware packages attached.
@@ -60,7 +60,7 @@ In this project, you will build the reducer, actions and basic redux connects ne
 ### Complete components/SmurfList.js
   Connect this component to your smurfs and loading screen state slices.
   
-  * [ ] Connect the smurfs and loading state values to the SmurfList component.
+  * [x] Connect the smurfs and loading state values to the SmurfList component.
   * [ ] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
   * [ ] Replace the static isLoading variable with the state loading variable.
 
