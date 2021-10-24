@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Smurf from './Smurf';
 import { fetchSmurfs } from '../actions';
 
  const SmurfList = (props)=> {
+    useEffect(() => {
+        props.fetchSmurfs();
+    },[]);
     // const isLoading = false;
     // const testSmurf = {
     //     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",

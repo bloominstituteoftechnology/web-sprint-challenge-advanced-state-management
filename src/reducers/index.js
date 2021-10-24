@@ -1,4 +1,4 @@
-import { LOADING, FETCH_SUCCESS, ERROR} from "../actions/index"
+import { START_FETCH, FETCH_SUCCESS, ERROR, ADD_SMURF, SET_ERROR} from "../actions/index"
 
 const initialState = {
     smurfs: [],
@@ -8,7 +8,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
-        case LOADING:
+        case START_FETCH:
             return {
                 ...state,
                 loading: true,
@@ -27,7 +27,21 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload,
             }
-            
+
+        case ADD_SMURF:
+            return{
+                ...state,
+                loading: false,
+                smurfs: [...state.smurfs, action.payload]
+            }
+
+        case SET_ERROR:
+            return{
+                ...state,
+                loading: false,
+                error: action.payload
+            } 
+
         default:
             return state;
     } 
