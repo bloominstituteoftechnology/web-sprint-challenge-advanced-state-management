@@ -17,7 +17,7 @@ const AddForm = (props) => {
     });
 
     //remove when error state is added
-    const errorMessage = "";
+    // const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -30,7 +30,7 @@ const AddForm = (props) => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //add in error action
-           return setError(errorMessage);
+           return props.setError("error");
         }
         props.addSmurf({...state, id:Date.now()});
         push("/smurfs");
