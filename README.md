@@ -39,7 +39,7 @@ In this project, you will build the reducer, actions and basic redux connects ne
   * [x] Add in a reducer case to accommodate the successful smurf api fetch.
   * [x] Add in a reducer cases to accommodate an error.
   * [?] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
-  * [?] Add in a reducer case that adds in a value to the error message.
+  * [x] Add in a reducer case that adds in a value to the error message.
 
 ### Complete index.js
   Connect your application to reducer through redux with the thunk and logger middleware packages attached.
