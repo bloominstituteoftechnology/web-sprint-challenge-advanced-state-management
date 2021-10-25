@@ -4,20 +4,13 @@ import { connect } from 'react-redux';
 import { setError, addSmurf } from '../actions';
 import Smurf from './Smurf';
 
-import { useHistory } from 'react-router-dom';
-
 const AddForm = (props) => {
-    const push = useHistory();
-    
     const [state, setState] = useState({
         name:"",
         position:"",
         nickname:"",
         description:""
     });
-
-    //remove when error state is added
-    // const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -33,7 +26,6 @@ const AddForm = (props) => {
            return props.setError("error");
         }
         props.addSmurf({...state, id:Date.now()});
-        push("/smurfs");
     } 
 
     const { name, position, nickname, description } = state;
