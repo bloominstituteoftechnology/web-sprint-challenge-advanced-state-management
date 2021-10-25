@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import { setError, addSmurf } from '../actions';
 import Smurf from './Smurf';
 
+import { useHistory } from 'react-router-dom';
+
 const AddForm = (props) => {
+    const push = useHistory();
+    
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -13,7 +17,7 @@ const AddForm = (props) => {
     });
 
     //remove when error state is added
-    // const errorMessage = "";
+    const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -26,28 +30,31 @@ const AddForm = (props) => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //add in error action
-            props.addSmurf({...Smurf, id:Date.now()});
+           return setError(errorMessage);
         }
-    }
+        props.addSmurf({...state, id:Date.now()});
+        push("/smurfs");
+    } 
 
+    const { name, position, nickname, description } = state;
     return(<section>
         <h2>Add Smurf</h2>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="name">Name:</label><br/>
-                <input onChange={handleChange} value={state.name} name="name" id="name" />
+                <input onChange={handleChange} value={name} name="name" id="name" />
             </div>
             <div className="form-group">
                 <label htmlFor="position">Position:</label><br/>
-                <input onChange={handleChange} value={state.position} name="position" id="position" />
+                <input onChange={handleChange} value={position} name="position" id="position" />
             </div>
             <div className="form-group">
                 <label htmlFor="nickname">Nickname:</label><br/>
-                <input onChange={handleChange} value={state.nickname} name="nickname" id="nickname" />
+                <input onChange={handleChange} value={nickname} name="nickname" id="nickname" />
             </div>
             <div className="form-group">
                 <label htmlFor="description">Description:</label><br/>
-                <textarea onChange={handleChange} value={state.description} name="description" id="description" />
+                <textarea onChange={handleChange} value={description} name="description" id="description" />
             </div>
             {
                 props.error && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {props.error}</div>
