@@ -23,6 +23,23 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
 In this project, you will build the reducer, actions and basic redux connects nessiary to display smurf data. You will be implementing both thunk and traditional redux actions.
 
+## API documentation 
+
+* **[GET]** to `http://localhost:3333/smurfs`: returns the list of all smurfs objects.
+* **[POST]** to `http://localhost:3333/smurfs`: creates a new smurf object. Pass smurf data through the `body` of the request.
+
+* **Smurf Object Structure** 
+```js
+[
+  {
+    id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+    name:'Poppa Smurf',
+    position:'Village Leader',
+    nickname: 'Pops',
+    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+  }
+];
+```
  
 ## Project Requirements
 
@@ -80,25 +97,6 @@ In this project, you will build the reducer, actions and basic redux connects ne
 * Do not alter your `package.json` file except to install extra libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
-
-## API documentation 
-
-#### API Documentation
-* **[GET]** to `http://localhost:3333/smurfs`: returns the list of all smurfs objects.
-* **[POST]** to `http://localhost:3333/smurfs`: creates a new smurf object. Pass smurf data through the `body` of the request.
-
-* **Smurf Object Structure** 
-```js
-[
-  {
-    id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-    name:'Poppa Smurf',
-    position:'Village Leader',
-    nickname: 'Pops',
-    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-  }
-];
-```
 
 ## Submission format
 * [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
