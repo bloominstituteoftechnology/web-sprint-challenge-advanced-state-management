@@ -62,9 +62,9 @@ In this project, you will build the reducer, actions and basic redux connects ne
   Connect your application to reducer through redux with the thunk and logger middleware packages attached.
 
 ### Complete actions/index.js
-  Add in the action creators and action constants needed to add a smurf to state and fetch smurfs from the server. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
+  Add in the action creators and action constants needed to add a smurf to state and fetch smurfs from the server. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as necessary.**
 
-  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retreive all smurfs from the api. Save the result of to our state and show an error if one is made.
+  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retrieve all smurfs from the api. Save the result of to our state and show an error if one is made.
   * [ ] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
   * [ ] Add a standard action that allows us to set the value of the error message slice of state.
   
@@ -87,7 +87,7 @@ In this project, you will build the reducer, actions and basic redux connects ne
   * [ ] Connect your error state slice, setError and addSmurf actions to the AddForm component.
   * [ ] Replace all instances of the errorMessage static variable with your error message state slice. 
   * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
-  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summery passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
 ## Important Notes:
 
@@ -99,14 +99,14 @@ In this project, you will build the reducer, actions and basic redux connects ne
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 
 ## Submission format
-* [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
+* [ ] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
 * [ ] Check Codegrade before the deadline to compare its results against your local tests.
 * [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 * [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. What problem does the context API help solve?
 
