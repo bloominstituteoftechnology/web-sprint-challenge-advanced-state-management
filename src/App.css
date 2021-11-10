@@ -1,6 +1,9 @@
-html, body, #root, .App {
-  height:100%;
-  background: #007bff!important;
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  background: teal !important;
 }
 
 main {
@@ -9,8 +12,9 @@ main {
   margin: 2em auto;
 }
 
-input, textarea {
-  width:100%;
+input,
+textarea {
+  width: 100%;
 }
 
 section {
@@ -19,7 +23,7 @@ section {
 }
 
 .display {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -37,11 +41,9 @@ section {
 }
 
 .card-title {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
-
-
 
 @media (max-width: 800px) {
   .flex-container {

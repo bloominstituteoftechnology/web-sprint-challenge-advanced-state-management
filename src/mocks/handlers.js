@@ -1,19 +1,19 @@
 import { rest } from 'msw';
 
-let smurfs = [
+let guests = [
   {
     id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-    name:'Poppa Smurf',
-    position:'Village Leader',
-    nickname: 'Pops',
-    description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+    name:'Elliot Alderson',
+    position:'Head of Product at E Corp',
+    nickname: 'Mr Robot',
+    description: 'Elliot is the Head of Product at E Corp. He has spent 11 years in the software industry and credits his success to his outstanding people skills.'
   },
   {
     id:"JzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ",
-    name:'Smurfette',
-    position:'Beautician',
-    nickname: 'Smurfette',
-    description: 'Smurfette\'s role in the village is that of any other smurf; chores, and helping out where she can, but for her specifically, she is often seen to be very active in organizing events.'
+    name:'Donna Clark',
+    position:'Senior VP of Engineering at Cardiff Electric',
+    nickname: 'Matriarch of Mutiny',
+    description: 'Donna wears many hats as investor, hardware engineer, software engineer, and executive. She is motivated by the desire to create the future.'
   }
 ];
 
@@ -26,16 +26,16 @@ const sendUserError = (msg, ctx, res) => {
 };
 
 export const handlers = [
-    rest.get('http://localhost:3333/smurfs', (req, res, ctx) => {
+    rest.get('http://localhost:3333/guests', (req, res, ctx) => {
       return res(
         ctx.status(200),
-        ctx.json(smurfs)
+        ctx.json(guests)
       )
     }),
 
-    rest.post('http://localhost:3333/smurfs', (req, res, ctx) => {
+    rest.post('http://localhost:3333/guests', (req, res, ctx) => {
       const { name, position, nickname, description } = req.body;
-      const newSmurf = { name, position, nickname, description, id: Date.now() };
+      const newGuest = { name, position, nickname, description, id: Date.now() };
 
       if (!name || !position || !nickname) {
         const resp = sendUserError(
@@ -45,59 +45,59 @@ export const handlers = [
         );
         return resp;
       }
-      const findSmurfByName = smurf => {
-        return smurf.name === name;
+      const findGuestByName = guest => {
+        return guest.name === name;
       };
-      if (smurfs.find(findSmurfByName)) {
+      if (guests.find(findGuestByName)) {
         const resp = sendUserError(
-          `${name} already exists in the smurf DB.`,
+          `${name} already exists in the guest DB.`,
           ctx,
           res
         );
         return resp;
       }
 
-      smurfs.push(newSmurf);
+      guests.push(newGuest);
 
       return res(
         ctx.status(200),
-        ctx.json(smurfs)
+        ctx.json(guests)
       )
     }),
 
-    rest.put('http://localhost:3333/smurfs/:id', (req, res, ctx) => {
+    rest.put('http://localhost:3333/guests/:id', (req, res, ctx) => {
       const { id } = req.params;
       const { name, age, height } = req.body;
-      const findSmurfById = smurf => {
-        return smurf.id === id;
+      const findGuestById = guest => {
+        return guest.id === id;
       };
-      const foundSmurf = smurfs.find(findSmurfById);
-      if (!foundSmurf) {
-        return sendUserError('No Smurf found by that ID', res);
+      const foundGuest = guests.find(findGuestById);
+      if (!foundGuest) {
+        return sendUserError('No Guest found by that ID', res);
       } else {
-        if (name) foundSmurf.name = name;
-        if (age) foundSmurf.age = age;
-        if (height) foundSmurf.height = height;
+        if (name) foundGuest.name = name;
+        if (age) foundGuest.age = age;
+        if (height) foundGuest.height = height;
         
         return res(
           ctx.status(200),
-          ctx.json(smurfs)
+          ctx.json(guests)
         )
       }
     }),
 
-    rest.delete('http://localhost:3333/smurfs/:id', (req, res, ctx) => {
+    rest.delete('http://localhost:3333/guests/:id', (req, res, ctx) => {
       const { id } = req.params;
-      const foundSmurf = smurfs.find(smurf => smurf.id === id);
+      const foundGuest = guests.find(guest => guest.id === id);
     
-      if (foundSmurf) {
-        smurfs = smurfs.filter(smurf => smurf.id !== id);
+      if (foundGuest) {
+        guests = guests.filter(guest => guest.id !== id);
         return res(
           ctx.status(200),
-          ctx.json(smurfs)
+          ctx.json(guests)
         )
       } else {
-        sendUserError('No smurf by that ID exists in the smurf DB', res);
+        sendUserError('No guest by that ID exists in the DB', res);
       }
     })
 ]

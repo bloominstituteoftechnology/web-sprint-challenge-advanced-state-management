@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { addSmurf, setError } from '../actions';
+import { addGuest, setError } from '../actions';
 
 const AddForm = (props) => {
     const [state, setState] = useState({
@@ -23,11 +23,11 @@ const AddForm = (props) => {
         if (state.name === "" || state.position === "" || state.nickname === "") {
             props.setError('Incomplete form')
         }
-        else props.addSmurf({name: state.name, position: state.position, nickname: state.position, description: state.description})
+        else props.addGuest({name: state.name, position: state.position, nickname: state.position, description: state.description})
     }
 
     return(<section>
-        <h2>Add Smurf</h2>
+        <h2>Add Guest</h2>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="name">Name:</label><br/>
@@ -48,7 +48,7 @@ const AddForm = (props) => {
             {
                 props.errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {props.errorMessage}</div>
             }
-            <button>Submit Smurf</button>
+            <button>Submit Guest</button>
         </form>
     </section>);
 }
@@ -59,10 +59,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addSmurf, setError})(AddForm);
-
-//Task List:
-//1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
-//2. Replace all instances of the errorMessage static variable with your error message state value. 
-//3. Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
-//4. Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summury passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+export default connect(mapStateToProps, {addGuest, setError})(AddForm);
