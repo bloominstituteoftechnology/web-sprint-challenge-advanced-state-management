@@ -56,11 +56,7 @@ describe("Validation Testing:", ()=>{
         await runForm('', 'worker', 's3', 'description');
         const error = await screen.findByTestId('errorAlert');
         
-        const nicknameTest = within(error).queryByText(/name/i);
-        const errorTest = within(error).queryByText(/error/i);
-    
-        expect(nicknameTest).not.toBeNull();
-        expect(errorTest).not.toBeNull();
+        expect(error).toBeInTheDocument();
     });
 });
 

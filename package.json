@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.3",
+    "logger": "0.0.1",
     "mutationobserver-shim": "^0.3.7",
     "react": "^16.12.0",
     "react-bootstrap": "^1.4.0",
@@ -15,7 +16,8 @@
     "react-redux": "^7.2.2",
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "thunk": "0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
