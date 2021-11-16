@@ -23,7 +23,7 @@ const AddForm = (props) => {
         if (state.name === "" || state.position === "" || state.nickname === "") {
             //dispatch a custom error action
         } else {
-            //dispathc an addSmurf action
+            //dispatch an addSmurf action
         }
     }
 
