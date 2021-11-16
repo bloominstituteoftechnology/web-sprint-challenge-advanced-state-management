@@ -12,18 +12,18 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Introduction
 
-In this challenge, you are to build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
+In this challenge, you will build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
 
 ## Project Setup
 * [ ] Run npm install to install your dependencies.
 * [ ] Run npm start to run your frontend and backend code automatically.
-* [ ] Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
+* [ ] Note your backend code will run automatically when your run npm start. There is no need to separately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
 
-In this project, you will build the reducer, actions and basic redux connects nessiary to display smurf data. You will be implementing both thunk and traditional redux actions.
+In this project, you will build the reducer, actions and basic redux connects to display smurf data. You will be implementing both thunk and traditional redux actions.
 
-## API documentation 
+## API Documentation 
 
 * **[GET]** to `http://localhost:3333/smurfs`: returns the list of all smurfs objects.
 * **[POST]** to `http://localhost:3333/smurfs`: creates a new smurf object. Pass smurf data through the `body` of the request.
@@ -46,7 +46,7 @@ In this project, you will build the reducer, actions and basic redux connects ne
 
 ## Project Requirements
 
-#### Complete reducers/index.js
+### Complete reducers/index.js
   Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
   * [ ] Adds the following state values into the initialState:
