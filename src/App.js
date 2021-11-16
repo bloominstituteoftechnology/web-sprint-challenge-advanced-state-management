@@ -7,19 +7,17 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
+const App = ()=> {
+  return (
+    <div className="App">
+      <Header />
 
-        <main>
-          <SmurfList/>
-          <AddForm/>
-        </main>
-      </div>
-    );
-  }
+      <main>
+        <SmurfList/>
+        <AddForm/>
+      </main>
+    </div>
+  );
 }
 
 export default App;

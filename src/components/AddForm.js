@@ -21,7 +21,9 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            //add in error action
+            //dispatch a custom error action
+        } else {
+            //dispathc an addSmurf action
         }
     }
 
