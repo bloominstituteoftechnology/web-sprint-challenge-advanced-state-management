@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {fetchSmurfs} from "../actions";
 
 const AddForm = (props) => {
     const [state, setState] = useState({
@@ -24,7 +25,10 @@ const AddForm = (props) => {
             //add in error action
         }
     }
+const handleClick =() => {
+    fetchSmurfs() 
 
+}
     return(<section>
         <h2>Add Smurf</h2>
         <form onSubmit={handleSubmit}>

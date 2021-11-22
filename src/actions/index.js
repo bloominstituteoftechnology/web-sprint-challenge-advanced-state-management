@@ -21,7 +21,7 @@ export const fetchSmurfs = () =>dispatch =>{
     .then(res => 
         dispatch({type: FETCH_SMURFS_SUCCESS, payload: res.data.results[0]})
         .catch(err=> {
-            dispatch({type: FETCH_SMURFS_ERROR, payload: error})})
+            dispatch({type: FETCH_SMURFS_ERROR})})
             )}
 
 export const addsmurf = (newSmurf)=> {

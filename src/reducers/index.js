@@ -1,36 +1,38 @@
 import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS,
-     FETCH_SMURFS_ERROR, FETCH_ADD_SMURFS, } from "../actions";
+    FETCH_SMURFS_ERROR, FETCH_ADD_SMURFS, } from "../actions";
 
 export const initialState = {
-    smurfs:[{
-        id: 0 , name:"", nickname:"", position: "", description:""
-    }],
-    isLoading : false,
-    error : "Wrong Smurfs Loading"
+   smurf:[
+       {id: 0 , name:"", nickname:"", position: "", description:""}
+   
+   ],
+   isLoading : false,
+   error : "Wrong Smurfs Loading"
 }
 
-const reducer = (state = initialState, action )=>{
-    switch(action.type){
-        case (FETCH_SMURFS_START):
-            return({...state, isLoading: true})
+const reducer = (state = initialState, action ) =>{
+   switch (action.type){
+       case FETCH_SMURFS_START:
+           return {...state, isLoading: true}
 
-        case (FETCH_SMURFS_SUCCESS):
-        return({...state, smurfs: action.payload, isLoading:false, })
+       case FETCH_SMURFS_SUCCESS:
+           return {...state, smurfs: action.payload, isLoading:false }
 
-        case (FETCH_SMURFS_ERROR):
-            return({...state, isLoading: false, error: action.payload,})
+       case FETCH_SMURFS_ERROR:
+           return {...state, isLoading: false, error: action.payload}
 
-        case (FETCH_ADD_SMURFS):
-            const newSmurf ={
-             id: action.payload ,  name: action.payload, nickname: action.payload, position: action.payload, summary: action.payload 
+       case FETCH_ADD_SMURFS:
+           return  { ...state, 
+            id: action.payload , name: action.payload, nickname: action.payload, position: action.payload, summary: action.payload 
 
-            }
-            return({...state.smurfs, newSmurf})
+           }
+           
 
-      default:
-        return state;
-    }
+     default:
+       return state;
+   }
 }
+
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
