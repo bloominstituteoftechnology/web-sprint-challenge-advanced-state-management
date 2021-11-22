@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import {fetchSmurfs} from "../actions";
 
  const SmurfList =( 
-   smurf,
+   
    isLoading,
-   error,
    fetchSmurfs
 
   ) =>{
@@ -16,10 +15,7 @@ import {fetchSmurfs} from "../actions";
         fetchSmurfs()
       }, [])
     
-      if (error) {
-        return <h2>We got an error: {error}</h2>;
-      }
-    
+         
       if (isLoading) {
         return <h2>Loading...</h2>;
       }
@@ -28,7 +24,7 @@ import {fetchSmurfs} from "../actions";
         return
     
             (<div className="listContainer">
-                <Smurf smurf={fetchSmurfs}/>
+                <Smurf/>
             </div>);
     }
     const mapStateToProps = state => {
