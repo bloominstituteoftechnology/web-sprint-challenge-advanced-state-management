@@ -7,6 +7,7 @@ import axios from 'axios';
 
 export const FETCH_SMURFS_START = "FETCH_SMURFS_START"
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS"
+export const ERROR = 'ERROR';
 //2. Add a standard action that allows us to add new smurf (including the name, nickname, position, summary)
 export const FETCH_ADD_SMURFS = "FETCH_ADD_SMURFS"
 //3. Add a standard action that allows us to set the value of the error message slice of state.
@@ -21,7 +22,7 @@ export const fetchSmurfs = () =>dispatch =>{
     .then(res => 
         dispatch({type: FETCH_SMURFS_SUCCESS, payload: res.data.results[0]})
         .catch(err=> {
-            dispatch({type: FETCH_SMURFS_ERROR})})
+            dispatch({type: "ERROR", payload: err.message })})
             )}
 
 export const addsmurf = (newSmurf)=> {
