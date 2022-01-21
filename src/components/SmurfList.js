@@ -1,7 +1,11 @@
-import React from 'react';
+import React , {useReducer}  from 'react';
 import Smurf from './Smurf';
+import {connect, useSelector} from "react-redux"
+import reducer, {initialState} from "../reducers/index"
+import {getSmurf} from "../actions"
+import {useEffect} from "react";
 
- const SmurfList = ()=> {
+ const SmurfList = (props)=> {
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
@@ -19,6 +23,18 @@ import Smurf from './Smurf';
         <Smurf smurf={testSmurf}/>
     </div>);
 }
+
+const mapStateToProps = state => {
+    console.log(state);
+    return{
+      smurfs: state.smurfs      
+
+    
+  }
+ };
+
+
+
 
 export default SmurfList;
 

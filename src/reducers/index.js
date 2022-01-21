@@ -1,9 +1,33 @@
 
+import { FETCH_SMURF_START} from "../actions";
+import {FETCH_SMURF_EPIC_FAIL} from "../actions"
+
+
 export const initialState = {
+    smurfs : [],
+    error : "",
+    inSearch : false,
+
 }
 
-const reducer = ()=>{
+
+const reducer = (state = initialState, action) => {
+    switch(action.type) {
+        case FETCH_SMURF_START:
+        return {  ...state, inSearch: true, smurfs: action.payload,
+error:""
+
+ }
+
+case FETCH_SMURF_EPIC_FAIL:
+return {  ...state,error:action.payload, inSearch: false
 }
+   default:
+return state;
+        }
+      
+}
+
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;
